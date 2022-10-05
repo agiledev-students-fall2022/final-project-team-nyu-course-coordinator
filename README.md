@@ -12,7 +12,7 @@ The program will offer:
 ## Meet the Team
 - Rizwan Amir, [github](https://github.com/raa573)
 - Yuri Hwang, [github](https://github.com/yurihwang)
-- Noah Kim, [github][https://github.com/nonoahkim1]
+- Noah Kim, [github](https://github.com/nonoahkim1)
 - Laura Lourenco, [github](https://github.com/qlaueen)
 - Phil Wee, [github](https://github.com/philwee)
 
