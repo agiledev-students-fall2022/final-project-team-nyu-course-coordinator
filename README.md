@@ -23,4 +23,5 @@ Please contribute [here](https://github.com/agiledev-students-fall2022/final-pro
 
 ## Additional Information/Links
 [Yuri Hwang's Project Proposal](https://github.com/agiledev-students-fall2022/project-proposal-team)
+
 [NYU Albert](http://albert.nyu.edu/albert_index.html)
