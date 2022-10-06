@@ -1,5 +1,9 @@
 # User Experience Design
 
+## Prototype
+
+The prototype for this app can be found [here](https://www.figma.com/file/s5xYz2b3R1OzXOYchSdlkr/Wireframe?node-id=0%3A1).
+
 ## App Map
 
 ![image](ux-design/AppMapDraft1Pic.PNG)
@@ -37,3 +41,4 @@ This page shows the student's schedule and allows them to edit the session of th
 This page will allow the user to change their information and view their weekly schedule.
 
 ![image](ux-design/5_My_account.png)
+
