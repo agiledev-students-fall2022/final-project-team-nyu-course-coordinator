@@ -1,5 +1,9 @@
 # User Experience Design
 
+## App Map
+
+![image](ux-design/AppMapDraft1Pic.PNG)
+
 ## Wireframe diagrams
 
 ### First page for new users:
