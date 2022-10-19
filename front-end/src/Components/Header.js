@@ -4,7 +4,7 @@ import React from 'react';
 export default function Header() {
   return (
     <nav>
-      <div className="container">
+      <div className="container-header">
         <div className="left-nav">
           <ul>
             <li>

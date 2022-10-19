@@ -35,7 +35,11 @@
 
 
 /*-- header styles --*/
-.container {
+body {
+  background-color: #ede5ed;
+}
+
+.container-header {
   display: flex;
   background-color: #57068c;
   align-items: center;
@@ -71,5 +75,31 @@
 
 nav .logo {
   height: 70px;
+  padding-right: 20px;
   float: right;
+}
+
+/*-- profile page --*/
+
+.container-profile {
+  display:flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.edit-field {
+  float: right;
+  padding-left: 10em;
+}
+
+.edit-field a:hover {
+  background-color: #57068c;
+  color: white;
+}
+
+.field-container {
+  padding: 10px;
+  border: 1px solid #57068c;
+  margin: 10px;
+  background-color: white;
 }
