@@ -81,25 +81,26 @@ nav .logo {
 
 /*-- profile page --*/
 
-.container-profile {
-  display:flex;
-  align-content: center;
-  justify-content: center;
-}
-
 .edit-field {
   float: right;
   padding-left: 10em;
 }
 
-.edit-field a:hover {
-  background-color: #57068c;
-  color: white;
+.schedule-container {
+  padding: 10px;
 }
 
-.field-container {
-  padding: 10px;
-  border: 1px solid #57068c;
-  margin: 10px;
-  background-color: white;
+
+h1 {
+  color: #57068c;
+}
+
+.profile-page {
+  max-width: 400px;
+}
+
+th, td {
+  width: 100px !important;
+  height: 100px !important;
+  text-align: center;
 }
