@@ -37,6 +37,7 @@
 /*-- header styles --*/
 body {
   background-color: #ede5ed;
+  line-height: 1em;
 }
 
 .container-header {
@@ -87,7 +88,8 @@ nav .logo {
 }
 
 .schedule-container {
-  padding: 10px;
+  padding: 2.5em 0 2.5em 0;
+
 }
 
 
@@ -99,8 +101,17 @@ h1 {
   max-width: 400px;
 }
 
+
 th, td {
-  width: 100px !important;
+  width: 150px !important;
   height: 100px !important;
   text-align: center;
+  vertical-align: middle;
+}
+
+.class-info {
+  background-color: #56bc00; 
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

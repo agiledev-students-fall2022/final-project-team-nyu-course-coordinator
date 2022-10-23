@@ -29,7 +29,7 @@ export default function Profile() {
         </ul>
       </div>
       <div className="schedule-container">
-          <table className="table table-light table-bordered"> 
+          <table className="table table-responsive table-light table-bordered"> 
             <thead>
               <tr>
                 <th> </th>
@@ -78,9 +78,17 @@ export default function Profile() {
                 <td></td>
                 <td></td>
                 <td></td>
-                <td className="class-calendar">CSCI UA 480 - Agile Software Development</td>
+                <td className="class-calendar">
+                  <div className="class-info">
+                    CSCI UA 480 - Agile Software Development
+                  </div> 
+                </td>
                 <td></td>
-                <td className="class-calendar">CSCI UA 480 - Agile Software Development</td>
+                <td className="class-calendar">
+                  <div className="class-info">
+                    CSCI UA 480 - Agile Software Development
+                  </div> 
+                </td>
                 <td></td>
               </tr>
               <tr>
