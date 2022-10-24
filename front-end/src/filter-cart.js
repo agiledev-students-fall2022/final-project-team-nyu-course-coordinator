@@ -2,6 +2,25 @@ import React, {useMemo}  from 'react'
 import { useTable, useFilters } from 'react-table'
 
 function FilterCart(props){
+
+    const ColumnFilter= ({column})=>{
+        const {filterValue, setFilter} =column
+        return (
+            <span>
+                Search:{' '}
+                <input
+                    value={filterValue || ""}
+                    onChange={(e)=> setFilter(e.target.value)}
+                />
+            </span>
+        )
+    }
+
+
+
+
+
+
     // const data = useMemo(() => props.data, [props.data]);
     const data= useMemo(
         ()=> [
@@ -62,18 +81,7 @@ function FilterCart(props){
         []
       );
 
-    const ColumnFilter= ({column})=>{
-        const {filterValue, setFilter} =column
-        return (
-            <span>
-                Search:{' '}
-                <input
-                    value={filterValue || ""}
-                    onChange={(e)=> setFilter(e.target.value)}
-                />
-            </span>
-        )
-    }
+    
 
 
     const {
@@ -99,9 +107,9 @@ function FilterCart(props){
                     {headerGroup.headers.map((column) => (
                     <th {...column.getHeaderProps()}>
                         {column.render("Header")}
-                        <span>
+                        <div>
                         {column.canFilter ? column.render("Filter") : null}
-                        </span>
+                        </div>
                     </th>
                     ))}
                 </tr>
