@@ -42,7 +42,7 @@
   background-color: white;
 }
 
-.login-page-container {
+.login-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@
   height: 100vh;
 }
 
-.login-page {
+.login-form {
   width: 420px;
   box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
   padding-top: 30px;
@@ -59,12 +59,12 @@
   background-color: white;
 }
 
-.login-page-content {
+.login-form-content {
   padding-left: 12%;
   padding-right: 12%;
 }
 
-.login-page-title {
+.login-form-title {
   text-align: center;
   margin-bottom: 1em;
   font-size: 24px;
