@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function Popups() {
+function SessionChangePopup() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,12 +11,12 @@ function Popups() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Add Class to Shopping Cart
+        Change Session
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Shopping Cart Updated</Modal.Title>
+          <Modal.Title>Session Changed Successfully</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -28,4 +28,4 @@ function Popups() {
   );
 }
 
-export default Popups;
+export default SessionChangePopup;
