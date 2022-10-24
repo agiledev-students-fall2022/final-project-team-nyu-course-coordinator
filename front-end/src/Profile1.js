@@ -128,58 +128,47 @@ export default function Profile() {
             </tbody>
           </table>
         </div>
-      <h1 className="text-center p-5">All Classes</h1> 
       <div className="scheduleBox">
-        <h2>Class Name</h2>
-        <ul>
-          <li>Required for your major</li>
-          <li>You have all pre-requisits</li>
-        </ul>
-        <h3>Available Sessions</h3>
         <div className="sessions">
-          <h4>Session 002</h4>
-          <p className="sessionInfo">Professor John Doe</p>
-          <p className="sessionInfo">Monday and Wednesdays</p>
-          <p className="sessionInfo">10:30AM ~ 11:45AM</p>
-          <p className="sessionInfo">Silver 420</p>
-          
-        </div>
-        <div className="sessions">
-          <h4>Session 004</h4>
-          <p className="sessionInfo">Professor John Doe</p>
-          <p className="sessionInfo">Tuesday and Thursdays</p>
-          <p className="sessionInfo">12:30PM ~ 1:45PM</p>
-          <p className="sessionInfo">Silver 409</p>
-          <div className="button">
-            <a href="">Add</a>
-          </div>
-        </div>
-      </div>
-      <div className="scheduleBox">
-        <h2>Class Name</h2>
-        <ul>
-          <li>Required for your major</li>
-          <li>You have all pre-requisits</li>
-        </ul>
-        <h3>Available Sessions</h3>
-        <div className="sessions">
-          <h4>Session 002</h4>
+          <h4>CORE 400</h4>
+          <p className="sessionInfo">Session 001</p>
           <p className="sessionInfo">Professor John Doe</p>
           <p className="sessionInfo">Monday and Wednesdays</p>
           <p className="sessionInfo">10:30AM ~ 11:45AM</p>
           <p className="sessionInfo">Silver 420</p>
           <div className="button">
-            <a href="">Add</a>
+            <a href="">Change Session</a>
+          </div>
+          <div className="button">
+            <a href="">Remove Class</a>
           </div>
         </div>
         <div className="sessions">
-          <h4>Session 004</h4>
+          <h4>MATH 121</h4>
+          <p className="sessionInfo">Session 006</p>
           <p className="sessionInfo">Professor John Doe</p>
           <p className="sessionInfo">Tuesday and Thursdays</p>
           <p className="sessionInfo">12:30PM ~ 1:45PM</p>
           <p className="sessionInfo">Silver 409</p>
           <div className="button">
-            <a href="">Add</a>
+            <a href="">Change Session</a>
+          </div>
+          <div className="button">
+            <a href="">Remove Class</a>
+          </div>
+        </div>
+        <div className="sessions">
+          <h4>MATH 121</h4>
+          <p className="sessionInfo">Session 006</p>
+          <p className="sessionInfo">Professor John Doe</p>
+          <p className="sessionInfo">Tuesday and Thursdays</p>
+          <p className="sessionInfo">12:30PM ~ 1:45PM</p>
+          <p className="sessionInfo">Silver 409</p>
+          <div className="button">
+            <a href="">Change Session</a>
+          </div>
+          <div className="button">
+            <a href="">Remove Class</a>
           </div>
         </div>
       </div>
