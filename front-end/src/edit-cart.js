@@ -13,13 +13,15 @@ function EditCart() {
   const [input, setInput] = useState("")
   const [submittedInput, setSubmittedInput] = useState("")
 
+  //prop.data
   const [data, setData] = useState([{ section: 'One', instructor: 'one' },{ section: 'Two', instructor: 'two' },{ section: 'Three', instructor: 'three' }])
 
   const SearchAddCourse= ()=>{
 
     const handleClick= (e)=>{
       setSubmittedInput(input)
-
+    
+      //hardcode the columns
       const updateData= [...data,{
         section: input,
         instructor: "x"

@@ -12,6 +12,13 @@ const Header = props => {
             <li className="nav-item">
               <Link to="/editcart">Edit Shopping Cart</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/sortcart">Sort Shopping Cart</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/filtercart">Filter Shopping Cart</Link>
+            </li>
+            
             
           </ul>
         </nav>

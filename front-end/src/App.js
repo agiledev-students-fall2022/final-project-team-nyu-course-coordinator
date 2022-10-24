@@ -3,6 +3,9 @@ import Header from './Header'
 
 import './App.css';
 import EditCart from './edit-cart'
+import SortCart from './sort-cart'
+import FilterCart from './filter-cart'
+
 
 
 const App = props => {
@@ -18,6 +21,8 @@ const App = props => {
             {/* a route for the home page */}
 
             <Route path="/EditCart" element={<EditCart />} />
+            <Route path="/SortCart" element={<SortCart />} />
+            <Route path="/FilterCart" element={<FilterCart />} />
 
           </Routes>
         </main>
