@@ -3,6 +3,11 @@ import Profile from "./Profile";
 import Header from "./Components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AddClassPopup from './AddClassPopup.js';
+import RemoveClassPopup from './RemoveClassPopup.js';
+import SessionChangePopup from './SessionChangePopup.js';
+import SortBy from './SortBy.js'
 
 function App() {
   return (
@@ -28,6 +33,18 @@ function App() {
         <Route path="/Profile" element={<Profile/>} />
       </Routes>
     </BrowserRouter>
+    <p>
+    <AddClassPopup />
+  </p>
+  <p>
+    <RemoveClassPopup />
+  </p>
+  <p>
+    <SessionChangePopup />
+  </p>
+  <p>
+    <SortBy />
+  </p>
   );
 }
 
