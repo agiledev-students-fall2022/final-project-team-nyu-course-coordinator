@@ -43,11 +43,10 @@ body {
   display: flex;
   background-color: #57068c;
   align-items: center;
-  padding: 30px;
+  padding-top: 15px;
 }
 
 .left-nav {
-  width: 50%;
   flex-direction: column;
 }
 

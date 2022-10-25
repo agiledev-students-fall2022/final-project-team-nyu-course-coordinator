@@ -23,6 +23,7 @@ const App = props => {
         <Route path="/FilterCart" element={<FilterCart />} />
         <Route path="/AllClasses" element={<AllClasses />} />
         <Route path="/MySchedule" element={<MySchedule />} />
+        <Route path="/edit-cart.js" element={<EditCart />} />
       </Routes>
     </BrowserRouter>
  

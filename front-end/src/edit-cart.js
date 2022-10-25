@@ -5,10 +5,6 @@ import {useState} from 'react'
 import ReactDeleteRow from 'react-delete-row'
 
 
-
-
-
-
 function EditCart() {
   const [input, setInput] = useState("")
   const [submittedInput, setSubmittedInput] = useState("")

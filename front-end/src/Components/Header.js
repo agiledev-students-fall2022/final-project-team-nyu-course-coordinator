@@ -1,4 +1,4 @@
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from 'react';
 
@@ -19,9 +19,9 @@ export default function Header() {
             </li>
           </ul>
         </div>
-        <div className="right-nav">
+        {/* <div className="right-nav">
           <img src={logo} className="logo" alt="logo" />
-        </div>
+        </div> */}
       </div>
     </nav>
   )
