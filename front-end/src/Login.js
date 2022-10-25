@@ -6,55 +6,7 @@ export default function (props) {
   const changeloginMode = () => {
     setloginMode(loginMode === "signin" ? "signup" : "signin")
   }
-
-
-  return (
-    <div className="login-form-container">
-      <form className="login-form">
-        <div className="login-form-content">
-          <h3 className="login-form-title">Sign In</h3>
-          <div className="text-center">
-            Already registered?{" "}
-            <span className="link-primary" onClick={changeloginMode}>
-              Sign In
-            </span>
-          </div>
-          <div className="form-group mt-3">
-            <label>Full Name</label>
-            <input
-              type="email"
-              className="form-control mt-1"
-              placeholder="e.g Jane Doe"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <label>Email address</label>
-            <input
-              type="email"
-              className="form-control mt-1"
-              placeholder="Email Address"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control mt-1"
-              placeholder="Password"
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-          <p className="text-center mt-2">
-            Forgot <a href="#">password?</a>
-          </p>
-        </div>
-      </form>
-    </div>
-  )
+  const [tnc,setTnc]=useState(false);
 
   if (loginMode === "signin") {
     return (
@@ -69,21 +21,60 @@ export default function (props) {
               </span>
             </div>
             <div className="form-group mt-3">
-              <label>Email address</label>
-              <input
-                type="email"
-                className="form-control mt-1"
-                placeholder="Enter email"
-              />
-            </div>
+            <label>What is your name?</label>
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="e.g Jane Doe"
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>What is your NYU Email?</label>
+            <input
+              type="email"
+              className="form-control mt-1"
+              placeholder="Email Address"
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>Please enter a password</label>
+            <input type="password"
+              className="form-control mt-1"
+              placeholder="Password"
+            />
+          </div>
+
             <div className="form-group mt-3">
-              <label>Password</label>
-              <input
-                type="password"
-                className="form-control mt-1"
-                placeholder="Enter password"
-              />
-            </div>
+            <label>What is your major and school?</label>
+            <br></br>
+              <select>
+              <option value="pleaseSelect">Please select</option>
+              <option value="casCS">Computer Science at CAS</option>
+              <option value="tandonCS">Computer Science at Tandon </option>
+              </select>
+          </div>
+
+          <div className="form-group mt-3">
+            <label>What classes have you previously taken?</label>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Intro to CS</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Discrete Math</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Data Structures</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Basic Algorithms</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Computer Systems Organization</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Software Engineering</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Operating Systems</span>
+            <br></br>
+          </div>
+
+
+
             <div className="d-grid gap-2 mt-3">
               <button type="submit" className="btn btn-primary">
                 Submit
@@ -97,6 +88,84 @@ export default function (props) {
       </div>
     )
   }
+
+
+  return (
+    <div className="login-form-container">
+      <form className="login-form">
+        <div className="login-form-content">
+          <h3 className="login-form-title">Sign In</h3>
+          <div className="text-center">
+            Already registered?{" "}
+            <span className="link-primary" onClick={changeloginMode}>
+              Sign In
+            </span>
+          </div>
+          <div className="form-group mt-3">
+            <label>What is your name?</label>
+            <input
+              type="text"
+              className="form-control mt-1"
+              placeholder="e.g Jane Doe"
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>What is your NYU Email?</label>
+            <input
+              type="email"
+              className="form-control mt-1"
+              placeholder="Email Address"
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>Please enter a password</label>
+            <input type="password"
+              className="form-control mt-1"
+              placeholder="Password"
+            />
+          </div>
+
+          <div className="form-group mt-3">
+            <label>What is your major and school?</label>
+            <br></br>
+              <select>
+              <option value="casCS">Computer Science at CAS</option>
+              <option value="tandonCS">Computer Science at Tandon </option>
+              </select>
+          </div>
+
+          <div className="form-group mt-3">
+            <label>What classes have you previously taken?</label>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Intro to CS</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Discrete Math</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Data Structures</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Basic Algorithms</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Computer Systems Organization</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Software Engineering</span>
+            <br></br>
+            <input type="checkbox" onChange={(e)=>setTnc(e.target.checked)} /><span> Operating Systems</span>
+            <br></br>
+          </div>
+
+
+          <div className="d-grid gap-2 mt-3">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <p className="text-center mt-2">
+          <a href="#"> Forgot password?</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  )
 
 
 }
