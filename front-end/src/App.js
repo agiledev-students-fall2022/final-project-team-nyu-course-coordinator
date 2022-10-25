@@ -3,6 +3,7 @@ import Profile from "./Profile";
 import Header from "./Components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import Login from "./Login"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddClassPopup from './AddClassPopup.js';
 import RemoveClassPopup from './RemoveClassPopup.js';
@@ -31,6 +32,8 @@ function App() {
     <Header />
       <Routes>
         <Route path="/Profile" element={<Profile/>} />
+        <Route path="/login" element={<Login/>} />
+
       </Routes>
     </BrowserRouter>
     <p>
