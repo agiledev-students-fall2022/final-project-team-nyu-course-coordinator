@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color:white
 }
 
 .App-logo {
@@ -37,7 +36,7 @@
 
 /*-- header styles --*/
 body {
-  background-color: #ede5ed;
+  line-height: 1em;
 }
 
 .container-header {
@@ -56,13 +55,20 @@ body {
   list-style: none;
   padding: 10px;
   display: inline;
-  padding: 20px;
-  margin: 10px;
+  align-items: middle;
+  border-radius: 5px;
+  margin: 0.4em;
+  color: #220337;
 }
 
 .left-nav li:hover {
   background-color: #220337;
+  border: none;
+  color: white;
+}
 
+.left-nav a:hover {
+  color: white;
 }
 
 .left-nav a {
@@ -75,7 +81,7 @@ body {
 }
 
 nav .logo {
-  height: 70px;
+  height: 3em;
   padding-right: 20px;
   float: right;
 }
@@ -88,9 +94,8 @@ nav .logo {
 }
 
 .schedule-container {
-  padding: 10px;
+  padding: 2.5em 0 2.5em 0;
 }
-
 
 h1 {
   color: #57068c;
@@ -101,29 +106,35 @@ h1 {
 }
 
 th, td {
-  width: 100px !important;
+  width: 150px !important;
   height: 100px !important;
   text-align: center;
+  vertical-align: middle;
 }
 
+.class-info {
+  background-color: #56bc00; 
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+/*-- Home page --*/
+
 .scheduleBox {
-  width: 60%;
-  border: 1px solid white;
+  border: 1px solid lavender;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 5px;
   text-align: left;
   padding: 20px;
-  padding-left: 40px;
   margin: auto;
   margin-bottom: 50px;
 }
 
 .sessions {
-  width: 80%;
   border: 1px solid white;
   background-color: lavender;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
@@ -188,4 +199,8 @@ label {
   font-size: 14px;
   font-weight: 600;
   color: rgb(34, 34, 34);
+}
+
+.modal-dialog {
+  z-index: +1;
 }

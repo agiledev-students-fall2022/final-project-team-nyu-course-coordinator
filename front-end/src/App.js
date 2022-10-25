@@ -1,18 +1,15 @@
-import Profile from "./Profile";
-import Header from "./Components/Header";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./Components/Header";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Profile from "./Profile";
 import EditCart from './edit-cart'
 import SortCart from './sort-cart'
 import FilterCart from './filter-cart'
 import Login from "./Login"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import AddClassPopup from './AddClassPopup.js';
-import RemoveClassPopup from './RemoveClassPopup.js';
-import SessionChangePopup from './SessionChangePopup.js';
-import SortBy from './SortBy.js'
-
-
+import AllClasses from "./AllClasses";
+import MySchedule from "./MySchedule";
 
 const App = props => {
   return (
@@ -20,29 +17,15 @@ const App = props => {
     <Header />
       <Routes>
         <Route path="/Profile" element={<Profile/>} />
-        <Route path="/login" element={<Login/>} />
-
-      </Routes>
-      <Routes>
-        <Route path="/Profile" element={<Profile/>} />
-
-        <Route path="/EditCart" element={<EditCart />} />
+        <Route path="/Login" element={<Login/>} />
+        <Route path="/EditCart" element={<EditCart />} /> 
         <Route path="/SortCart" element={<SortCart />} />
         <Route path="/FilterCart" element={<FilterCart />} />
+        <Route path="/AllClasses" element={<AllClasses />} />
+        <Route path="/MySchedule" element={<MySchedule />} />
       </Routes>
     </BrowserRouter>
-    <p>
-    <AddClassPopup />
-  </p>
-  <p>
-    <RemoveClassPopup />
-  </p>
-  <p>
-    <SessionChangePopup />
-  </p>
-  <p>
-    <SortBy />
-  </p>
+ 
   );
 }
 

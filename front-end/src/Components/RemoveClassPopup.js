@@ -14,7 +14,7 @@ function RemoveClassPopup() {
         Remove
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Class Removed from Schedule</Modal.Title>
         </Modal.Header>

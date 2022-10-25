@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import RemoveClassPopup from "./Components/RemoveClassPopup"
+import SessionChangePopup from "./Components/SessionChangePopup"
 
 export default function (props) {
   let [loginMode, setloginMode] = useState("signin")
@@ -7,12 +9,11 @@ export default function (props) {
     setloginMode(loginMode === "signin" ? "signup" : "signin")
   }
 
-
   return (
     <div className="login-form-container">
       <form className="login-form">
         <div className="login-form-content">
-          <h3 className="login-form-title">Sign In</h3>
+          <h3 className="login-form-title">Sign Up</h3>
           <div className="text-center">
             Already registered?{" "}
             <span className="link-primary" onClick={changeloginMode}>
