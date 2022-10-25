@@ -1,8 +1,10 @@
 import Profile from "./Profile";
-import Profile1 from "./Profile1";
 import Header from "./Components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import EditCart from './edit-cart'
+import SortCart from './sort-cart'
+import FilterCart from './filter-cart'
 import Login from "./Login"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddClassPopup from './AddClassPopup.js';
@@ -10,7 +12,9 @@ import RemoveClassPopup from './RemoveClassPopup.js';
 import SessionChangePopup from './SessionChangePopup.js';
 import SortBy from './SortBy.js'
 
-function App() {
+
+
+const App = props => {
   return (
     <BrowserRouter>
     <Header />
@@ -20,7 +24,11 @@ function App() {
 
       </Routes>
       <Routes>
-        <Route path="/Profile1" element={<Profile1/>} />
+        <Route path="/Profile" element={<Profile/>} />
+
+        <Route path="/EditCart" element={<EditCart />} />
+        <Route path="/SortCart" element={<SortCart />} />
+        <Route path="/FilterCart" element={<FilterCart />} />
       </Routes>
     </BrowserRouter>
     <p>
@@ -38,4 +46,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
