@@ -38,7 +38,6 @@
 /*-- header styles --*/
 body {
   background-color: #ede5ed;
-  line-height: 1em;
 }
 
 .container-header {
@@ -89,8 +88,7 @@ nav .logo {
 }
 
 .schedule-container {
-  padding: 2.5em 0 2.5em 0;
-
+  padding: 10px;
 }
 
 
@@ -102,18 +100,53 @@ h1 {
   max-width: 400px;
 }
 
-
 th, td {
-  width: 150px !important;
+  width: 100px !important;
   height: 100px !important;
   text-align: center;
-  vertical-align: middle;
 }
 
-.class-info {
-  background-color: #56bc00; 
+.scheduleBox {
+  width: 60%;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 20px;
+  text-align: left;
+  padding: 20px;
+  padding-left: 40px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.sessions {
+  width: 80%;
+  border: 1px solid white;
+  background-color: lavender;
   padding: 10px;
   border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.sessionInfo {
+  margin: 1px;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid white;
+  background-color: thistle;
+  border-radius: 10px;
+  text-align: center;
+  width: 170px;
+  margin: 10px;
+}
+
+.add {
+  border: 1px solid white;
+  background-color: thistle;
+  border-radius: 10px;
+  text-align: center;
+  width: 170px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
