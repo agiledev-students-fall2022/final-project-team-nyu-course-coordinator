@@ -1,4 +1,7 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import Profile from "./Profile";
+import Header from "./Components/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
@@ -12,15 +15,6 @@ function App() {
     //     <p>
     //       Edit <code>src/App.js</code> and save to reload.
     //     </p>
-
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login/>} />
-      </Routes>
-    </BrowserRouter>
-
-
-
     //     <a
     //       className="App-link"
     //       href="https://reactjs.org"
@@ -31,6 +25,14 @@ function App() {
     //     </a>
     //   </header>
     // </div>
+    <BrowserRouter>
+    <Header />
+      <Routes>
+        <Route path="/Profile" element={<Profile/>} />
+        <Route path="/login" element={<Login/>} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

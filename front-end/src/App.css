@@ -7,11 +7,11 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
@@ -24,19 +24,97 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+/*-- header styles --*/
+body {
+  background-color: #ede5ed;
+  line-height: 1em;
 }
 
+.container-header {
+  display: flex;
+  background-color: #57068c;
+  align-items: center;
+  padding: 30px;
+}
+
+.left-nav {
+  width: 50%;
+  flex-direction: column;
+}
+
+.left-nav li {
+  list-style: none;
+  padding: 10px;
+  display: inline;
+  padding: 20px;
+  margin: 10px;
+}
+
+.left-nav li:hover {
+  background-color: #220337;
+
+}
+
+.left-nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.right-nav {
+  width: 50%;
+}
+
+nav .logo {
+  height: 70px;
+  padding-right: 20px;
+  float: right;
+}
+
+/*-- profile page --*/
+
+.edit-field {
+  float: right;
+  padding-left: 10em;
+}
+
+.schedule-container {
+  padding: 2.5em 0 2.5em 0;
+
+}
+
+
+h1 {
+  color: #57068c;
+}
+
+.profile-page {
+  max-width: 400px;
+}
+
+
+th, td {
+  width: 150px !important;
+  height: 100px !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.class-info {
+  background-color: #56bc00; 
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 
 .App {
   background-color: white;
