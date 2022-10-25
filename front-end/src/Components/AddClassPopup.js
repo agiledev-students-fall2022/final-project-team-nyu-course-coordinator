@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function SessionChangePopup() {
+function AddClassPopup() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,12 +11,12 @@ function SessionChangePopup() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Change Session
+        Add
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Session Changed Successfully</Modal.Title>
+          <Modal.Title>Class Added Successfully</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -28,4 +28,4 @@ function SessionChangePopup() {
   );
 }
 
-export default SessionChangePopup;
+export default AddClassPopup;

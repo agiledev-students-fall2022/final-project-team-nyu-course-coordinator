@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function AddClassPopup() {
+function RemoveClassPopup() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,12 +11,12 @@ function AddClassPopup() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Add
+        Remove
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Class Added Successfully</Modal.Title>
+          <Modal.Title>Class Removed from Schedule</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -28,4 +28,4 @@ function AddClassPopup() {
   );
 }
 
-export default AddClassPopup;
+export default RemoveClassPopup;

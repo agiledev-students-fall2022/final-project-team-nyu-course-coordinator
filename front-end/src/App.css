@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color:white
 }
 
 .App-logo {
@@ -37,7 +36,6 @@
 
 /*-- header styles --*/
 body {
-  background-color: #ede5ed;
   line-height: 1em;
 }
 
@@ -45,11 +43,10 @@ body {
   display: flex;
   background-color: #57068c;
   align-items: center;
-  padding: 30px;
+  padding-top: 15px;
 }
 
 .left-nav {
-  width: 50%;
   flex-direction: column;
 }
 
@@ -57,13 +54,20 @@ body {
   list-style: none;
   padding: 10px;
   display: inline;
-  padding: 20px;
-  margin: 10px;
+  align-items: middle;
+  border-radius: 5px;
+  margin: 0.4em;
+  color: #220337;
 }
 
 .left-nav li:hover {
   background-color: #220337;
+  border: none;
+  color: white;
+}
 
+.left-nav a:hover {
+  color: white;
 }
 
 .left-nav a {
@@ -76,7 +80,7 @@ body {
 }
 
 nav .logo {
-  height: 70px;
+  height: 3em;
   padding-right: 20px;
   float: right;
 }
@@ -90,9 +94,7 @@ nav .logo {
 
 .schedule-container {
   padding: 2.5em 0 2.5em 0;
-
 }
-
 
 h1 {
   color: #57068c;
@@ -101,7 +103,6 @@ h1 {
 .profile-page {
   max-width: 400px;
 }
-
 
 th, td {
   width: 150px !important;
@@ -114,6 +115,48 @@ th, td {
   background-color: #56bc00; 
   padding: 10px;
   border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+/*-- Home page --*/
+
+.scheduleBox {
+  border: 1px solid lavender;
+  background-color: white;
+  border-radius: 5px;
+  text-align: left;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.sessions {
+  border: 1px solid white;
+  background-color: lavender;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.sessionInfo {
+  margin: 1px;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid white;
+  background-color: thistle;
+  border-radius: 10px;
+  text-align: center;
+  width: 170px;
+  margin: 10px;
+}
+
+.add {
+  border: 1px solid white;
+  background-color: thistle;
+  border-radius: 10px;
+  text-align: center;
+  width: 170px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -155,4 +198,8 @@ label {
   font-size: 14px;
   font-weight: 600;
   color: rgb(34, 34, 34);
+}
+
+.modal-dialog {
+  z-index: +1;
 }

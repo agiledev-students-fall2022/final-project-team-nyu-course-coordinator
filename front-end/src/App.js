@@ -1,54 +1,33 @@
-// import logo from './logo.svg';
-import Profile from "./Profile";
-import Header from "./Components/Header";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Login from "./Login"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./Components/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AddClassPopup from './AddClassPopup.js';
-import RemoveClassPopup from './RemoveClassPopup.js';
-import SessionChangePopup from './SessionChangePopup.js';
-import SortBy from './SortBy.js'
 
-function App() {
+import Profile from "./Profile";
+import EditCart from './edit-cart'
+import SortCart from './sort-cart'
+import FilterCart from './filter-cart'
+import Login from "./Login"
+import AllClasses from "./AllClasses";
+import MySchedule from "./MySchedule";
+
+const App = props => {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     <BrowserRouter>
     <Header />
       <Routes>
         <Route path="/Profile" element={<Profile/>} />
-        <Route path="/login" element={<Login/>} />
-
+        <Route path="/Login" element={<Login/>} />
+        <Route path="/EditCart" element={<EditCart />} /> 
+        <Route path="/SortCart" element={<SortCart />} />
+        <Route path="/FilterCart" element={<FilterCart />} />
+        <Route path="/AllClasses" element={<AllClasses />} />
+        <Route path="/MySchedule" element={<MySchedule />} />
+        <Route path="/edit-cart.js" element={<EditCart />} />
       </Routes>
     </BrowserRouter>
-    <p>
-    <AddClassPopup />
-  </p>
-  <p>
-    <RemoveClassPopup />
-  </p>
-  <p>
-    <SessionChangePopup />
-  </p>
-  <p>
-    <SortBy />
-  </p>
+ 
   );
 }
 
-export default App;
+export default App
