@@ -1,4 +1,3 @@
-// import logo from '../logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from 'react';
 
@@ -8,6 +7,9 @@ export default function Header() {
       <div className="container-header">
         <div className="left-nav">
           <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
             <li>
               <a href="/AllClasses">All Classes</a>
             </li>
