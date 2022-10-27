@@ -10,12 +10,10 @@ import FilterCart from './filter-cart'
 import Login from "./Login"
 import AllClasses from "./AllClasses";
 import MySchedule from "./MySchedule";
-<<<<<<< yuri
 import ChangeSession from "./change-session.js"
-=======
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
->>>>>>> master
+
 
 const App = props => {
   return (
