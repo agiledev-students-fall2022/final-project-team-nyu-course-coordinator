@@ -10,12 +10,15 @@ import FilterCart from './filter-cart'
 import Login from "./Login"
 import AllClasses from "./AllClasses";
 import MySchedule from "./MySchedule";
+import Footer from "./Components/Footer";
+import Home from "./Components/Home";
 
 const App = props => {
   return (
     <BrowserRouter>
     <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/Profile" element={<Profile/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/EditCart" element={<EditCart />} /> 
@@ -25,6 +28,7 @@ const App = props => {
         <Route path="/MySchedule" element={<MySchedule />} />
         <Route path="/edit-cart.js" element={<EditCart />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
  
   );
