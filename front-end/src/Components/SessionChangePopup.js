@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import EditCart from '../edit-cart';
 
 function SessionChangePopup() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} href="/edit-cart.js">
+      <Button variant="primary" onClick={handleShow} href="ChangeSession">
         Change Session
       </Button>
 

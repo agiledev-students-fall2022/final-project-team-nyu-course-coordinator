@@ -1,7 +1,6 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddClassPopup from './Components/AddClassPopup.js';
-import SortCart from './sort-cart';
 import SortBy from './Components/SortBy.js';
 
 export default function AllClasses() {
@@ -12,6 +11,14 @@ export default function AllClasses() {
       <h1 className="text-center p-5">All Classes</h1>
       <SortBy/> 
       <br />
+
+      <a href="/edit-cart.js">
+        <button className="add-delete-btn">Add or Delete</button>
+      </a>
+      <br />
+      <br />
+      
+
       <div className="scheduleBox">
         <h2>CSCI 480 - Agile Development and DevOps</h2>
         <ul>
@@ -26,6 +33,8 @@ export default function AllClasses() {
           <p className="sessionInfo">10:30AM ~ 11:45AM</p>
           <p className="sessionInfo">Silver 420</p>
           <span className="badge rounded-pill text-bg-warning">You have conflicting classes.</span>
+          <br />
+          <AddClassPopup/>
           
         </div>
         <div className="sessions">
@@ -75,6 +84,8 @@ export default function AllClasses() {
           <p className="sessionInfo">10:30AM ~ 11:45AM</p>
           <p className="sessionInfo">Silver 420</p>
           <span className="badge rounded-pill text-bg-danger">You don't have all the pre-requisites.</span>
+          
+          
         </div>
         <div className="sessions">
           <h4>Session 004</h4>

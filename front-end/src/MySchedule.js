@@ -1,8 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import RemoveClassPopup from './Components/RemoveClassPopup.js';
-import SessionChangePopup from './Components/SessionChangePopup.js';
-import EditCart from './edit-cart.js';
+import ChangeSession from './change-session.js';
 
 export default function Profile() {
   
@@ -233,8 +232,9 @@ export default function Profile() {
           <p className="sessionInfo">Monday and Wednesdays</p>
           <p className="sessionInfo">9AM ~ 10AM</p>
           <p className="sessionInfo">Silver 420</p>
-          <div className="btn" onClick={EditCart}>
-            <SessionChangePopup />
+          
+          <div className="btn">
+            <ChangeSession />
           </div>
           <div className="btn">
             <RemoveClassPopup/>
@@ -249,7 +249,7 @@ export default function Profile() {
           <p className="sessionInfo">12PM ~ 1PM</p>
           <p className="sessionInfo">Silver 409</p>
           <div className="btn">
-            <SessionChangePopup/>
+            <ChangeSession />
           </div>
           <div className="btn">
             <RemoveClassPopup/>

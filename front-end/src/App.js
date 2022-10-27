@@ -10,6 +10,7 @@ import FilterCart from './filter-cart'
 import Login from "./Login"
 import AllClasses from "./AllClasses";
 import MySchedule from "./MySchedule";
+import ChangeSession from "./change-session.js"
 
 const App = props => {
   return (
@@ -24,6 +25,8 @@ const App = props => {
         <Route path="/AllClasses" element={<AllClasses />} />
         <Route path="/MySchedule" element={<MySchedule />} />
         <Route path="/edit-cart.js" element={<EditCart />} />
+        <Route path="/change-session.js" element={<ChangeSession />} />
+
       </Routes>
     </BrowserRouter>
  
