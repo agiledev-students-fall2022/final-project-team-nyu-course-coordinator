@@ -32,7 +32,7 @@ Understandably, disagreement is part of the collaboration process. As a result, 
 - Meetings will be held in-person or on zoom synchronously and details will be communicated through Discord.
 - All team members are required to attend. If a team member is unaivalable or cannot attend, he/she should let the team know beforehand. 
 - The meeting will follow this guideline:
-    - What have you worked on since the last meetin?
+    - What have you worked on since the last meeting?
     - What are you working on right now?
     - What obstacles are blocking your progress?
 
