@@ -10,7 +10,7 @@ function EditCart() {
   const [submittedInput, setSubmittedInput] = useState("")
 
   //prop.data
-  const [data, setData] = useState([{ section: 'One', instructor: 'one' },{ section: 'Two', instructor: 'two' },{ section: 'Three', instructor: 'three' }])
+  const [data, setData] = useState([{ section: 'MATH 200 - Calculus IV' },{ section: 'lorum ipsum'},{ section: 'lorum ipsum' }])
 
   const SearchAddCourse= ()=>{
 
@@ -20,7 +20,6 @@ function EditCart() {
       //hardcode the columns
       const updateData= [...data,{
         section: input,
-        instructor: "x"
       }]
       setData(updateData)
 
@@ -33,13 +32,14 @@ function EditCart() {
         <div className="Search">
           <form className="Search Form">
             <input
+              className="search-input"
               key= "course-search"
               type="text"
-              placeholder="Course ID"
+              placeholder="Enter course ID (eg. CSCI-UA 480)"
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
-            <button onClick={handleClick}>Search</button>
+            <button className="blue-btn" onClick={handleClick}>Search</button>
           </form>
           
           
@@ -54,22 +54,21 @@ function EditCart() {
 
         <SearchAddCourse />
 
-        <table className="table">
+        <table className="table table-responsive ">
           <thead>
               <tr>
-                  <th scope="col">Section</th>
-                  <th scope="col">Instructor</th>
-                  <th scope="col"></th>
+                  <th scope="col">Course</th>
+                  <th scope="col">🗑️</th>
               </tr>
           </thead>
           <tbody>
               { data.map((item, i) => { return (
               <ReactDeleteRow key={i} data={item} onDelete={ item => { return window.confirm(`Are you sure?`) }}>
                   <td>{item.section}</td>
-                  <td>{item.instructor}</td>
               </ReactDeleteRow>
               )}) }
           </tbody>
+        
       </table>
               
     </div>
