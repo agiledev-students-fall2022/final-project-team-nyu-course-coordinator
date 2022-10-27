@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import SessionChangePopup from './Components/SessionChangePopup.js';
 
 export default function ChangeSession() {
-  const [replace, setReplace] = useState(false)
 
   return (
 

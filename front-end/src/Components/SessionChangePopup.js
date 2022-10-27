@@ -12,7 +12,7 @@ function SessionChangePopup() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} href="ChangeSession">
+      <Button variant="primary" onClick={handleShow}>
         Change Session
       </Button>
 

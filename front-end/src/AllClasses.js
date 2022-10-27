@@ -12,7 +12,7 @@ export default function AllClasses() {
       <SortBy/> 
       <br />
 
-      <a href="/edit-cart.js">
+      <a href="/EditCart">
         <button className="add-delete-btn">Add or Delete</button>
       </a>
       <br />
