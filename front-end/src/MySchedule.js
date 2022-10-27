@@ -1,8 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import RemoveClassPopup from './Components/RemoveClassPopup.js';
-import SessionChangePopup from './Components/SessionChangePopup.js';
-import EditCart from './edit-cart.js';
+import ChangeSession from './change-session.js';
 
 export default function Profile() {
   
@@ -225,7 +224,7 @@ export default function Profile() {
           </table>
         </div>
         <h1 className="text-center p-5">Your Classes</h1>
-      <div className="scheduleBox">
+        <div className="scheduleBox">
         <div className="sessions">
           <h4>CSCI 480</h4>
           <p className="sessionInfo">Session 001</p>
@@ -233,9 +232,9 @@ export default function Profile() {
           <p className="sessionInfo">Monday and Wednesdays</p>
           <p className="sessionInfo">9AM ~ 10AM</p>
           <p className="sessionInfo">Silver 420</p>
-          <div className="btn" onClick={EditCart}>
-            <SessionChangePopup />
-          </div>
+          <a href="./change-session.js">
+            <button className="blue-btn">Change to another section</button>
+          </a>
           <div className="btn">
             <RemoveClassPopup/>
           </div>
@@ -248,9 +247,9 @@ export default function Profile() {
           <p className="sessionInfo">Tuesday and Thursdays</p>
           <p className="sessionInfo">12PM ~ 1PM</p>
           <p className="sessionInfo">Silver 409</p>
-          <div className="btn">
-            <SessionChangePopup/>
-          </div>
+          <a href="./change-session.js">
+            <button className="blue-btn">Change to another section</button>
+          </a>
           <div className="btn">
             <RemoveClassPopup/>
           </div>
