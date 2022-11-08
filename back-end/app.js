@@ -1,8 +1,10 @@
 // import and instantiate express
 const express = require("express") // CommonJS import style!
+const data = require('./data');
+
 const app = express() // instantiate an Express object
-// we will put some server logic here later...
 // Routes
+
 // sample code
 app.use('/', (req, res, next) => {
     const filters = req.query;
@@ -17,5 +19,6 @@ app.use('/', (req, res, next) => {
     res.send(filteredUsers);
   });
 // end of sample code
+
 // export the express app we created to make it available to other modules
 module.exports = app
