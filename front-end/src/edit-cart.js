@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useEffect, useState} from 'react'
 import AddClassPopup from './Components/AddClassPopup.js';
 import {} from 'react-redux'
+import axios from 'axios';
 
 
 function EditCart() {
@@ -14,19 +15,30 @@ function EditCart() {
 
   const initialData = async() => {
     
-    try{
-      const res = await fetch("/dfg")
-      const data = await res.json()
-      return data
-    } catch (error){
-      console.log(error)
+    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/dfg`)
+        .then(res => {
+            setData(res.json())
+        })
+        .catch(err => {
+          console.log(`ERROR: ${err}`)
+        })
     }
+
+
+
+    // try{
+    //   const res = await fetch("/dfg")
+    //   const data = await res.json()
+    //   return data
+    // } catch (error){
+    //   console.log(error)
+    // }
     
 
     
 
-    setData(data)
-  }
+    // setData(data)
+  
 
   useEffect(() => {
     initialData()

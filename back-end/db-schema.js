@@ -20,6 +20,15 @@ const Course = new mongoose.Schema({
 });
 
 
+const User = new mongoose.Schema({
+    name: {type: String, required: true},
+    email: {type: String, required: true},
+    major: {type: String, required: true},
+    year: {type: Number, required: true},
+}, {
+    _id: true
+})
+
 
 const mongooseOpts = {
 	useNewUrlParser: true,  
@@ -27,7 +36,9 @@ const mongooseOpts = {
   };
 
 
-mongoose.model('Course', Course);
+mongoose.model('Course', Course)
+mongoose.model('User', User)
+
 mongoose.connect( '', mongooseOpts, (err) => {
   if (err) {
     console.log(err);
