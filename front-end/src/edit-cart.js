@@ -102,17 +102,18 @@ function EditCart() {
     )
   }
 
-  const handleRemove= (props) => {
-    console.log(props.id)
-    setData(data.filter( (course, index) => index !== props.id))
-  }
+
 
   const RemoveBtn=(props) =>{
     const id= props.id
     const isRequired= props.isRequired
+    
     if (!isRequired){
+      
       return (
-        <button onClick={(id)=> handleRemove(id) }>Remove</button>
+        <button onClick={()=> setData(data.filter((course,index) => index !== id)) }>
+          Remove
+        </button>
       )
     }
   }
