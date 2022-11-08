@@ -1,9 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import AddClassPopup from './Components/AddClassPopup.js';
 
-import ReactDeleteRow from 'react-delete-row'
 
 
 function EditCart() {
@@ -11,73 +10,96 @@ function EditCart() {
   const [submittedInput, setSubmittedInput] = useState("")
 
   //prop.data
-  const [data, setData] = useState(
-    [{ name: "CSCI 480- Agile Development and DevOps", 
-        isRequired: true, 
-        isPrereqSat: true, 
-        sessions:
-          [{section: 2,
-            prof: "John Doe",
-            day: "Monday, Wednesday",
-            time: 10301145,
-            loc: "Silver 420",
-            isConflicted: true},
-          {section: 4,
-            prof: "John Doe",
-            day: "Tuesday, Thursday",
-            time: 12301345,
-            loc: "Silver 409",
-            isConflicted: true}]
-      },
-      { name: "MATH 121 - Discrete Mathematics", 
-        isRequired: true, 
-        isPrereqSat: true, 
-        sessions:
-          [{section: 2,
-            prof: "John Doe",
-            day: "Monday, Wednesday",
-            time: 10301145,
-            loc: "Silver 420",
-            isConflicted: true},
-          {section: 4,
-            prof: "John Doe",
-            day: "Tuesday, Thursday",
-            time: 12301345,
-            loc: "Silver 409",
-            isConflicted: false}]
-      },
-      { name: "MATH 200 - Calculus IV", 
-        isRequired: false, 
-        isPrereqSat: false, 
-        sessions:
-          [{section: 2,
-            prof: "John Doe",
-            day: "Monday, Wednesday",
-            time: 10301145,
-            loc: "Silver 420",
-            isConflicted: false},
-          {section: 4,
-            prof: "John Doe",
-            day: "Tuesday, Thursday",
-            time: 12301345,
-            loc: "Silver 409",
-            isConflicted: false}]
-      }
+  const [data, setData] = useState([
+    { name: "CSCI 480- Agile Development and DevOps", 
+    isRequired: true, 
+    isPrereqSat: true, 
+    sessions:
+      [{section: 2,
+        prof: "John Doe",
+        day: "Monday, Wednesday",
+        time: 10301145,
+        loc: "Silver 420",
+        isConflicted: true},
+      {section: 4,
+        prof: "John Doe",
+        day: "Tuesday, Thursday",
+        time: 12301345,
+        loc: "Silver 409",
+        isConflicted: true}]
+  },
+  { name: "MATH 121 - Discrete Mathematics", 
+    isRequired: true, 
+    isPrereqSat: true, 
+    sessions:
+      [{section: 2,
+        prof: "John Doe",
+        day: "Monday, Wednesday",
+        time: 10301145,
+        loc: "Silver 420",
+        isConflicted: true},
+      {section: 4,
+        prof: "John Doe",
+        day: "Tuesday, Thursday",
+        time: 12301345,
+        loc: "Silver 409",
+        isConflicted: false}]
+  },
+  { name: "MATH 200 - Calculus IV", 
+    isRequired: false, 
+    isPrereqSat: false, 
+    sessions:
+      [{section: 2,
+        prof: "John Doe",
+        day: "Monday, Wednesday",
+        time: 10301145,
+        loc: "Silver 420",
+        isConflicted: false},
+      {section: 4,
+        prof: "John Doe",
+        day: "Tuesday, Thursday",
+        time: 12301345,
+        loc: "Silver 409",
+        isConflicted: false}]
+  }
+  ])
 
-    ])
+  // const initialData = async() => {
+    
+  //   try{
+  //     const res = await fetch("/dfg")
+  //     const data = await res.json()
+  //     return data
+  //   } catch (error){
+  //     console.log(error)
+  //   }
+    
+
+    
+
+  //   setData(data)
+  // }
+
+  // useEffect(() => {
+  //   initialData()
+  // }, [])
 
   const SearchAddCourse= ()=>{
 
-    const handleClick= (e)=>{
+    async function handleClick(e){
+      e.preventDefault()
       setSubmittedInput(input)
-    
+      const url=`/Allclasses/get/?name=${submittedInput}`
+      
+      const res = await fetch(url)
+      const course= await res.json()
       //hardcode the columns
       const updateData= [...data,{
-        name: input,
+        name: course,
       }]
       setData(updateData)
 
-      e.preventDefault()
+      
 
     }
 
