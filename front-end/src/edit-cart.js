@@ -62,7 +62,7 @@ function EditCart() {
             time: 12301345,
             loc: "Silver 409",
             isConflicted: false}]
-      },
+      }
 
     ])
 
@@ -102,11 +102,9 @@ function EditCart() {
     )
   }
 
-  const Remove = (id) =>{
-    return("hello")
-    // setData(current => current.filter( index => {
-    //   return ("index !== id")
-    // }))
+  const handleRemove= (props) => {
+    console.log(props.id)
+    setData(data.filter( (course, index) => index !== props.id))
   }
 
   const RemoveBtn=(props) =>{
@@ -114,7 +112,7 @@ function EditCart() {
     const isRequired= props.isRequired
     if (!isRequired){
       return (
-        <button type='button' onClick={console.log("hello")}>Remove</button>
+        <button onClick={(id)=> handleRemove(id) }>Remove</button>
       )
     }
   }
