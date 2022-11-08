@@ -6,7 +6,7 @@ const app = express() // instantiate an Express object
 // Routes
 
 // sample code
-app.use('/', (req, res, next) => {
+app.use('/EditCart', (req, res, next) => {
     const filters = req.query;
     const filteredUsers = data.filter(user => {
       let isValid = true;
