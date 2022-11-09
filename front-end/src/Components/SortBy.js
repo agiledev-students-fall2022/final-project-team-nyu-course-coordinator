@@ -39,59 +39,53 @@ function SortBy() {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
-        <Accordion.Header>Class Availability</Accordion.Header>
+        <Accordion.Header>Days</Accordion.Header>
         <Accordion.Body>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
               <label class="form-check-label" for="flexCheckDefault">
-                Show Open Classes
+                Monday
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
               <label class="form-check-label" for="flexCheckDefault">
-                Show Waitlisted Classes
+                Tuesday
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
               <label class="form-check-label" for="flexCheckDefault">
-                Show Closed Classes
+                Wednesday
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+              <label class="form-check-label" for="flexCheckDefault">
+                Thursday
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+              <label class="form-check-label" for="flexCheckDefault">
+                Friday
               </label>
             </div>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
-        <Accordion.Header>Credits</Accordion.Header>
+        <Accordion.Header>Miscellaneous</Accordion.Header>
         <Accordion.Body>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
               <label class="form-check-label" for="flexCheckDefault">
-                1 credits
+                Show Prerequisite Classes
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
               <label class="form-check-label" for="flexCheckDefault">
-                2 credits
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label class="form-check-label" for="flexCheckDefault">
-                3 credits
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label class="form-check-label" for="flexCheckDefault">
-                4 credits
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label class="form-check-label" for="flexCheckDefault">
-                5+ credits
+                Show Conflicting Classes
               </label>
             </div>
         </Accordion.Body>
