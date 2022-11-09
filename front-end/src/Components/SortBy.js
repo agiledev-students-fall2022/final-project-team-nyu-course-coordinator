@@ -39,59 +39,53 @@ function SortBy() {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
-        <Accordion.Header>Class Availability</Accordion.Header>
+        <Accordion.Header>Days</Accordion.Header>
         <Accordion.Body>
             <div className="form-check">
               <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexCheckDefault">
-                Show Open Classes
+              <label className="form-check-label" for="flexCheckDefault">
+                Monday
               </label>
             </div>
             <div className="form-check">
               <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexCheckDefault">
-                Show Waitlisted Classes
+              <label className="form-check-label" for="flexCheckDefault">
+                Tuesday
               </label>
             </div>
             <div className="form-check">
               <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexCheckDefault">
-                Show Closed Classes
+              <label className="form-check-label" for="flexCheckDefault">
+                Wednesday
+              </label>
+            </div>
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+              <label className="form-check-label" for="flexCheckDefault">
+                Thursday
+              </label>
+            </div>
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+              <label className="form-check-label" for="flexCheckDefault">
+                Friday
               </label>
             </div>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
-        <Accordion.Header>Credits</Accordion.Header>
+        <Accordion.Header>Miscellaneous</Accordion.Header>
         <Accordion.Body>
             <div className="form-check">
               <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexCheckDefault">
-                1 credits
+              <label className="form-check-label" for="flexCheckDefault">
+                Show Prerequisite Classes
               </label>
             </div>
             <div className="form-check">
               <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexCheckDefault">
-                2 credits
-              </label>
-            </div>
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexCheckDefault">
-                3 credits
-              </label>
-            </div>
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexCheckDefault">
-                4 credits
-              </label>
-            </div>
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexCheckDefault">
-                5+ credits
+              <label className="form-check-label" for="flexCheckDefault">
+                Show Conflicting Classes
               </label>
             </div>
         </Accordion.Body>
