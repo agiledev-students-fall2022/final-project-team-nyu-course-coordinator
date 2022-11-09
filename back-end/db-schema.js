@@ -38,7 +38,8 @@ const mongooseOpts = {
 mongoose.model('Course', Course)
 mongoose.model('User', User)
 
-mongoose.connect( '', mongooseOpts, (err) => {
+//`${process.env.DB_CONNECTION_STRING}`
+mongoose.connect( `${process.env.DB_CONNECTION_STRING}`, mongooseOpts, (err) => {
   if (err) {
     console.log(err);
   } else {
