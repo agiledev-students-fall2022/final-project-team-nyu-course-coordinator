@@ -1,33 +1,28 @@
-// import and instantiate express
-const { default: axios } = require("axios");
-const express = require("express") // CommonJS import style!
-const data = require('./data');
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+require('dotenv/config');
+app.use(bodyParser.json());
 
-const app = express() // instantiate an Express object
-// Routes
+// Import Routes
+const postsRoute = require('./routes/posts');
+const courseRoute = require('./routes/courses');
+const userRoute = require('./routes/users');
+app.use('/posts', postsRoute);
+app.use('/courses', courseRoute);
+app.use('/users', userRoute);
 
-// sample code
-app.use('/AllClasses', (req, res, next) => {
-    const filters = req.query;
-    const filteredUsers = data.filter(user => {
-      let isValid = true;
-      for (key in filters) {
-        console.log(key, user[key], filters[key]);
-        isValid = isValid && user[key] == filters[key];
-      }
-      return isValid;
-    });
-    res.send(filteredUsers);
-  });
-// end of sample code
+// routes
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
-app.get("/AllClasses", (req, res, next) => {
-  axios
-    .get("https://my.api.mockaroo.com/CourseData?key=ce44b840")
-    .then(apiResponse => res.json(apiResponse.data))
-    .catch(err => next(err))
-})
-
-
-// export the express app we created to make it available to other modules
-module.exports = app
+// connect to db
+mongoose.connect(
+    process.env.DB_CONNECTION,
+    { useNewUrlParser: true},
+    () => console.log('connected to db')
+);
+ 
+app.listen(3001);
