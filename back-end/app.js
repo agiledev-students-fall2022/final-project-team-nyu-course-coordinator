@@ -1,31 +1,18 @@
-// import and instantiate express
-const express = require("express") // CommonJS import style!
-const app = express() // instantiate an Express object
+require('./db-schema')
+const mongoose= require('mongoose')
+const Course = mongoose.model('Course')
+const express = require("express") 
+const app = express() 
 const path = require('path');
-
 const bodyParser= require('body-parser')
+const cors= require('cors')
 
+app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-// we will put some server logic here later...
-// Routes
-// sample code
-app.use('/EditCart', (req, res, next) => {
-    const filters = req.query;
-    const filteredUsers = data.filter(user => {
-      let isValid = true;
-      for (key in filters) {
-        console.log(key, user[key], filters[key]);
-        isValid = isValid && user[key] == filters[key];
-      }
-      return isValid;
-    });
-    res.send(filteredUsers);
-  });
-// end of sample code
 
 
 
@@ -82,14 +69,32 @@ const Allcourses =
             isConflicted: false}]
       }]
 
+const addThisCourseEx= [
+  { name: "Core 400 - Expressive Culture", 
+    isRequired: true, 
+    isPrereqSat: true, 
+    sessions:
+      [{section: 2,
+        prof: "John Doe",
+        day: "Monday, Wednesday",
+        time: 10301145,
+        loc: "Silver 420",
+        isConflicted: false},
+      {section: 4,
+        prof: "John Doe",
+        day: "Tuesday, Thursday",
+        time: 12301345,
+        loc: "Silver 409",
+        isConflicted: false}]
+  }
+]
 
 
-app.get('/dfg', async function(req, res){
-  console.log("HEY")
-  res.header('Access-Control-Allow-Origin: *');
 
-  // const cart = await Allcourses.find({}).exec()
-  const cart= Allcourses
+app.get('/load-courses', async function(req, res){
+  
+  const cart = await Course.find({}).exec()
+  // const cart= Allcourses
   const data = cart.map(c => {
       return {name: c.name, 
               isRequired: c.isRequired, 
@@ -106,23 +111,62 @@ app.get('/dfg', async function(req, res){
               })
       }
     })
-    
   res.json(data)
-  console.log(res.json(data))
-
 })
     
-
-app.get('/Allclasses/search-course', async function(req, res){
+// search and add the desired course
+app.get('/Allclasses/add', async function(req, res){
    const name= req.query.name
-   let newCourse = await AllCourses.find({name: name}).exec()
-   let sessions = newCourses.sessions.map(s=> {
-      return {section: s.section, prof: s.prof, day: s.day, time: s.time, loc: s.loc, isConflicted: s.isConflicted}
+   //Catalog = db that contains all classes? or fetch indiviually from Albert?
+   let newCourse = await Catalog.find({"name": {"$regex":name, "$options":"i"}}).exec()
+   await newCourse.save(async function(err, saved){
+      if (err){
+        console.log(err);
+        res.send({"error": err});
+        } else {
+          const courses = await Course.find({}).exec();
+          const data = courses.map(c => {
+            return {name: c.name, 
+                    isRequired: c.isRequired, 
+                    isPrereqSat: c.isPrereqSat, 
+                    sessions: c.sessions.map(s => {
+                      return{
+                        section: s.section,
+                        prof: s.prof, 
+                        day: s.day, 
+                        time: s.time, 
+                        loc: s.loc, 
+                        isConflicted: s.isConflicted
+                      }
+                    })
+            }
+          })
+           res.json(data)
+        }
    })
-   const data = newCourse.map(c => {
-      return {name: c.name, isRequired: c.isRequired, isPrereqSat: c.isPrereqSat, sessions: sessions}
-   })
-   res.json(data)
+   
+})
+
+app.get('/Allclasses/remove', async function(req, res){
+  const id= req.query.id
+  let updatedCart = await Course.findByIdAndDelete({_id: id}).exec()
+  const data = updatedCart.map(c => {
+   return {name: c.name, 
+           isRequired: c.isRequired, 
+           isPrereqSat: c.isPrereqSat, 
+           sessions: c.sessions.map(s => {
+             return{
+               section: s.section,
+               prof: s.prof, 
+               day: s.day, 
+               time: s.time, 
+               loc: s.loc, 
+               isConflicted: s.isConflicted
+             }
+           })
+   }
+ })
+  res.json(data)
 })
 
 

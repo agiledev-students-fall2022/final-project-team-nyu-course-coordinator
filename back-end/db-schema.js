@@ -1,5 +1,4 @@
-const mongoose = require('mongoose'),
-	URLSlugs = require('mongoose-url-slugs');
+const mongoose = require('mongoose')
 
 
 const Course = new mongoose.Schema({
@@ -8,7 +7,7 @@ const Course = new mongoose.Schema({
     isPrerqSat: {type: Boolean, required: true},
     sessions: [{
         section: {type: Number, required: true},
-        prof: {type: String, required: T-true},
+        prof: {type: String, required: true},
         day: {type: String, required: true},
         time: {type: Number, required: true},
         loc: {type: String, required :true},

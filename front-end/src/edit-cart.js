@@ -7,17 +7,15 @@ import axios from 'axios';
 
 
 function EditCart() {
-  const [input, setInput] = useState("")
-  const [submittedInput, setSubmittedInput] = useState("")
 
   //prop.data
   const [data, setData] = useState([])
 
   const initialData = async() => {
     
-    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/dfg`)
+    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/load-courses`)
         .then(res => {
-            setData(res.json())
+            setData(res.data)
         })
         .catch(err => {
           console.log(`ERROR: ${err}`)
@@ -25,39 +23,29 @@ function EditCart() {
     }
 
 
-
-    // try{
-    //   const res = await fetch("/dfg")
-    //   const data = await res.json()
-    //   return data
-    // } catch (error){
-    //   console.log(error)
-    // }
-    
-
-    
-
-    // setData(data)
-  
-
   useEffect(() => {
     initialData()
   }, [])
 
+
+
   const SearchAddCourse= ()=>{
+    const [input, setInput] = useState("")
+    const [submittedInput, setSubmittedInput] = useState("")
 
     async function handleClick(e){
       e.preventDefault()
       setSubmittedInput(input)
-      const url=`/Allclasses/get/?name=${submittedInput}`
+      const url=`/Allclasses/add/?name=${submittedInput}`
       
-      const res = await fetch(url)
-      const course= await res.json()
-      //hardcode the columns
-      const updateData= [...data,{
-        name: course,
-      }]
-      setData(updateData)
+      axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`)
+        .then(res => {
+          const updatedData= [...data, ...res.data]
+            setData(updatedData)
+        })
+        .catch(err => {
+          console.log(`ERROR: ${err}`)
+        })
 
       
 
@@ -84,6 +72,22 @@ function EditCart() {
     )
   }
 
+  async function handleRemove(id, e){
+    // setData(data.filter((course,index) => index !== id))
+    e.preventDefault()
+    const unwanted= data.filter((course,index) => index === id)
+    const ID = unwanted._id
+    const url=`/Allclasses/remove/?id=${ID}`
+      
+    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`)
+      .then(res => {
+        const updatedData= [...data, ...res.data]
+          setData(updatedData)
+      })
+      .catch(err => {
+        console.log(`ERROR: ${err}`)
+      })
+  }
 
 
   const RemoveBtn=(props) =>{
@@ -94,8 +98,8 @@ function EditCart() {
       
       //to do: save data to db
       return (
-        <button onClick={()=> setData(data.filter((course,index) => index !== id)) }>
-          Remove
+        <button onClick={()=> handleRemove(id) }>
+          Remove from Cart
         </button>
       )
     }
