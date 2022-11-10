@@ -1,0 +1,15 @@
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.editBadge {
+  margin-left: 5px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
