@@ -1,4 +1,6 @@
-const express = require('express');
+import express from 'express';
+// import { getCourses, getCourseBySearch, addNMCourse, deleteNMCourse, addToSchedule, removeFromSchedule, }
+
 const router = express.Router();
 
 const Course = require('../models/Course');
