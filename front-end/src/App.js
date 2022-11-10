@@ -1,12 +1,12 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Profile from "./components/Profile/Profile";
-import Auth from "./components/Auth/Auth";
-import Courses from "./components/Courses/Courses";
-import Menu from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
-import Schedule from "./components/Schedule/Schedule";
+import Profile from "./Components/Profile/Profile";
+import Auth from "./Components/Auth/Auth";
+import Courses from "./Components/Courses/Courses";
+import Menu from "./Components/Navbar/Navbar";
+import Home from "./Components/Home/Home";
+import Schedule from "./Components/Schedule/Schedule";
 
 
 const App = props => {
