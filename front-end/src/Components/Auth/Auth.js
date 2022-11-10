@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import Input from "./Input";
 
 export default function (props) {
   let [loginMode, setloginMode] = useState("signin")
@@ -21,37 +22,16 @@ export default function (props) {
               </span>
             </div>
             <div className="form-group mt-3">
-            <label>What is your name?</label>
-            <input
-              type="text"
-              className="form-control mt-1"
-              placeholder="e.g Jane Doe"
-            />
+              <Input name="name" label="Name" type="name" placeholder="Enter name" />
+            </div>
           </div>
           <div className="form-group mt-3">
-            <label>What is your NYU Email?</label>
-            <input
-              type="email"
-              className="form-control mt-1"
-              placeholder="Email Address"
-            />
-          </div>
+            <Input name="email" label="Email" type="email" placeholder="Enter NYU email" />
           <div className="form-group mt-3">
-            <label>Please enter a password</label>
-            <input type="password"
-              className="form-control mt-1"
-              placeholder="Password"
-            />
+            <Input name="password" label="Password" type="password" placeholder="Enter password" />
           </div>
-
             <div className="form-group mt-3">
-            <label>What is your major and school?</label>
-            <br></br>
-              <select>
-              <option value="pleaseSelect">Please select</option>
-              <option value="casCS">Computer Science at CAS</option>
-              <option value="tandonCS">Computer Science at Tandon </option>
-              </select>
+              <Input name="major" label="Major" type="major" placeholder="Enter major" />
           </div>
 
           <div className="form-group mt-3">

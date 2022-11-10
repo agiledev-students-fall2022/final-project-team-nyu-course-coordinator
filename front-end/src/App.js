@@ -1,38 +1,27 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Components/Header";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Profile from "./Profile";
-import EditCart from './edit-cart'
-import SortCart from './sort-cart'
-import FilterCart from './filter-cart'
-import Login from "./Login"
-import AllClasses from "./AllClasses";
-import MySchedule from "./MySchedule";
-import ChangeSession from "./change-session.js"
-import Footer from "./Components/Footer";
-import Home from "./Components/Home";
+import Profile from "./components/Profile/Profile";
+import Auth from "./components/Auth/Auth";
+import Courses from "./components/Courses/Courses";
+import Menu from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import Schedule from "./components/Schedule/Schedule";
 
 
 const App = props => {
   return (
     <BrowserRouter>
-    <Header />
+    <Menu />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Profile" element={<Profile/>} />
-        <Route path="/Login" element={<Login/>} />
-        <Route path="/EditCart" element={<EditCart />} /> 
-        <Route path="/SortCart" element={<SortCart />} />
-        <Route path="/FilterCart" element={<FilterCart />} />
-        <Route path="/AllClasses" element={<AllClasses />} />
-        <Route path="/MySchedule" element={<MySchedule />} />
-        <Route path="/edit-cart.js" element={<EditCart />} />
-        <Route path="/change-session.js" element={<ChangeSession />} />
+        <Route path="/profile" element={<Profile/>} />
+        <Route path="/auth" element={<Auth/>} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/schedule" element={<Schedule />} />
 
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
  
   );
