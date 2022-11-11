@@ -12,9 +12,7 @@ const Course = () => {
       <Card.Body >
         <Card.Title>Course Name</Card.Title>
         <Card.Text className="sectionInfo">
-          <p>Course description:</p>
           <p>Course requirements:</p>
-          <p>School:</p>
         </Card.Text>
         <Section />
       </Card.Body>

@@ -18,7 +18,6 @@ const Section = () => {
           <p>Component:</p>
           <p>Class time:</p>
           <p>Class instructor:</p>
-          <p>Class time:</p>
         </Card.Text>
         <Button variant="primary">Add to Schedule</Button>
       </Card.Body>
