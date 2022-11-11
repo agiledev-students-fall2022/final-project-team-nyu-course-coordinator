@@ -11,6 +11,7 @@ const Course = new mongoose.Schema({
           required: true 
         }],
         time: {type: String, required: true},
+        time2: {type: Number, required: true},
         loc: {type: String, required :true},
         }]
 }, {

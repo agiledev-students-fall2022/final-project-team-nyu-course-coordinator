@@ -7,6 +7,7 @@
         "prof":"Amanda Steigman",
         "day": ["Mon", "Wed"],
         "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
         "loc":"12WV L120"
     },
     {
@@ -14,6 +15,7 @@
         "prof":"Susan Liao",
         "day": ["Tue", "Thu"],
         "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
         "loc":"12WV L120"
     },
     {
@@ -21,6 +23,7 @@
         "prof":"Craig Kapp",
         "day": ["Mon", "Wed"],
         "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
         "loc":"MEYR 121"
     },
     {
@@ -28,6 +31,7 @@
         "prof":"Julie Lizardo",
         "day": ["Tue", "Thu"],
         "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
         "loc":"BOBS LL138"
     },
     {
@@ -35,6 +39,7 @@
         "prof":"Zoe Robert",
         "day": ["Mon", "Wed"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"25W4 C-20"
     },
     {
@@ -42,6 +47,7 @@
         "prof":"Zoe Robert",
         "day": ["Mon", "Wed"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"25W4 C-20"
     },
     {
@@ -49,6 +55,7 @@
         "prof":"Julie Lizardo",
         "day": ["Tue", "Thu"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"BOBS LL138"
     },
     {
@@ -56,6 +63,7 @@
         "prof":"Matthew Zeidenberg",
         "day": ["Tue", "Thu"],
         "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
         "loc":"Online"
     },
     {
@@ -63,6 +71,7 @@
         "prof":"Joshua Clayton",
         "day": ["Mon", "Wed"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"Online"
     },
     {
@@ -70,6 +79,7 @@
         "prof":"Khye Borg Liew",
         "day": ["Tue", "Thu"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"Online"
     },
     {
@@ -77,6 +87,7 @@
         "prof":"Emily Zhao",
         "day": ["Tue", "Thu"],
         "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
         "loc":"GCASL 361"
     },
     {
@@ -84,6 +95,7 @@
         "prof":"Emily Zhao",
         "day": ["Tue", "Thu"],
         "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
         "loc":"GCASL 361"
     },
     {
@@ -91,6 +103,7 @@
         "prof":"Michell Cardona",
         "day": ["Tue", "Thu"],
         "time":"6.20 PM - 7.35 PM",
+        "time2":620735,
         "loc":"TISC LC11"
     },
     {
@@ -98,6 +111,7 @@
         "prof":"Mihir Patil",
         "day": ["Mon", "Wed"],
         "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
         "loc":"CIWW 317"
     }
 ]
@@ -111,6 +125,7 @@
         "prof":"Mauricio Arias Hernandez",
         "day": ["Tue", "Thu"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"Online"
     }
 ]
@@ -124,6 +139,7 @@
         "prof":"Al Olsen",
         "day": ["Mon", "Wed"],
         "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
         "loc":"BOBS LL150"
     },
     {
@@ -131,6 +147,7 @@
         "prof":"Adam Scher",
         "day": ["Tue", "Thu"],
         "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
         "loc":"Online"
     },
     {
@@ -138,6 +155,7 @@
         "prof":"Mark Ramos",
         "day": ["Mon", "Wed"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"CIWW 102"
     },
     {
@@ -145,6 +163,7 @@
         "prof":"Joshua Clayton",
         "day": ["Tue", "Thu"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"CIWW 317"
     },
     {
@@ -152,6 +171,7 @@
         "prof":"Julie Lizardo",
         "day": ["Mon", "Wed"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"GCASL 279"
     },
     {
@@ -159,6 +179,7 @@
         "prof":"Al Olsen",
         "day": ["Mon", "Wed"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"SILV 208"
     }
 ]
@@ -172,6 +193,7 @@
         "prof":"Amos Bloomberg",
         "day": ["Tue", "Thu"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"5WP 101"
     }
 ]
@@ -185,6 +207,7 @@
         "prof":"Sana Odeh",
         "day": ["Mon", "Wed"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"SILV 408"
     }
 ]
@@ -198,6 +221,7 @@
         "prof":"Nader Nassar",
         "day": ["Mon", "Wed"],
         "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
         "loc":"SILV 208"
     },
     {
@@ -205,6 +229,7 @@
         "prof":"Gizem Kayar",
         "day": ["Tue", "Thu"],
         "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
         "loc":"Online"
     },
     {
@@ -212,6 +237,7 @@
         "prof":"Hilbert Locklear",
         "day": ["Mon", "Wed"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"25W4 C-20"
     },
     {
@@ -219,6 +245,7 @@
         "prof":"Candido Cabo",
         "day": ["Tue", "Thu"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"TISC LC11"
     },
     {
@@ -226,6 +253,7 @@
         "prof":"Duygu Ataman",
         "day": ["Mon", "Wed"],
         "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
         "loc":"Online"
     },
     {
@@ -233,6 +261,7 @@
         "prof":"Sana Odeh",
         "day": ["Tue", "Thu"],
         "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
         "loc":"KIMM 803"
     },
     {
@@ -240,6 +269,7 @@
         "prof":"Hilbert Locklear",
         "day": ["Mon", "Wed"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"SILV 401"
     },
     {
@@ -247,6 +277,7 @@
         "prof":"Anasse Bari",
         "day": ["Tue", "Thu"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"CANT 101"
     },
     {
@@ -254,6 +285,7 @@
         "prof":"Sana Odeh",
         "day": ["Mon", "Wed"],
         "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
         "loc":"Online"
     }
 ]
@@ -267,6 +299,7 @@
         "prof":"Evan Korth",
         "day": ["Tue", "Thu"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"TISC UC50"
     },
     {
@@ -274,6 +307,7 @@
         "prof":"Anasse Bari",
         "day": ["Tue", "Thu"],
         "time":"11.00 AM - 12.15",
+        "time2":11001215,
         "loc":"Online"
     },
     {
@@ -281,6 +315,7 @@
         "prof":"Joanna Klukowska",
         "day": ["Mon", "Wed"],
         "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
         "loc":"CANT 200"
     }
 ]
@@ -294,6 +329,7 @@
         "prof":"Douglas L Moody",
         "day": ["Mon", "Wed"],
         "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
         "loc":"Online"
     },
     {
@@ -301,6 +337,7 @@
         "prof":"Jinyang Li",
         "day": ["Tue", "Thu"],
         "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
         "loc":"Online"
     },
     {
@@ -308,6 +345,7 @@
         "prof":"Hasan Aljabbouli",
         "day": ["Mon", "Wed"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"CANT 101"
     },
     {
@@ -315,6 +353,7 @@
         "prof":"Gizem Kayar",
         "day": ["Tue", "Thu"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"Online"
     }
 ]
@@ -328,6 +367,7 @@
         "prof":"Yang Tang",
         "day": ["Mon", "Wed"],
         "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
         "loc":"Online"
     },
     {
@@ -335,6 +375,7 @@
         "prof":"Mohamed Zahran",
         "day": ["Tue", "Thu"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"Online"
     }
 ]
@@ -355,6 +396,7 @@
         "prof":"Oded Regev",
         "day": ["Mon", "Wed"],
         "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
         "loc":"CANT 101"
     },
     {
@@ -362,6 +404,7 @@
         "prof":"Seyed Nassajianmojarrad",
         "day": ["Tue", "Thu"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"Online"
     }
 ]
@@ -375,6 +418,7 @@
         "prof":"Craig Kapp",
         "day": ["Mon", "Wed"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"CIWW 102"
     }
 ]
@@ -388,6 +432,7 @@
         "prof":"Hasan Aljabbouli",
         "day": ["Tue", "Thu"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"SILV 208"
     }
 ]
@@ -401,6 +446,7 @@
         "prof":"Joseph Versoza",
         "day": ["Tue", "Thu"],
         "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
         "loc":"Online"
     },
     {
@@ -408,6 +454,7 @@
         "prof":"Joseph Versoza",
         "day": ["Mon", "Wed"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"SILV 208"
     }
 ]
@@ -421,6 +468,7 @@
         "prof":"Hasan Aljabbouli",
         "day": ["Mon", "Wed"],
         "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
         "loc":"SILV 206"
     }
 ]
@@ -434,6 +482,7 @@
         "prof":"Ernest Davis",
         "day": ["Tue", "Thu"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"CIWW 102"
     }
 ]
@@ -447,6 +496,7 @@
         "prof":"Lerrel Pinto",
         "day": ["Tue", "Thu"],
         "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
         "loc":"Online"
     }
 ]
@@ -460,6 +510,7 @@
         "prof":"Amos Bloomberg",
         "day": ["Mon", "Wed"],
         "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
         "loc":"SILV 411"
     }
 ]
@@ -473,6 +524,7 @@
         "prof":"Ann Malavet",
         "day": ["Tue", "Thu"],
         "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
         "loc":"GCASL 383"
     }
 ]
@@ -486,6 +538,7 @@
         "prof":"Joseph Versoza",
         "day": ["Mon", "Wed"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"Online"
     },
     {
@@ -493,6 +546,7 @@
         "prof":"Matthew Zeidenberg",
         "day": ["Mon", "Wed"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"SILV 411"
     },
     {
@@ -500,6 +554,7 @@
         "prof":"Matthew Zeidenberg",
         "day": ["Mon", "Wed"],
         "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
         "loc":"Online"
     }
 ]
@@ -513,6 +568,7 @@
         "prof":"Kenneth Perlin",
         "day": ["Tue", "Thu"],
         "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
         "loc":"CIWW 101"
     }
 ]
@@ -526,6 +582,7 @@
         "prof":"Davi Geiger",
         "day": ["Tue", "Thu"],
         "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
         "loc":"SILV 401"
     }
 ]
@@ -539,6 +596,7 @@
         "prof":"Bhubaneswar Mishra",
         "day": ["Tue", "Thu"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"GCASL 383"
     }
 ]
@@ -552,6 +610,7 @@
         "prof":"Joanna Klukowska",
         "day": ["Mon", "Wed"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"CIWW 101"
     }
 ]
@@ -565,6 +624,7 @@
         "prof":"Adam Meyers",
         "day": ["Tue", "Thu"],
         "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
         "loc":"Online"
     }
 ]
@@ -578,6 +638,7 @@
         "prof":"Evan Korth",
         "day": ["Tue", "Thu"],
         "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
         "loc":"SILV 411"
     }
 ]
@@ -591,6 +652,7 @@
         "prof":"Amos Bloomberg",
         "day": ["Tue", "Thu"],
         "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
         "loc":"SILV 405"
     }
 ]
@@ -604,6 +666,7 @@
         "prof":"Independent Study",
         "day": ["Independent Study"],
         "time":"N/A",
+        "time2":0,
         "loc":"N/A"
     }
 ]
@@ -617,6 +680,7 @@
         "prof":"Independent Study",
         "day": ["Independent Study"],
         "time":"N/A",
+        "time2":0,
         "loc":"N/A"
     }
 ]
@@ -630,6 +694,7 @@
         "prof":"Independent Study",
         "day": ["Independent Study"],
         "time":"N/A",
+        "time2":0,
         "loc":"N/A"
     }
 ]
