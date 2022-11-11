@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require('../models/User');
 
 router.get('/', async (req, res) => {
+    console.log('get users');
     try {
         const users = await User.find();
         res.json(users);
@@ -14,11 +15,13 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log('post user');
     const user = new User({
         name: req.body.name,
         email: req.body.email,
         major: req.body.major,
-        year: req.body.year
+        year: req.body.year,
+        classes: req.body.classes
     });
     user.save()
     .then(data => {
@@ -31,6 +34,7 @@ router.post('/', (req, res) => {
 
 // Specific Post
 router.get('/:userId', async (req, res) => {
+    console.log(req.params.userId);
     try {
         const user = await User.findById(req.params.userId);
         res.json(user);
