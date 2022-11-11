@@ -8,7 +8,6 @@ import Menu from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import Schedule from "./Components/Schedule/Schedule";
 
-
 const App = props => {
   return (
     <BrowserRouter>
@@ -19,9 +18,7 @@ const App = props => {
         <Route path="/auth" element={<Auth/>} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/schedule" element={<Schedule />} />
-
       </Routes>
-      {/* <Footer /> */}
     </BrowserRouter>
  
   );

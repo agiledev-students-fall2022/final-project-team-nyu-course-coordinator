@@ -1,45 +1,38 @@
 import mongoose from 'mongoose';
 
-
-const Course = mongoose.Schema({
+const Course = new mongoose.Schema({
     name: {type: String, required: true},
     isRequired: {type: Boolean, required: true},
-    isPrerqSat: {type: Boolean, required: true},
     sessions: [{
         section: {type: Number, required: true},
         prof: {type: String, required: true},
-        day: {type: String, required: true},
+        day: [{ 
+          type: String, 
+          required: true 
+        }],
         time: {type: Number, required: true},
         loc: {type: String, required :true},
-        isConflicted:{type: Boolean, required: true}
         }]
+}, {
+    _id: true
 });
 
-// sample data:
-// {
-//     "name": "CS 111",
-//     "isRequired": true,
-//     "isPrerqSat": true,
-//     "sessions": [
-//         {
-//             "section": 1,
-//             "prof": "John Doe",
-//             "day": "MWF",
-//             "time": 1000,
-//             "loc": "Bldg 1, Room 101",
-//             "isConflicted": false
-//         },
-//         {
-//             "section": 2,
-//             "prof": "Jane Doe",
-//             "day": "TR",
-//             "time": 1000,
-//             "loc": "Bldg 1, Room 102",
-//             "isConflicted": false
-//         }
-//     ]
-// }
 
 
+const mongooseOpts = {
+	useNewUrlParser: true,  
+	useUnifiedTopology: true
+  };
 
-module.exports = mongoose.model('Courses', Course);
+
+mongoose.model('Course', Course)
+mongoose.model('User', User)
+
+//`${process.env.DB_CONNECTION_STRING}`
+mongoose.connect( `${process.env.DB_CONNECTION_STRING}`, mongooseOpts, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('connected to database'); 
+  }
+});

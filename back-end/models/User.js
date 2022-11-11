@@ -9,18 +9,11 @@ const User =  mongoose.Schema({
         type: String, 
         required: true
     },
-    major: {
-        type: String, 
-        required: true
-    },
-    year: {
-        type: Number, 
-        required: true
-    },
     password: {
         type: String, 
         required: true
     },
+    
 });
 
 module.exports = mongoose.model('Users', User);
