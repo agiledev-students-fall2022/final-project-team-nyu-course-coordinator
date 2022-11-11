@@ -1,7 +1,7 @@
 
-require('./db-schema')
+//require('./db-schema')
 const mongoose= require('mongoose')
-const Course = mongoose.model('Course')
+//const Course = mongoose.model('Course')
 const express = require("express") 
 const app = express() 
 const path = require('path');
@@ -175,19 +175,19 @@ app.get('/Allclasses/remove', async function(req, res){
 
 // export the express app we created to make it available to other modules
 module.exports = app
-const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-require('dotenv/config');
+//const express = require('express');
+//const app = express();
+//const mongoose = require('mongoose');
+//const bodyParser = require('body-parser');
+//require('dotenv/config');
 app.use(bodyParser.json());
 
 // Import Routes
 const postsRoute = require('./routes/posts');
-const courseRoute = require('./routes/courses');
+//const courseRoute = require('./routes/courses');
 const userRoute = require('./routes/users');
 app.use('/posts', postsRoute);
-app.use('/courses', courseRoute);
+//app.use('/courses', courseRoute);
 app.use('/users', userRoute);
 
 // routes
@@ -202,4 +202,4 @@ mongoose.connect(
     () => console.log('connected to db')
 );
  
-app.listen(3001);
+app.listen(3000);
