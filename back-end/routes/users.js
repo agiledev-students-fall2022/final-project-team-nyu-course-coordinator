@@ -6,8 +6,15 @@ const User = require('../models/User');
 router.get('/', async (req, res) => {
     console.log('get users');
     try {
-        const users = await User.find();
-        res.json(users);
+        const users = await User.find({}).exec()
+        const data = users.map(u => {
+            return {name: u.name, email:u.email, major: u.major, year: u.year, 
+                classes: u.classes.map (c => {
+                    return{class_id: u.class_id, section_num: u.section_num}
+                })}
+            })
+            console.log(users)
+            res.json(users);
     }
     catch (err) {
         res.json({ message: err });
