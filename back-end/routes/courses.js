@@ -9,11 +9,15 @@ app.use(cors())
 
 
 router.get('/', async (req, res) => {
-    console.log("THE server")
+    console.log("server reached")
     try {
         const courses = await Course.find({}).exec()
-        console.log(courses)
-        res.json(courses)
+        const data = courses.map(c => {
+            return {name: c.name, isRequired: c.isRequired, sessions: c.sessions.map(s => {
+                return{section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
+            })}
+        })
+        res.json(data)
     }
     catch (err) {
         res.json({ message: err });

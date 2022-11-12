@@ -14,7 +14,7 @@ app.use('/courses', courseRoute);
 app.use('/users', userRoute);
 
 // routes
-app.get('/df', (req, res) => {
+app.get('/', (req, res) => {
   console.log("hello")
   res.send('Hello World!');
 });

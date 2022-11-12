@@ -1,22 +1,30 @@
 import * as api from '../api/index.js';
 import axios from "axios"
+import {useDispatch} from 'react-redux'
 
 // action creators
 export const getCourses = async () => {
-  
+  try {
+        const { data } = await api.fetchCourses();
+        console.log("getCourses",data)
+        return (data)
+        // dispatch({ type: 'FETCH_ALL', payload: data });
+      } catch (error) {
+        console.log("GCM",error.message);
+      }
+    }
+
     //const { data } =await api.fetchCourses()
-    axios.get ("http://localhost:3001/courses")
-    .then(res => {
-      console.log("hello")
-      console.log("DATA",res.data)
-      // dispatch({ type: 'FETCH_ALL', payload: data })
-    })
-    
-  
-  .catch (error =>{
-    console.log(error.message);
-  })
-}
+          // dispatch({ type: 'FETCH_ALL', payload: data })
+
+    // axios.get ("http://localhost:3001/courses")
+    // .then(res => {
+    //   console.log("DATA",res.data)
+    // })
+    // .catch (error =>{
+    //   console.log(error.message);
+    // })
+
 
 //fetchSections is not in the index
 // export const getSections = () => async (dispatch) => {
