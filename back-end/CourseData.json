@@ -1,0 +1,702 @@
+[{
+    "name":"CSCI-UA 2 Introduction to Computer Programming (No Prior Experience)",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Amanda Steigman",
+        "day": ["Mon", "Wed"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"12WV L120"
+    },
+    {
+        "section": 2,
+        "prof":"Susan Liao",
+        "day": ["Tue", "Thu"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"12WV L120"
+    },
+    {
+        "section": 3,
+        "prof":"Craig Kapp",
+        "day": ["Mon", "Wed"],
+        "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
+        "loc":"MEYR 121"
+    },
+    {
+        "section": 4,
+        "prof":"Julie Lizardo",
+        "day": ["Tue", "Thu"],
+        "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
+        "loc":"BOBS LL138"
+    },
+    {
+        "section": 5,
+        "prof":"Zoe Robert",
+        "day": ["Mon", "Wed"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"25W4 C-20"
+    },
+    {
+        "section": 6,
+        "prof":"Zoe Robert",
+        "day": ["Mon", "Wed"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"25W4 C-20"
+    },
+    {
+        "section": 7,
+        "prof":"Julie Lizardo",
+        "day": ["Tue", "Thu"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"BOBS LL138"
+    },
+    {
+        "section": 8,
+        "prof":"Matthew Zeidenberg",
+        "day": ["Tue", "Thu"],
+        "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
+        "loc":"Online"
+    },
+    {
+        "section": 9,
+        "prof":"Joshua Clayton",
+        "day": ["Mon", "Wed"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"Online"
+    },
+    {
+        "section": 10,
+        "prof":"Khye Borg Liew",
+        "day": ["Tue", "Thu"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"Online"
+    },
+    {
+        "section": 11,
+        "prof":"Emily Zhao",
+        "day": ["Tue", "Thu"],
+        "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
+        "loc":"GCASL 361"
+    },
+    {
+        "section": 11,
+        "prof":"Emily Zhao",
+        "day": ["Tue", "Thu"],
+        "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
+        "loc":"GCASL 361"
+    },
+    {
+        "section": 12,
+        "prof":"Michell Cardona",
+        "day": ["Tue", "Thu"],
+        "time":"6.20 PM - 7.35 PM",
+        "time2":620735,
+        "loc":"TISC LC11"
+    },
+    {
+        "section": 13,
+        "prof":"Mihir Patil",
+        "day": ["Mon", "Wed"],
+        "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
+        "loc":"CIWW 317"
+    }
+]
+},
+{
+    "name":"CSCI-UA 3 Introduction to Computer Programming (Limited Prior Experience)",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Mauricio Arias Hernandez",
+        "day": ["Tue", "Thu"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"Online"
+    }
+]
+},
+{
+    "name":"CSCI-UA 4 Introduction to Web Design and Computer Principles",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Al Olsen",
+        "day": ["Mon", "Wed"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"BOBS LL150"
+    },
+    {
+        "section": 2,
+        "prof":"Adam Scher",
+        "day": ["Tue", "Thu"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"Online"
+    },
+    {
+        "section": 3,
+        "prof":"Mark Ramos",
+        "day": ["Mon", "Wed"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"CIWW 102"
+    },
+    {
+        "section": 4,
+        "prof":"Joshua Clayton",
+        "day": ["Tue", "Thu"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"CIWW 317"
+    },
+    {
+        "section": 5,
+        "prof":"Julie Lizardo",
+        "day": ["Mon", "Wed"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"GCASL 279"
+    },
+    {
+        "section": 6,
+        "prof":"Al Olsen",
+        "day": ["Mon", "Wed"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"SILV 208"
+    }
+]
+},
+{
+    "name":"CSCI-UA 60 Database Design and Implementation",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Amos Bloomberg",
+        "day": ["Tue", "Thu"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"5WP 101"
+    }
+]
+},
+{
+    "name":"CSCI-UA 61 Web Development and Programming",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Sana Odeh",
+        "day": ["Mon", "Wed"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"SILV 408"
+    }
+]
+},
+{
+    "name":"CSCI-UA 101 Intro to Computer Science",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Nader Nassar",
+        "day": ["Mon", "Wed"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"SILV 208"
+    },
+    {
+        "section": 2,
+        "prof":"Gizem Kayar",
+        "day": ["Tue", "Thu"],
+        "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
+        "loc":"Online"
+    },
+    {
+        "section": 3,
+        "prof":"Hilbert Locklear",
+        "day": ["Mon", "Wed"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"25W4 C-20"
+    },
+    {
+        "section": 4,
+        "prof":"Candido Cabo",
+        "day": ["Tue", "Thu"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"TISC LC11"
+    },
+    {
+        "section": 5,
+        "prof":"Duygu Ataman",
+        "day": ["Mon", "Wed"],
+        "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
+        "loc":"Online"
+    },
+    {
+        "section": 6,
+        "prof":"Sana Odeh",
+        "day": ["Tue", "Thu"],
+        "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
+        "loc":"KIMM 803"
+    },
+    {
+        "section": 7,
+        "prof":"Hilbert Locklear",
+        "day": ["Mon", "Wed"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"SILV 401"
+    },
+    {
+        "section": 8,
+        "prof":"Anasse Bari",
+        "day": ["Tue", "Thu"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"CANT 101"
+    },
+    {
+        "section": 9,
+        "prof":"Sana Odeh",
+        "day": ["Mon", "Wed"],
+        "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
+        "loc":"Online"
+    }
+]
+},
+{
+    "name":"CSCI-UA 102 Data Structures",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Evan Korth",
+        "day": ["Tue", "Thu"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"TISC UC50"
+    },
+    {
+        "section": 3,
+        "prof":"Anasse Bari",
+        "day": ["Tue", "Thu"],
+        "time":"11.00 AM - 12.15",
+        "time2":11001215,
+        "loc":"Online"
+    },
+    {
+        "section": 5,
+        "prof":"Joanna Klukowska",
+        "day": ["Mon", "Wed"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"CANT 200"
+    }
+]
+},
+{
+    "name":"CSCI-UA 201 Computer Systems Org",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Douglas L Moody",
+        "day": ["Mon", "Wed"],
+        "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
+        "loc":"Online"
+    },
+    {
+        "section": 3,
+        "prof":"Jinyang Li",
+        "day": ["Tue", "Thu"],
+        "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
+        "loc":"Online"
+    },
+    {
+        "section": 5,
+        "prof":"Hasan Aljabbouli",
+        "day": ["Mon", "Wed"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"CANT 101"
+    },
+    {
+        "section": 7,
+        "prof":"Gizem Kayar",
+        "day": ["Tue", "Thu"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"Online"
+    }
+]
+},
+{
+    "name":"CSCI-UA 202 Operating Systems",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Yang Tang",
+        "day": ["Mon", "Wed"],
+        "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
+        "loc":"Online"
+    },
+    {
+        "section": 2,
+        "prof":"Mohamed Zahran",
+        "day": ["Tue", "Thu"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"Online"
+    }
+]
+},
+{
+    "name":"CSCI-UA 310 Basic Algorithms",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Marshall Ball",
+        "day": ["Tue", "Thu"],
+        "time":"12.30 PM - 1.45 PM",
+        "loc":"CANT 101"
+    },
+    {
+        "section": 3,
+        "prof":"Oded Regev",
+        "day": ["Mon", "Wed"],
+        "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
+        "loc":"CANT 101"
+    },
+    {
+        "section": 5,
+        "prof":"Seyed Nassajianmojarrad",
+        "day": ["Tue", "Thu"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"Online"
+    }
+]
+},
+{
+    "name":"CSCI-UA 380 Topics of General Interest: Interactive Computing",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Craig Kapp",
+        "day": ["Mon", "Wed"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"CIWW 102"
+    }
+]
+},
+{
+    "name":"CSCI-UA 381 Programming Tools for the Data Scientist",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Hasan Aljabbouli",
+        "day": ["Tue", "Thu"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"SILV 208"
+    }
+]
+},
+{
+    "name":"CSCI-UA 467 Applied Internet Technology",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Joseph Versoza",
+        "day": ["Tue", "Thu"],
+        "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
+        "loc":"Online"
+    },
+    {
+        "section": 2,
+        "prof":"Joseph Versoza",
+        "day": ["Mon", "Wed"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"SILV 208"
+    }
+]
+},
+{
+    "name":"CSCI-UA 470 Object Oriented Programming",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Hasan Aljabbouli",
+        "day": ["Mon", "Wed"],
+        "time":"9.30 AM - 10.45 AM",
+        "time2":9301045,
+        "loc":"SILV 206"
+    }
+]
+},
+{
+    "name":"CSCI-UA 472 Artificial Intelligence",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Ernest Davis",
+        "day": ["Tue", "Thu"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"CIWW 102"
+    }
+]
+},
+{
+    "name":"CSCI-UA 473 Fundamentals of Machine Learning | Introduction to Machine Learning",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Lerrel Pinto",
+        "day": ["Tue", "Thu"],
+        "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
+        "loc":"Online"
+    }
+]
+},
+{
+    "name":"CSCI-UA 474 Software Engineering",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Amos Bloomberg",
+        "day": ["Mon", "Wed"],
+        "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
+        "loc":"SILV 411"
+    }
+]
+},
+{
+    "name":"CSCI-UA 476 Processing Big Data for Analytics Applications",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Ann Malavet",
+        "day": ["Tue", "Thu"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"GCASL 383"
+    }
+]
+},
+{
+    "name":"CSCI-UA 479 Data Management and Analysis",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Joseph Versoza",
+        "day": ["Mon", "Wed"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"Online"
+    },
+    {
+        "section": 2,
+        "prof":"Matthew Zeidenberg",
+        "day": ["Mon", "Wed"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"SILV 411"
+    },
+    {
+        "section": 3,
+        "prof":"Matthew Zeidenberg",
+        "day": ["Mon", "Wed"],
+        "time":"11.00 AM - 12.15 PM",
+        "time2":11001215,
+        "loc":"Online"
+    }
+]
+},
+{
+    "name":"CSCI-UA 480 Special Topics: Computer Graphics",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 41,
+        "prof":"Kenneth Perlin",
+        "day": ["Tue", "Thu"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"CIWW 101"
+    }
+]
+},
+{
+    "name":"CSCI-UA 480 Special Topics: Computer Vision",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 42,
+        "prof":"Davi Geiger",
+        "day": ["Tue", "Thu"],
+        "time":"4.55 PM - 6.10 PM",
+        "time2":455610,
+        "loc":"SILV 401"
+    }
+]
+},
+{
+    "name":"CSCI-UA 480 Special Topics: Social Networking",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 46,
+        "prof":"Bhubaneswar Mishra",
+        "day": ["Tue", "Thu"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"GCASL 383"
+    }
+]
+},
+{
+    "name":"CSCI-UA 480 Special Topics: Algorithmic Problem Solving",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 52,
+        "prof":"Joanna Klukowska",
+        "day": ["Mon", "Wed"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"CIWW 101"
+    }
+]
+},
+{
+    "name":"CSCI-UA 480 Special Topics: Natural Language Processing",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 57,
+        "prof":"Adam Meyers",
+        "day": ["Tue", "Thu"],
+        "time":"2.00 PM - 3.15 PM",
+        "time2":200315,
+        "loc":"Online"
+    }
+]
+},
+{
+    "name":"CSCI-UA 480 Special Topics: Collaborating Remotely: Build Software from Anywhe",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 71,
+        "prof":"Evan Korth",
+        "day": ["Tue", "Thu"],
+        "time":"3.30 PM - 4.45 PM",
+        "time2":330445,
+        "loc":"SILV 411"
+    }
+]
+},
+{
+    "name":"CSCI-UA 480 Special Topics: Agile Software Development and DevOps",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 69,
+        "prof":"Amos Bloomberg",
+        "day": ["Tue", "Thu"],
+        "time":"12.30 PM - 1.45 PM",
+        "time2":1230145,
+        "loc":"SILV 405"
+    }
+]
+},
+{
+    "name":"CSCI-UA 520 Undergraduate Research",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Independent Study",
+        "day": ["Independent Study"],
+        "time":"N/A",
+        "time2":0,
+        "loc":"N/A"
+    }
+]
+},
+{
+    "name":"CSCI-UA 897 Internship in Computer Science",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Independent Study",
+        "day": ["Independent Study"],
+        "time":"N/A",
+        "time2":0,
+        "loc":"N/A"
+    }
+]
+},
+{
+    "name":"CSCI-UA 997 Independent Study",
+    "isRequired":true,
+    "sessions":[
+    {
+        "section": 1,
+        "prof":"Independent Study",
+        "day": ["Independent Study"],
+        "time":"N/A",
+        "time2":0,
+        "loc":"N/A"
+    }
+]
+}]
+

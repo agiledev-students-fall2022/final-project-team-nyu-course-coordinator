@@ -13,8 +13,6 @@ const User =  mongoose.Schema({
         type: String, 
         required: true
     },
-    
-    
 });
 
 module.exports = mongoose.model('Users', User);
