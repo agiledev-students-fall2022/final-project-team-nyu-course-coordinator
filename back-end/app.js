@@ -3,7 +3,7 @@ require('./db-schema')
 const mongoose= require('mongoose')
 const Course = mongoose.model('Course')
 const express = require("express") 
-const app = express() 
+// const app = express() 
 const path = require('path');
 const bodyParser= require('body-parser')
 const cors= require('cors')
