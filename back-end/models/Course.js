@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-
+import mongoose from 'mongoose';
 
 const Course = new mongoose.Schema({
   name: {type: String, required: true},
@@ -19,7 +18,8 @@ const Course = new mongoose.Schema({
   _id: true
 });
 
-module.exports = mongoose.model('Courses', Course);
+var Courses = mongoose.model('Courses', Course);
+export default Courses;
 
 //////////////////////////// PLEASE MAKE SURE EVERYTHING UNDER THIS LINE IS COMMENTED OUT, OR ELSE IT WONT RUN ////////////////////////////
 

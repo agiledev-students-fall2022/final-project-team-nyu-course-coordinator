@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
-const User = require('../models/User');
+import User from '../models/User.js';
+// const User = require('../models/User');
 
 router.get('/', async (req, res) => {
     console.log('get users');
@@ -66,4 +67,5 @@ router.patch('/:userId', async (req, res) => {
     }
 });
 
-module.exports = router;
+// module.exports = router;
+export default router;

@@ -1,0 +1,14 @@
+[{
+    "name":"CSCI-UA 2 Introduction to Computer Programming (No Prior Experience)",
+    "isRequired":true,
+    "sessions":
+    {
+        "section": 1,
+        "prof":"Amanda Steigman",
+        "day": ["Mon", "Wed"],
+        "time":"8.00 AM - 9.15 AM",
+        "time2":800915,
+        "loc":"12WV L120"
+    }
+}]
+
