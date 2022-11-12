@@ -19,7 +19,7 @@ const Course = new mongoose.Schema({
   _id: true
 });
 
-module.exports = mongoose.model('Courses', Course);
+module.exports = mongoose.model('Course', Course);
 
 //////////////////////////// PLEASE MAKE SURE EVERYTHING UNDER THIS LINE IS COMMENTED OUT, OR ELSE IT WONT RUN ////////////////////////////
 

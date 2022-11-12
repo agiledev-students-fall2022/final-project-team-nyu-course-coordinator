@@ -1,23 +1,48 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
 
 
 const Course = () => {
-  // const { courses } = useSelector((state) => state.courses);
-  return (
-    <Card className='courseCard'>
-      <Card.Body >
-        <Card.Title>Course Name</Card.Title>
-        <Card.Text className="sectionInfo">
-          <p>Course requirements:</p>
-        </Card.Text>
-        <Section />
-      </Card.Body>
-    </Card>
-  );
+  getCourses()
+
+  // const { cart } = useSelector((state) => state.course);
+  // console.log(cart)
+  const Requirement=(props) => {
+    const isRequired= props.isRequired
+    if (isRequired){
+      return ("Required for your major")
+    }
+    else {
+      return ("Not required for your major")
+    }
+  }
+
+  // return (
+  //   <div>
+  //     {cart.map((course, index)=>{
+  //       <>
+  //       <Card className='courseCard'>
+  //         <Card.Body>
+  //           <Card.Title>{course.name}</Card.Title>
+  //           <Card.Text className="sectionInfo">
+  //            <p> <Requirement isRequired={course.isRequired}/></p>
+  //           </Card.Text>
+  //           {course.sessions.map((session, i)=>{
+  //             <Section info={session}/>
+  //           })}
+  //         </Card.Body>
+  //       </Card>
+  //       </>
+  //     })}
+  //   </div>
+    
+
+  // );
 }
 
 export default Course;
+

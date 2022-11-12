@@ -4,7 +4,9 @@ const api = axios.create({
   baseURL: 'http://localhost:3000',
 });
 
-export const fetchCourses = () => api.get('/courses');
+export const fetchCourses = async () => api.get('/courses')
+
+// there's no fetchSections
 export const createCourse = (newCourse) => api.post('/courses', newCourse);
 export const deleteCourse = (id) => api.delete(`/courses/${id}`);
 export const changeSection = (id) => api.patch(`/courses/${id}`);

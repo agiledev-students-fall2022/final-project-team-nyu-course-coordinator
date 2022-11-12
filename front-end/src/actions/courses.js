@@ -1,23 +1,32 @@
 import * as api from '../api/index.js';
+import axios from "axios"
 
 // action creators
-export const getCourses = () => async (dispatch) => {
-  try {
-    const { data } = await api.fetchCourses();
-    dispatch({ type: 'FETCH_ALL', payload: data });
-  } catch (error) {
+export const getCourses = async () => {
+  
+    //const { data } =await api.fetchCourses()
+    axios.get ("http://localhost:3001/courses")
+    .then(res => {
+      console.log("hello")
+      console.log("DATA",res.data)
+      // dispatch({ type: 'FETCH_ALL', payload: data })
+    })
+    
+  
+  .catch (error =>{
     console.log(error.message);
-  }
+  })
 }
 
-export const getSections = () => async (dispatch) => {
-  try {
-    const { data } = await api.fetchSections();
-    dispatch({ type: 'FETCH_ALL', payload: data });
-  } catch (error) {
-    console.log(error.message);
-  }
-}
+//fetchSections is not in the index
+// export const getSections = () => async (dispatch) => {
+//   try {
+//     const { data } = await api.fetchSections();
+//     dispatch({ type: 'FETCH_ALL', payload: data });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
 
 export const createCourse = (course) => async (dispatch) => {
   try {

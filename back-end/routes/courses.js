@@ -1,12 +1,19 @@
+const cors= require('cors');
 const express = require('express');
+const app= express()
 const router = express.Router();
+const mongoose = require('mongoose');
+require('../models/Course');
+const Course = mongoose.model('Course')
+app.use(cors())
 
-const Course = require('../models/Course');
 
 router.get('/', async (req, res) => {
+    console.log("THE server")
     try {
-        const courses = await Course.find();
-        res.json(courses);
+        const courses = await Course.find({}).exec()
+        console.log(courses)
+        res.json(courses)
     }
     catch (err) {
         res.json({ message: err });
