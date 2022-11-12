@@ -1,8 +1,4 @@
 
-
-
-// export the express app we created to make it available to other modules
-module.exports = app
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
