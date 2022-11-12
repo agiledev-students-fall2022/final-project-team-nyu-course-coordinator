@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Card from 'react-bootstrap/Card';
 import { useSelector } from 'react-redux';
 import { getCourses } from '../../../actions/courses';
@@ -7,10 +7,32 @@ import './styles.css';
 
 
 const Course = () => {
-  getCourses()
+  let [cart, setCart] = useState([])
+  // const data= getCourses()
+  // console.log("cart", data)
 
+  async function loadCourses (){
+    const data =  await getCourses()
+    console.log("cart", cart)
+    setCart(data)
+  }
+
+    // useEffect(()=>{
+      
+
+    //   const intervalHandle = setInterval(getCourses(), 5000) 
+
+    //   return e => {
+    //     clearInterval(intervalHandle)
+    //   }
+    // },[])
+
+    // loadCourses()
+  
+
+  
+  
   // const { cart } = useSelector((state) => state.course);
-  // console.log(cart)
   const Requirement=(props) => {
     const isRequired= props.isRequired
     if (isRequired){
@@ -20,6 +42,7 @@ const Course = () => {
       return ("Not required for your major")
     }
   }
+
 
   // return (
   //   <div>
@@ -41,7 +64,9 @@ const Course = () => {
   //   </div>
     
 
-  // );
+  // )
+
+
 }
 
 export default Course;
