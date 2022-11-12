@@ -11,37 +11,27 @@ const Course = () => {
   // const data= getCourses()
   // console.log("cart", data)
 
-  async function loadCourses (){
-    const data =  await getCourses()
-    console.log("cart", cart)
-    setCart(data)
-  }
-
-    // useEffect(()=>{
-      
-
-    //   const intervalHandle = setInterval(getCourses(), 5000) 
-
-    //   return e => {
-    //     clearInterval(intervalHandle)
-    //   }
-    // },[])
-
-    // loadCourses()
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getCourses();
+      setCart(result);
+    };
+    fetchData();
+  }, []);
   
-
+  // console.log("cart", cart)
   
   
-  // const { cart } = useSelector((state) => state.course);
-  const Requirement=(props) => {
-    const isRequired= props.isRequired
-    if (isRequired){
-      return ("Required for your major")
-    }
-    else {
-      return ("Not required for your major")
-    }
-  }
+  // // const { cart } = useSelector((state) => state.course);
+  // const Requirement=(props) => {
+  //   const isRequired= props.isRequired
+  //   if (isRequired){
+  //     return ("Required for your major")
+  //   }
+  //   else {
+  //     return ("Not required for your major")
+  //   }
+  // }
 
 
   // return (
