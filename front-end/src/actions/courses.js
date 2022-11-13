@@ -13,7 +13,7 @@ export const getCourses = async () => {
         console.log("GCM",error.message);
       }
     }
-
+    
     //const { data } =await api.fetchCourses()
           // dispatch({ type: 'FETCH_ALL', payload: data })
 
@@ -34,7 +34,6 @@ export const getCourses = async () => {
 //   } catch (error) {
 //     console.log(error.message);
 //   }
-// }
 
 export const createCourse = (course) => async (dispatch) => {
   try {
@@ -60,5 +59,22 @@ export const changeSection = (id) => async (dispatch) => {
     dispatch({ type: 'CHANGE', payload: data });
   } catch (error) {
     console.log(error);
+  }
+}
+
+export const getUsers = async () => {
+  try {
+    const { data } = await api.fetchUsers()
+  // axios.get ("http://localhost:3001/users")
+  // .then(res => {
+  //   console.log("hello")
+  //   console.log("DATA",res.data)
+  console.log("getUsers", data)
+  return(data)
+    // dispatch({ type: 'FETCH_ALL', payload: data })
+  }
+  catch (error) {
+    console.log(error.message);
+    console.log("This is an error")
   }
 }
