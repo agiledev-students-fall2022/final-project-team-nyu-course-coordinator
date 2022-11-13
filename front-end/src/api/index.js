@@ -14,3 +14,4 @@ export const addToSchedule = (id) => api.patch(`/courses/${id}`);
 export const removeFromSchedule = (id) => api.delete(`/courses/${id}`);
 export const signin = (formData) => api.post('/user/signin', formData);
 export const signup = (formData) => api.post('/user/signup', formData);
+export const fetchUsers = async () => api.get('/users');
