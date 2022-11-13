@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
-import axios from 'axios'
-
 
 const Course = () => {
   let [cart, setCart] = useState([])
@@ -20,9 +18,6 @@ const Course = () => {
 
   console.log(cart)
   
-
-  
-  
   // const { cart } = useSelector((state) => state.course);
   const Requirement=(props) => {
     const isRequired= props.isRequired
@@ -33,7 +28,6 @@ const Course = () => {
       return ("Not required for your major")
     }
   }
-
 
   return (
     <>

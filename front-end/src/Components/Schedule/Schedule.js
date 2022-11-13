@@ -3,13 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from 'react-bootstrap';
 import Course from './Course/Course';
 import './styles.css';
-// import axios from 'axios'
 import { useState, useEffect } from 'react'
-// import User from './User'
-import { getUsers } from '../../actions/courses';
+import { getUsers, getCourses } from '../../actions/courses';
 
 const Schedule = () => {
   let [users, setUsers] = useState([])
+  let [cart, setCart] = useState([])
 
   useEffect(() => {
     const fetchData = async() => {
@@ -19,6 +18,32 @@ const Schedule = () => {
     fetchData()
   }, [])
   
+  useEffect(()=>{
+    const fetchData= async()=>{
+      const result = await getCourses()
+      setCart(result)
+    }
+    fetchData()
+  },[])
+
+  const getUserClass = () => {
+    // loop through courses
+    console.log("random")
+    console.log("636ed0839d69c324c439fc08")
+    console.log(cart[0]._id);
+    cart.map((course, index) => {
+      return(
+        if ("636ed0839d69c324c439fc08" === course._id) {
+          console.log("It worked")
+        }
+        else {
+          console.log("it didn't work")
+        }
+      )
+    })
+  }
+  getUserClass();
+
   return (
     <div className="container" >
     <Container className="container">
@@ -51,6 +76,6 @@ const Schedule = () => {
     //   );
     // })};
     // </>
-    
+
 // console.log(users[0].classes[0].section_num)
 export default Schedule;
