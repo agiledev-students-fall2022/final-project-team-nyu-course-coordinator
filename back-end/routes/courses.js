@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 require('../models/Course');
 const Course = mongoose.model('Course')
 app.use(cors())
+const chai = require('chai');
+const expect = chai.expect;
+const assert = chai.assert;
 
 
 router.get('/', async (req, res) => {
@@ -48,6 +51,8 @@ router.get('/:courseId', async (req, res) => {
     } catch(err) {
         res.json({message: err});
     }   
+    assert.typeOf(course, 'object');
+    assert.typeOf(course.name, 'string');
 });
 
 // Delete Post
@@ -58,6 +63,7 @@ router.delete('/:courseId', async (req, res) => {
     } catch(err) {
         res.json({message: err});
     }
+    assert.equal(removedCourse.isRemoved, true);
 });
 
 // Update Post
@@ -71,6 +77,18 @@ router.patch('/:courseId', async (req, res) => {
     } catch(err) {
         res.json({message: err});
     }
+    assert.equal(updatedCourse.n, 1); 
 });
+
+// other unit tests
+assert.typeOf(router, 'function', 'router is a function');
+assert.typeOf(router.get, 'function', 'router.get is a function');
+assert.typeOf(router.post, 'function', 'router.post is a function');
+assert.typeOf(router.get('/:courseId'), 'function', 'router.get is a function');
+assert.typeOf(router.delete('/:courseId'), 'function', 'router.delete is a function');
+assert.typeOf(router.patch('/:courseId'), 'function', 'router.patch is a function');
+
+
+
 
 module.exports = router;

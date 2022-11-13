@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const chai = require('chai');
+const expect = chai.expect;
+const assert = chai.assert;
 
 const User = new mongoose.Schema({
     name: {type: String, required: true},
@@ -13,7 +16,8 @@ const User = new mongoose.Schema({
 
 module.exports = mongoose.model('Users', User);
 
-
+// unit tests
+assert.typeOf(User, 'object');
 
 
 

@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const chai = require('chai');
+const expect = chai.expect;
+const assert = chai.assert;
 
 
 const Course = new mongoose.Schema({
@@ -20,8 +23,8 @@ const Course = new mongoose.Schema({
 });
 
 // unit tests
+assert.typeOf(Course, 'object');
 
-assert.typeOf(Course, 'string');
 
 
 
