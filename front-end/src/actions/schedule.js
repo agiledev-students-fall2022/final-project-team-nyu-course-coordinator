@@ -1,9 +1,10 @@
 import * as api from '../api/index.js';
 
-export const addToSchedule = (id) => async (dispatch) => {
+export const addToSchedule = async (user ,id) => {
   try {
-    const { data } = await api.addToSchedule(id);
-    dispatch({ type: 'ADD_TO_SCHEDULE', payload: data });
+    const { data } = await api.addToSchedule(user, id);
+    return(data)
+    // dispatch({ type: 'ADD_TO_SCHEDULE', payload: data });
   } catch (error) {
     console.log(error);
   }

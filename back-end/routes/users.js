@@ -12,9 +12,9 @@ router.get('/', async (req, res) => {
     try {
         const users = await User.find({}).exec()
         const data = users.map(u => {
-            return {name: u.name, email:u.email, major: u.major, year: u.year, 
+            return {id: u._id, name: u.name, email:u.email, major: u.major, year: u.year, 
                 classes: u.classes.map (c => {
-                    return{class_id: c.class_id, section_num: c.section_num}
+                    return{section_id: c.section_id}
                 })}
             })
             console.log(data[0].classes[0].class_id)

@@ -6,12 +6,11 @@ const User = new mongoose.Schema({
     major: {type: String, required: true},
     year: {type: Number, required: true},
     classes: [{
-        class_id: {type: String, required: true},
-        section_num: {type: Number, required: true},
+        section_id: {type: String, required: true},
     }],
 });
 
-module.exports = mongoose.model('Users', User);
+module.exports = mongoose.model('User', User);
 
 
 

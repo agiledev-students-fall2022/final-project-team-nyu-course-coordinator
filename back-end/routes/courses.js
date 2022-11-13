@@ -5,6 +5,8 @@ const router = express.Router();
 const mongoose = require('mongoose');
 require('../models/Course');
 const Course = mongoose.model('Course')
+require('../models/User');
+const User = mongoose.model('User')
 app.use(cors())
 
 
@@ -13,8 +15,8 @@ router.get('/', async (req, res) => {
     try {
         const courses = await Course.find({}).exec()
         const data = courses.map(c => {
-            return {name: c.name, isRequired: c.isRequired, sessions: c.sessions.map(s => {
-                return{section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
+            return {id: c._id, name: c.name, isRequired: c.isRequired, sessions: c.sessions.map(s => {
+                return{id: s._id, section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
             })}
         })
         res.json(data)
@@ -62,12 +64,40 @@ router.delete('/:courseId', async (req, res) => {
 
 // Update Post
 router.patch('/:courseId', async (req, res) => {
+    console.log("Trying to add...")
+    // const user= req.params.userID
+    const sectionId= req.params.courseId
+    
     try {
-        const updatedCourse = await Course.updateOne(
-            {_id: req.params.courseId},
-            {$set: {name: req.body.name}}
-        );
-        res.json(updatedCourse);
+        const addingCourse = await Course.find({'sessions.prof':"Amanda Steigman"},{
+            'sessions._id':1,
+            'sessions.section':1,
+            'sessions.prof':1,
+            'sessions.day':1,
+            'sessions.time':1,
+            'sessions.time2':1,
+            'sessions.loc':1,
+        }).exec()
+        
+        const sections = addingCourse[0].sessions
+        const addingSection= sections.filter(section => section._id==sectionId)
+        
+        const addingSectionId = {section_id: addingSection[0]._id.toString()}
+        
+        // later with userID, find one user with that ID instead of retrieving all users
+        const users = await User.find({}).exec()
+        const schedule = users[0].classes
+        schedule.push(addingSectionId)
+        console.log(schedule)
+        await User.set({'jj': "Hello World"}).exec()
+        // await User.updateOne({_id: ObjectId("636ed77cfe63d7bf6b544a93")},{$unset:{classes:''}})
+        // {acknowledged, upsertedCount, modifiedCount, matchedCount} = await User.updateOne({'_id': ObjectId("636ed77cfe63d7bf6b544a93")},{$set:{"classes":schedule}})
+        // console.log(acknowledged, upsertedCount, modifiedCount, matchedCount)
+        // console.log(user[0].classes)
+        // const schedule = await user[0]
+        // {_id: req.params.courseId},
+        // {$set: {name: req.body.name}}
+        // res.json(updatedCourse);
     } catch(err) {
         res.json({message: err});
     }
