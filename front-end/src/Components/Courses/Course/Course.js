@@ -5,6 +5,7 @@ import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
 import axios from 'axios'
+import { assert } from 'chai';
 
 
 const Course = () => {
@@ -34,6 +35,9 @@ const Course = () => {
     }
   }
 
+  // unit tests
+assert.typeOf(Course, 'function');
+assert.typeOf(Requirement, 'function');
 
   return (
     <>
@@ -62,6 +66,7 @@ const Course = () => {
     
 
   )
+
 
 
 }

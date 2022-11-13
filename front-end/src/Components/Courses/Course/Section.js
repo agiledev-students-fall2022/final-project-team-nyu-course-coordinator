@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { assert } from 'chai';
 
 const Section = (session) => {
   const num = session.info.section
@@ -24,6 +25,18 @@ const Section = (session) => {
     </Card>
     </>
   )
+
+  // unit tests
+assert.typeOf(Section, 'function');
+assert.typeOf(num, 'number');
+assert.typeOf(prof, 'string');
+assert.typeOf(day, 'string');
+assert.typeOf(time, 'string');
+assert.typeOf(loc, 'string');
 }
+
+
+
+
 
 export default Section;

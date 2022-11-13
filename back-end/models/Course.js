@@ -19,6 +19,13 @@ const Course = new mongoose.Schema({
   _id: true
 });
 
+// unit tests
+
+assert.typeOf(Course, 'string');
+
+
+
+
 module.exports = mongoose.model('Course', Course);
 
 //////////////////////////// PLEASE MAKE SURE EVERYTHING UNDER THIS LINE IS COMMENTED OUT, OR ELSE IT WONT RUN ////////////////////////////
