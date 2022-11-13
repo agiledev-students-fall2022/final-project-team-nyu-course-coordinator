@@ -48,16 +48,17 @@ export const changeSection = (id) => async (dispatch) => {
 
 export const getUsers = async () => {
   try {
-    const { data } =await api.fetchUsers()
+    const { data } = await api.fetchUsers()
   // axios.get ("http://localhost:3001/users")
   // .then(res => {
   //   console.log("hello")
   //   console.log("DATA",res.data)
-  console.log(data)
+  console.log("getUsers", data)
   return(data)
     // dispatch({ type: 'FETCH_ALL', payload: data })
   }
   catch (error) {
     console.log(error.message);
+    console.log("This is an error")
   }
 }

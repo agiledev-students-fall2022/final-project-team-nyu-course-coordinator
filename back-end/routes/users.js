@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const cors = require('cors');
+
+const app = express()
+app.use(cors())
 
 const User = require('../models/User');
 
@@ -10,11 +14,11 @@ router.get('/', async (req, res) => {
         const data = users.map(u => {
             return {name: u.name, email:u.email, major: u.major, year: u.year, 
                 classes: u.classes.map (c => {
-                    return{class_id: u.class_id, section_num: u.section_num}
+                    return{class_id: c.class_id, section_num: c.section_num}
                 })}
             })
-            console.log(users)
-            res.json(users);
+            console.log(data[0].classes[0].class_id)
+            res.json(data);
     }
     catch (err) {
         res.json({ message: err });
