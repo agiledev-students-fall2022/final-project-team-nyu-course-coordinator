@@ -1,12 +1,23 @@
+const cors= require('cors');
 const express = require('express');
+const app= express()
 const router = express.Router();
+const mongoose = require('mongoose');
+require('../models/Course');
+const Course = mongoose.model('Course')
+app.use(cors())
 
-const Course = require('../models/Course');
 
 router.get('/', async (req, res) => {
+    console.log("server reached")
     try {
-        const courses = await Course.find();
-        res.json(courses);
+        const courses = await Course.find({}).exec()
+        const data = courses.map(c => {
+            return {name: c.name, isRequired: c.isRequired, sessions: c.sessions.map(s => {
+                return{section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
+            })}
+        })
+        res.json(data)
     }
     catch (err) {
         res.json({ message: err });

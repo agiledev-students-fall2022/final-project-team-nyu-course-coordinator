@@ -1,23 +1,70 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Card from 'react-bootstrap/Card';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
+import axios from 'axios'
 
 
 const Course = () => {
-  // const { courses } = useSelector((state) => state.courses);
+  let [cart, setCart] = useState([])
+  
+  useEffect(()=>{
+    const fetchData= async()=>{
+      const result = await getCourses()
+      setCart(result)
+    }
+    fetchData()
+  },[])
+
+  console.log(cart)
+  
+
+  
+  
+  // const { cart } = useSelector((state) => state.course);
+  const Requirement=(props) => {
+    const isRequired= props.isRequired
+    if (isRequired){
+      return ("Required for your major")
+    }
+    else {
+      return ("Not required for your major")
+    }
+  }
+
+
   return (
-    <Card className='courseCard'>
-      <Card.Body >
-        <Card.Title>Course Name</Card.Title>
-        <Card.Text className="sectionInfo">
-          <p>Course requirements:</p>
-        </Card.Text>
-        <Section />
-      </Card.Body>
-    </Card>
-  );
+    <>
+      {cart.map((course, index)=>{
+        return(
+          <>
+          <Card className='courseCard'>
+            <Card.Body>
+              <Card.Title>{course.name}</Card.Title>
+              <Card.Text className="sectionInfo">
+              <p> <Requirement isRequired={course.isRequired}/></p>
+              </Card.Text>
+              {course.sessions.map((session, i)=>{
+                return(
+                  <Section info={session}/>
+                )
+              })}
+            </Card.Body>
+          </Card>
+          </>
+        )
+        
+        
+      })}
+    </>
+    
+
+  )
+
+
 }
 
 export default Course;
+
