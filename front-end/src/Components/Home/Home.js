@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './styles.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
-
 export default function Home() {
+  
+
+
   return (
     <Container className="homeContainer">
       <Row>

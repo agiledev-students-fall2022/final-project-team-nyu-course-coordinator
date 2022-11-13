@@ -1,6 +1,7 @@
 export default (state = { courses: [] }, action) => {
   switch (action.type) {
     case "FETCH_ALL":
+      console.log(...state, action.payload)
       return {
         ...state,
         courses: action.payload,

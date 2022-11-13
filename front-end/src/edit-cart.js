@@ -309,7 +309,7 @@ function EditCart() {
 //                     <div><RemoveBtn id= {index} isRequired={course.isRequired}/> </div>
 //                     <ul>
 //                       <li> <Requirement isRequired={course.isRequired}/> </li>
-//                       <li> <PrereqSat isPrereqSat={course.isPrereqSat}/> </li>
+//                       <li> <PrereqSat isPrereq Sat={course.isPrereqSat}/> </li>
 //                     </ul>
                     
 //                     <h3>Available Sessions</h3>

@@ -2,8 +2,12 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors= require('cors')
+app.use(cors())
 require('dotenv/config');
 app.use(bodyParser.json());
+const cors = require('cors');
+app.use(cors())
 
 // Import Routes
 const courseRoute = require('./routes/courses');
@@ -13,6 +17,7 @@ app.use('/users', userRoute);
 
 // routes
 app.get('/', (req, res) => {
+  console.log("hello")
   res.send('Hello World!');
 });
 
@@ -43,81 +48,6 @@ app.listen(3001);
 
 // app.use(express.json());
 // app.use(express.static(path.join(__dirname, 'public')));
-
-
-
-// const Allcourses = 
-//     [{ name: "CSCI 480- Agile Development and DevOps", 
-//         isRequired: true, 
-//         isPrereqSat: true, 
-//         sessions:
-//           [{section: 2,
-//             prof: "John Doe",
-//             day: "Monday, Wednesday",
-//             time: 10301145,
-//             loc: "Silver 420",
-//             isConflicted: true},
-//           {section: 4,
-//             prof: "John Doe",
-//             day: "Tuesday, Thursday",
-//             time: 12301345,
-//             loc: "Silver 409",
-//             isConflicted: true}]
-//       },
-//       { name: "MATH 121 - Discrete Mathematics", 
-//         isRequired: true, 
-//         isPrereqSat: true, 
-//         sessions:
-//           [{section: 2,
-//             prof: "John Doe",
-//             day: "Monday, Wednesday",
-//             time: 10301145,
-//             loc: "Silver 420",
-//             isConflicted: true},
-//           {section: 4,
-//             prof: "John Doe",
-//             day: "Tuesday, Thursday",
-//             time: 12301345,
-//             loc: "Silver 409",
-//             isConflicted: false}]
-//       },
-//       { name: "MATH 200 - Calculus IV", 
-//         isRequired: false, 
-//         isPrereqSat: false, 
-//         sessions:
-//           [{section: 2,
-//             prof: "John Doe",
-//             day: "Monday, Wednesday",
-//             time: 10301145,
-//             loc: "Silver 420",
-//             isConflicted: false},
-//           {section: 4,
-//             prof: "John Doe",
-//             day: "Tuesday, Thursday",
-//             time: 12301345,
-//             loc: "Silver 409",
-//             isConflicted: false}]
-//       }]
-
-// const addThisCourseEx= [
-//   { name: "Core 400 - Expressive Culture", 
-//     isRequired: true, 
-//     isPrereqSat: true, 
-//     sessions:
-//       [{section: 2,
-//         prof: "John Doe",
-//         day: "Monday, Wednesday",
-//         time: 10301145,
-//         loc: "Silver 420",
-//         isConflicted: false},
-//       {section: 4,
-//         prof: "John Doe",
-//         day: "Tuesday, Thursday",
-//         time: 12301345,
-//         loc: "Silver 409",
-//         isConflicted: false}]
-//   }
-// ]
 
 
 
