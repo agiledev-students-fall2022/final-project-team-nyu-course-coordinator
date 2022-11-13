@@ -1,16 +1,15 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useDispatch } from 'react-redux';
 
 const Section = (session) => {
-  const dispatch = useDispatch();
-  const num = session.section
-  const prof= session.prof
-  const day = session.day
-  const time = session.time
-  const loc = session.loc
+  const num = session.info.section
+  const prof= session.info.prof
+  const day = session.info.day
+  const time = session.info.time
+  const loc = session.info.loc
   return (
+    <>
     <Card>
       <Card.Body>
         <Card.Title>Section {num}</Card.Title>
@@ -23,7 +22,8 @@ const Section = (session) => {
         <Button variant="primary">Add to Schedule</Button>
       </Card.Body>
     </Card>
-  );
+    </>
+  )
 }
 
 export default Section;

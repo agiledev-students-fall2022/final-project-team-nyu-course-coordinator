@@ -4,32 +4,21 @@ import { useSelector } from 'react-redux';
 import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
+import axios from 'axios'
 
 
 const Course = () => {
   let [cart, setCart] = useState([])
-  // const data= getCourses()
-  // console.log("cart", data)
 
-  async function loadCourses (){
-    const data =  await getCourses()
-    console.log("cart", cart)
-    setCart(data)
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getCourses();
+      setCart(result);
+    };
+    fetchData();
+  }, []);
 
-    // useEffect(()=>{
-      
-
-    //   const intervalHandle = setInterval(getCourses(), 5000) 
-
-    //   return e => {
-    //     clearInterval(intervalHandle)
-    //   }
-    // },[])
-
-    // loadCourses()
-  
-
+  console.log("CART", cart[0])
   
   
   // const { cart } = useSelector((state) => state.course);
@@ -44,27 +33,44 @@ const Course = () => {
   }
 
 
-  // return (
-  //   <div>
-  //     {cart.map((course, index)=>{
-  //       <>
-  //       <Card className='courseCard'>
-  //         <Card.Body>
-  //           <Card.Title>{course.name}</Card.Title>
-  //           <Card.Text className="sectionInfo">
-  //            <p> <Requirement isRequired={course.isRequired}/></p>
-  //           </Card.Text>
-  //           {course.sessions.map((session, i)=>{
-  //             <Section info={session}/>
-  //           })}
-  //         </Card.Body>
-  //       </Card>
-  //       </>
-  //     })}
-  //   </div>
-    
-
-  // )
+  return (
+    <>
+       
+       {cart.map((course, index)=>{
+        return(
+          <Card className='courseCard'>
+           <Card.Body>
+             <Card.Title>{course.name}</Card.Title>
+             <Card.Text className="sectionInfo">
+              <p> <Requirement isRequired={course.isRequired}/></p>
+             </Card.Text>
+             {course.sessions.map((session, i)=>{
+              return(
+                
+                <Section info={session}/>
+              )
+             })}
+           </Card.Body>
+         </Card>
+          
+        )
+        })}
+    </>
+  )
+      
+  
+        // <Card className='courseCard'>
+        //   <Card.Body>
+        //     <Card.Title>{course.name}</Card.Title>
+        //     <Card.Text className="sectionInfo">
+        //      <p> <Requirement isRequired={course.isRequired}/></p>
+        //     </Card.Text>
+        //     {course.sessions.map((session, i)=>{
+        //       <Section info={session}/>
+        //     })}
+        //   </Card.Body>
+        // </Card>
+      
 
 
 }
