@@ -40,11 +40,13 @@ const Schedule = () => {
 
   // array of only section_ids in the schedule
   const Schedule = () => {
+    return(
     users.map(user => { 
       user.classes.map(section => {
         schedule.push(section.section_id)
       })
     })
+    )
   }
 
   // 1D array of all sections of all classes
@@ -104,7 +106,7 @@ const Schedule = () => {
             <Container className="container">
               <h1 className="title">Schedule</h1>
               <h2>Monday</h2>
-              {/* <Course schedule={mon}/> */}
+              <Course schedule={mon}/>
               <h2>Tuesday</h2>
               {/* <Course schedule={tue}/> */}
               <h2>Wednesday</h2>
