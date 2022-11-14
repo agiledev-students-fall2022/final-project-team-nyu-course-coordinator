@@ -1,9 +1,0 @@
-.User-article {
-    padding: 10px 0;
-}
-  
-.User-article time {
-    font-size: calc(10px + 0.25vmin); /* half the font size of the header */
-    color: #505050;
-}
-  

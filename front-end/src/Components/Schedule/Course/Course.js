@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react'
 import { getUsers, getCourses } from '../../../actions/courses'
+import { useSelector } from 'react-redux';
+
 
 const Course = (props) => {
   
@@ -12,7 +14,6 @@ const Course = (props) => {
   return (
     <>
     {schedule.map(section => {
-      console.log(section.name)
       return(
         <>
           <Card className="card">
@@ -29,12 +30,10 @@ const Course = (props) => {
           </Card>
         </>
       )
-    })}
+    })};
     </>
-          
-         
-    
   )
+
 }
 
 export default Course

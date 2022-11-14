@@ -40,11 +40,13 @@ const Schedule = () => {
 
   // array of only section_ids in the schedule
   const Schedule = () => {
+    return(
     users.map(user => { 
       user.classes.map(section => {
         schedule.push(section.section_id)
       })
     })
+    )
   }
 
   // 1D array of all sections of all classes
@@ -132,6 +134,6 @@ const Schedule = () => {
     //   );
     // })};
     // </>
-    
+
 // console.log(users[0].classes[0].section_num)
 export default Schedule;

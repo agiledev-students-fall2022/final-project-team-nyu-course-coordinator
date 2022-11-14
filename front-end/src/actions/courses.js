@@ -12,7 +12,7 @@ export const getCourses = async () => {
       } catch (error) {
         console.log("GCM",error.message);
       }
-    }
+}
     
     //const { data } =await api.fetchCourses()
           // dispatch({ type: 'FETCH_ALL', payload: data })
