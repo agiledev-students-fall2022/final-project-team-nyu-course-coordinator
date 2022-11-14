@@ -7,9 +7,7 @@ app.use(cors())
 require('dotenv/config');
 app.use(bodyParser.json());
 
-const chai = require('chai');
-const expect = chai.expect;
-const assert = chai.assert;
+
 
 // Import Routes
 const courseRoute = require('./routes/courses');
@@ -33,9 +31,6 @@ mongoose.connect(
 app.listen(3001);
 
 
-//unit tests
-chai.assert.typeOf(courseRoute, 'function');
-chai.assert.typeOf(userRoute, 'function');
 
 
 //////////////////////////// PLEASE MAKE SURE EVERYTHING UNDER THIS LINE IS COMMENTED OUT, OR ELSE IT WONT RUN ////////////////////////////

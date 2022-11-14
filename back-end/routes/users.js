@@ -7,7 +7,6 @@ app.use(cors())
 
 const chai = require('chai');
 const expect = chai.expect;
-const assert = chai.assert;
 
 const User = require('../models/User');
 
@@ -39,7 +38,6 @@ router.post('/', (req, res) => {
         year: req.body.year,
         classes: req.body.classes
     });
-    assert.typeOf(user, 'object');
     user.save()
     .then(data => {
         res.json(data);
@@ -64,7 +62,6 @@ router.get('/:userId', async (req, res) => {
 router.delete('/:userId', async (req, res) => {
     try {
         const removedUser = await User.remove({_id: req.params.userId});
-        assert.typeOf(removedUser, 'object');
         res.json(removedUser);
     } catch(err) {
         res.json({message: err});
@@ -78,7 +75,6 @@ router.patch('/:userId', async (req, res) => {
             {_id: req.params.userId},
             {$set: {name: req.body.name}}
         );
-        assert.typeOf(updatedUser, 'object');
         res.json(updatedUser);
     } catch(err) {
         res.json({message: err});
