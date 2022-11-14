@@ -6,7 +6,7 @@ import Courses from "./Components/Courses/Courses";
 import Menu from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import Schedule from "./Components/Schedule/Schedule";
-
+import { expect } from 'chai';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -23,6 +23,12 @@ const App = () => {
       </BrowserRouter> 
   );
 }
+
+// unit tests
+
+expect(App).to.be.a('function');
+
+
 
 //(!user ? <Auth /> : <Navigate replace to="/courses" />)}
 

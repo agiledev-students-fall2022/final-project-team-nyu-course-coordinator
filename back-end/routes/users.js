@@ -5,6 +5,9 @@ const cors = require('cors');
 const app = express()
 app.use(cors())
 
+const chai = require('chai');
+const expect = chai.expect;
+
 const User = require('../models/User');
 
 router.get('/', async (req, res) => {
@@ -12,13 +15,14 @@ router.get('/', async (req, res) => {
     try {
         const users = await User.find({}).exec()
         const data = users.map(u => {
-            return {name: u.name, email:u.email, major: u.major, year: u.year, 
+            return {id: u._id, name: u.name, email:u.email, major: u.major, year: u.year, 
                 classes: u.classes.map (c => {
-                    return{class_id: c.class_id, section_num: c.section_num}
+                    return{section_id: c.section_id}
                 })}
             })
             console.log(data[0].classes[0].class_id)
             res.json(data);
+        
     }
     catch (err) {
         res.json({ message: err });
@@ -51,7 +55,7 @@ router.get('/:userId', async (req, res) => {
         res.json(user);
     } catch(err) {
         res.json({message: err});
-    }   
+    }  
 });
 
 // Delete Post
@@ -61,7 +65,7 @@ router.delete('/:userId', async (req, res) => {
         res.json(removedUser);
     } catch(err) {
         res.json({message: err});
-    }
+    };
 });
 
 // Update Post
@@ -76,5 +80,7 @@ router.patch('/:userId', async (req, res) => {
         res.json({message: err});
     }
 });
+
+
 
 module.exports = router;
