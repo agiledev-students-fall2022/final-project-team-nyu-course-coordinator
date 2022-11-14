@@ -55,15 +55,15 @@ router.get('/:courseId', async (req, res) => {
     }   
 });
 
-// Delete Post
-router.delete('/:courseId', async (req, res) => {
-    try {
-        const removedCourse = await Course.remove({_id: req.params.courseId});
-        res.json(removedCourse);    
-    } catch(err) {
-        res.json({message: err});
-    }
-});
+// // Delete Post
+// router.delete('/:courseId', async (req, res) => {
+//     try {
+//         const removedCourse = await Course.remove({_id: req.params.courseId});
+//         res.json(removedCourse);    
+//     } catch(err) {
+//         res.json({message: err});
+//     }
+// });
 
 
 // Update Post
@@ -90,6 +90,29 @@ router.patch('/:courseId', async (req, res) => {
 });
 
 
+// Update Post
+router.delete('/:courseId', async (req, res) => {
+    console.log("Trying to delete...")
+    // const user= req.params.userID
+    const sectionId= req.params.courseId
+    
+    try {
+        
+        const removingSection= {section_id: sectionId} // an object to add to the array of user.classes
+       
+        // later with userID, find one user with that ID instead of retrieving all users
+        const users = await User.find({}).exec()
+        const schedule = users[0].classes //the array of user.classes
+        console.log(schedule)
+        schedule.pop(removingSection) // updated array of user.classes
+        console.log(schedule)
+        const updatedSchedule= await User.updateOne({_id: users[0]._id},{$set:{"classes":schedule}})
+        
+        res.json(updatedSchedule);
+    } catch(err) {
+        res.json({message: err});
+    }
+});
 
 
 
