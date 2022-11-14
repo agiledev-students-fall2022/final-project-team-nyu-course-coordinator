@@ -114,7 +114,7 @@ router.patch('/:CourseId', async (req, res) => {
             {_id: req.params.CourseId},
             {$set: {name: req.body.name}}
         );
-        const data = courses.map(c => {
+        const data = updatedCourse.map(c => {
             return {id: c._id, name: c.name, isRequired: c.isRequired, sessions: c.sessions.map(s => {
                 return{id: s._id, section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
             })}
