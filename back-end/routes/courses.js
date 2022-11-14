@@ -51,14 +51,6 @@ router.delete('/:courseId', async (req, res) => {
 
 // Update Post
 router.patch('/:courseId', async (req, res) => {
-<<<<<<< Updated upstream
-    try {
-        const updatedCourse = await Course.updateOne(
-            {_id: req.params.courseId},
-            {$set: {name: req.body.name}}
-        );
-        res.json(updatedCourse);
-=======
     console.log("Trying to add...")
     // const user= req.params.userID
     const sectionId= req.params.courseId
@@ -95,14 +87,11 @@ router.patch('/:courseId', async (req, res) => {
         // {_id: req.params.courseId},
         // {$set: {name: req.body.name}}
         // res.json(updatedCourse);
->>>>>>> Stashed changes
     } catch(err) {
         res.json({message: err});
     }
 });
 
-<<<<<<< Updated upstream
-=======
 // router.patch('/:CourseId', async (req, res) => {
 //     try {
 //         const updatedCourse = await Course.updateOne(
@@ -144,5 +133,4 @@ router.patch('/:courseId', async (req, res) => {
 
 
 
->>>>>>> Stashed changes
 module.exports = router;
