@@ -20,6 +20,9 @@ router.get('/', async (req, res) => {
                     return{section_id: c.section_id}
                 })}
             })
+
+
+            // console.log(data[0].classes[0].class_id)
             res.json(data);
         
     }

@@ -135,6 +135,6 @@ const Schedule = () => {
     //   );
     // })};
     // </>
-    
+
 // console.log(users[0].classes[0].section_num)
 export default Schedule;
