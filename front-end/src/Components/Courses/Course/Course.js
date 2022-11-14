@@ -5,9 +5,7 @@ import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
 import axios from 'axios'
-const chai = require('chai');
-const expect = chai.expect;
-const assert = chai.assert;
+
 
 
 const Course = () => {
