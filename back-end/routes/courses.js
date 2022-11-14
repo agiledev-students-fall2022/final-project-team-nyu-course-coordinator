@@ -87,18 +87,19 @@ router.patch('/:courseId', async (req, res) => {
         
         const sections = addingCourse[0].sessions
         const addingSection= sections.filter(section => section._id==sectionId)
-        
-        const addingSectionId = {section_id: addingSection[0]._id.toString()}
+        const addingSectionId = {section_id: addingSection[0]._id.toString()} // an object to add to the array of user.classes
         
         // later with userID, find one user with that ID instead of retrieving all users
         const users = await User.find({}).exec()
-        const schedule = users[0].classes
-        schedule.push(addingSectionId)
+        const schedule = users[0].classes //the array of user.classes
+        schedule.push(addingSectionId) // updated array of user.classes
         console.log(schedule)
-        await User.set({'jj': "Hello World"}).exec()
-        // await User.updateOne({_id: ObjectId("636ed77cfe63d7bf6b544a93")},{$unset:{classes:''}})
-        // {acknowledged, upsertedCount, modifiedCount, matchedCount} = await User.updateOne({'_id': ObjectId("636ed77cfe63d7bf6b544a93")},{$set:{"classes":schedule}})
-        // console.log(acknowledged, upsertedCount, modifiedCount, matchedCount)
+
+        // trying to update existing user.classes but DONT KNOW how to
+        // so attempting to delete the field and add back with new array
+        await User.updateOne({_id: ObjectId("636ed77cfe63d7bf6b544a93")},{$unset:{classes:''}})
+        await User.updateOne({'_id': ObjectId("636ed77cfe63d7bf6b544a93")},{$set:{"classes":schedule}})
+        
         // console.log(user[0].classes)
         // const schedule = await user[0]
         // {_id: req.params.courseId},
