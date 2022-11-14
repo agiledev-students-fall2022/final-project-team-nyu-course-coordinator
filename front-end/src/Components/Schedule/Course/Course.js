@@ -4,20 +4,25 @@ import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react'
 import { getUsers, getCourses } from '../../../actions/courses'
 
-const Course = (schedule) => {
+const Course = (props) => {
   
-  // console.log(schedule)
+  const schedule = props.schedule
+  console.log("schedule",schedule)
 
   return (
     <>
     {schedule.map(section => {
+      console.log(section.name)
       return(
         <>
           <Card className="card">
             <Card.Body>
               <Card.Title>{section.name}</Card.Title>
               <Card.Text>
-                <p>Course time</p>
+                <p>Section {section.section}</p>
+                <p>{section.prof}</p>
+                <p>{section.time}</p>
+                <p>{section.loc}</p>
                 <Button>Remove from schedule</Button>
               </Card.Text>
             </Card.Body>

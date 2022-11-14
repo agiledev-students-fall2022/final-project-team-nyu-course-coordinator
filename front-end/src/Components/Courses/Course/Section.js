@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { addToSchedule } from '../../../api';
@@ -19,6 +19,10 @@ const Section = (session) => {
     setVisible((prev) => !prev)
 
   }
+
+  useEffect(()=>{
+    
+  },[])
 
   
 
