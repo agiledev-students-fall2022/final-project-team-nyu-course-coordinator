@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
                 return{id: s._id, section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
             })}
         })
+        console.log(data)
         res.json(data)
     }
     catch (err) {

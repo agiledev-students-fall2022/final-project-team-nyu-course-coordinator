@@ -7,8 +7,6 @@ app.use(cors())
 require('dotenv/config');
 app.use(bodyParser.json());
 
-
-
 // Import Routes
 const courseRoute = require('./routes/courses');
 const userRoute = require('./routes/users');

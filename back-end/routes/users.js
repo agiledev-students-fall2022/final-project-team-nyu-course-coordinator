@@ -11,7 +11,7 @@ const expect = chai.expect;
 const User = require('../models/User');
 
 router.get('/', async (req, res) => {
-    console.log('get users');
+    console.log('getting users...');
     try {
         const users = await User.find({}).exec()
         const data = users.map(u => {
@@ -20,7 +20,9 @@ router.get('/', async (req, res) => {
                     return{section_id: c.section_id}
                 })}
             })
-            console.log(data[0].classes[0].class_id)
+
+
+            // console.log(data[0].classes[0].class_id)
             res.json(data);
         
     }
