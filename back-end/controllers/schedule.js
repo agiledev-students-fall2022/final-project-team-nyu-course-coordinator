@@ -13,6 +13,7 @@ export const addToSchedule = async (req, res) => {
 }
 
 export const removeFromSchedule = async (req, res) => {
+  console.log("removing!!")
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No course with id: ${id}`);
   const updatedCourse = await Course.findByIdAndUpdate(id, { schedule: false }, { new: true });

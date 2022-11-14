@@ -5,8 +5,19 @@ const Course = require('../models/Course');
 
 router.get('/', async (req, res) => {
     try {
+<<<<<<< Updated upstream
         const courses = await Course.find();
         res.json(courses);
+=======
+        const courses = await Course.find({}).exec()
+        const data = courses.map(c => {
+            return {id: c._id, name: c.name, isRequired: c.isRequired, sessions: c.sessions.map(s => {
+                return{id: s._id, section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
+            })}
+        })
+        // console.log(data)
+        res.json(data)
+>>>>>>> Stashed changes
     }
     catch (err) {
         res.json({ message: err });
@@ -92,6 +103,7 @@ router.patch('/:courseId', async (req, res) => {
     }
 });
 
+<<<<<<< Updated upstream
 // router.patch('/:CourseId', async (req, res) => {
 //     try {
 //         const updatedCourse = await Course.updateOne(
@@ -129,6 +141,38 @@ router.patch('/:courseId', async (req, res) => {
 // assert.typeOf(router.get('/:courseId'), 'function', 'router.get is a function');
 // assert.typeOf(router.delete('/:courseId'), 'function', 'router.delete is a function');
 // assert.typeOf(router.patch('/:courseId'), 'function', 'router.patch is a function');
+=======
+router.delete('/:courseId', async (req, res) => {
+    console.log("Trying to remove...")
+    // const user= req.params.userID
+    const sectionId= req.params.courseId
+    
+    try {
+        
+        const removingSection= {section_id: sectionId} // an object to add to the array of user.classes
+       
+        // later with userID, find one user with that ID instead of retrieving all users
+        const users = await User.find({}).exec()
+        const schedule = users[0].classes //the array of user.classes
+        // remove the section from the array
+        const index = schedule.indexOf(removingSection)
+        // traverse and pop
+        if (index > -1) {
+            schedule.splice(index, 1);
+        }
+
+        console.log(schedule);
+        const updatedSchedule= await User.updateOne({_id: users[0]._id},{$set:{"classes":schedule}})
+        
+        res.json(updatedSchedule);
+    } catch(err) {
+        res.json({message: err});
+    }
+});
+
+
+
+>>>>>>> Stashed changes
 
 
 

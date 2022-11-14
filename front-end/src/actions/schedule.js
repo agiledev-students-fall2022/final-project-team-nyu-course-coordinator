@@ -12,7 +12,8 @@ export const addToSchedule = (id) => async (dispatch) => {
 export const removeFromSchedule = (id) => async (dispatch) => {
   try {
     await api.removeFromSchedule(id);
-    dispatch({ type: 'REMOVE_FROM_SCHEDULE', payload: id });
+    return (data)
+    // dispatch({ type: 'REMOVE_FROM_SCHEDULE', payload: id });
   } catch (error) {
     console.log(error);
   }
