@@ -53,64 +53,90 @@ router.get('/:courseId', async (req, res) => {
     } catch(err) {
         res.json({message: err});
     }   
-    // assert.typeOf(course, 'object');
-    // assert.typeOf(course.name, 'string');
 });
 
 // Delete Post
 router.delete('/:courseId', async (req, res) => {
     try {
         const removedCourse = await Course.remove({_id: req.params.courseId});
-        res.json(removedCourse);
+        res.json(removedCourse);    
     } catch(err) {
         res.json({message: err});
     }
-    // assert.equal(removedCourse.isRemoved, true);
 });
+
 
 // Update Post
-router.patch('/:courseId', async (req, res) => {
-    console.log("Trying to add...")
-    // const user= req.params.userID
-    const sectionId= req.params.courseId
+// router.patch('/:courseId', async (req, res) => {
+//     console.log("Trying to add...")
+//     // const user= req.params.userID
+//     const sectionId= req.params.courseId
     
-    try {
-        const addingCourse = await Course.find({'sessions.prof':"Amanda Steigman"},{
-            'sessions._id':1,
-            'sessions.section':1,
-            'sessions.prof':1,
-            'sessions.day':1,
-            'sessions.time':1,
-            'sessions.time2':1,
-            'sessions.loc':1,
-        }).exec()
+//     try {
+//         const addingCourse = await Course.find({'sessions.prof':"Amanda Steigman"},{
+//             'sessions._id':1,
+//             'sessions.section':1,
+//             'sessions.prof':1,
+//             'sessions.day':1,
+//             'sessions.time':1,
+//             'sessions.time2':1,
+//             'sessions.loc':1,
+//         }).exec()
         
-        const sections = addingCourse[0].sessions
-        const addingSection= sections.filter(section => section._id==sectionId)
-        const addingSectionId = {section_id: addingSection[0]._id.toString()} // an object to add to the array of user.classes
+//         const sections = addingCourse[0].sessions
+//         const addingSection= sections.filter(section => section._id==sectionId)
+//         const addingSectionId = {section_id: addingSection[0]._id.toString()} // an object to add to the array of user.classes
         
-        // later with userID, find one user with that ID instead of retrieving all users
-        const users = await User.find({}).exec()
-        const schedule = users[0].classes //the array of user.classes
-        schedule.push(addingSectionId) // updated array of user.classes
-        console.log(schedule)
+//         // later with userID, find one user with that ID instead of retrieving all users
+//         const users = await User.find({}).exec()
+//         const schedule = users[0].classes //the array of user.classes
+//         schedule.push(addingSectionId) // updated array of user.classes
+//         console.log(schedule)
 
-        // trying to update existing user.classes but DONT KNOW how to
-        // so attempting to delete the field and add back with new array
-        const updatedSchedule= await User.updateOne({_id: ObjectId("636ed77cfe63d7bf6b544a93")},{$set:{classes:schedule}})
-        console.log(updatedSchedule)
-        // await User.updateOne({'_id': ObjectId("636ed77cfe63d7bf6b544a93")},{$set:{"classes":schedule}})
+//         // trying to update existing user.classes but DONT KNOW how to
+//         // so attempting to delete the field and add back with new array
+//         await User.updateOne({_id: ObjectId("636ed77cfe63d7bf6b544a93")},{$unset:{"classes":''}})
+//         await User.updateOne({'_id': ObjectId("636ed77cfe63d7bf6b544a93")},{$set:{"classes":schedule}})
         
-        // console.log(user[0].classes)
-        // const schedule = await user[0]
-        // {_id: req.params.courseId},
-        // {$set: {name: req.body.name}}
-        // res.json(updatedCourse);
+//         // console.log(user[0].classes)
+//         // const schedule = await user[0]
+//         // {_id: req.params.courseId},
+//         // {$set: {name: req.body.name}}
+//         // res.json(updatedCourse);
+//     } catch(err) {
+//         res.json({message: err});
+//     }
+// });
+
+router.patch('/:CourseId', async (req, res) => {
+    try {
+        const updatedCourse = await Course.updateOne(
+            {_id: req.params.CourseId},
+            {$set: {name: req.body.name}}
+        );
+        const data = updatedCourse.map(c => {
+            return {id: c._id, name: c.name, isRequired: c.isRequired, sessions: c.sessions.map(s => {
+                return{id: s._id, section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
+            })}
+        })
+        res.json(data);
     } catch(err) {
         res.json({message: err});
     }
-    // assert.equal(updatedCourse.n, 1); 
 });
+
+// router.patch('/:CourseId', async (req, res) => {
+//     try {
+//         const updatedUser = await User.updateOne(
+//             {_id: req.params.userId},
+//             {$set: {name: req.body.name}}
+//         );
+//         assert.typeOf(updatedUser, 'object');
+//         res.json(updatedUser);
+//     } catch(err) {
+//         res.json({message: err});
+//     }
+// });
 
 // other unit tests
 // assert.typeOf(router, 'function', 'router is a function');
