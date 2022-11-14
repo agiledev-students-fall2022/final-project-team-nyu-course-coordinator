@@ -2,6 +2,9 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { addToSchedule } from '../../../api';
+const chai = require('chai');
+const expect = chai.expect;
+const assert = chai.assert;
 
 const Section = (session) => {
 
@@ -17,6 +20,15 @@ const Section = (session) => {
     console.log(section.id)
     addToSchedule(section.id)
   }
+
+  // unit tests
+  assert.typeOf(Section, 'function');
+  assert.typeOf(num, 'number');
+  assert.typeOf(prof, 'string');
+  assert.typeOf(day, 'object');
+  assert.typeOf(time, 'string');
+  assert.typeOf(loc, 'string');
+
   return (
     <>
     <Card>
@@ -35,5 +47,4 @@ const Section = (session) => {
     </>
   )
 }
-
 export default Section;

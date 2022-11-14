@@ -5,6 +5,10 @@ const cors = require('cors');
 const app = express()
 app.use(cors())
 
+const chai = require('chai');
+const expect = chai.expect;
+const assert = chai.assert;
+
 const User = require('../models/User');
 
 router.get('/', async (req, res) => {
@@ -23,6 +27,14 @@ router.get('/', async (req, res) => {
     catch (err) {
         res.json({ message: err });
     }
+    assert.typeOf(users, 'object');
+    assert.typeOf(users.name, 'string');
+    assert.typeOf(users.email, 'string');
+    assert.typeOf(users.major, 'string');
+    assert.typeOf(users.year, 'number');
+    assert.typeOf(users.classes, 'object');
+    assert.typeOf(users.classes.class_id, 'string');
+    assert.typeOf(users.classes.section_num, 'number');
 });
 
 router.post('/', (req, res) => {
@@ -41,6 +53,7 @@ router.post('/', (req, res) => {
     .catch(err => {
         res.json({message: err});
     });
+    assert.typeOf(user, 'object');
 });
 
 // Specific Post
@@ -52,6 +65,7 @@ router.get('/:userId', async (req, res) => {
     } catch(err) {
         res.json({message: err});
     }   
+    assert.typeOf(user, 'object');
 });
 
 // Delete Post
@@ -62,6 +76,8 @@ router.delete('/:userId', async (req, res) => {
     } catch(err) {
         res.json({message: err});
     }
+    assert.typeOf(removedUser, 'object');
+    assert.typeOf(removedUser.name, 'string');
 });
 
 // Update Post
@@ -75,6 +91,16 @@ router.patch('/:userId', async (req, res) => {
     } catch(err) {
         res.json({message: err});
     }
+    assert.typeOf(updatedUser, 'object');
 });
+
+// other unit tests
+assert.typeOf(router, 'function', 'router is a function');
+assert.typeOf(router.get, 'function', 'router.get is a function');
+assert.typeOf(router.post, 'function', 'router.post is a function');
+assert.typeOf(router.get('/:userId'), 'function', 'router.get is a function');
+assert.typeOf(router.delete('/:userId'), 'function', 'router.delete is a function');
+assert.typeOf(router.patch('/:userId'), 'function', 'router.patch is a function');
+
 
 module.exports = router;

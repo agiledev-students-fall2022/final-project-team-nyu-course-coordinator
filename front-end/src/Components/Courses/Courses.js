@@ -3,6 +3,9 @@ import React from 'react';
 import Course from './Course/Course';
 import Container from 'react-bootstrap/Container';
 import './styles.css';
+const chai = require('chai');
+const expect = chai.expect;
+const assert = chai.assert;
 
 
 const Courses = () => {
@@ -14,5 +17,9 @@ const Courses = () => {
     </Container>
   );
 }
+
+// unit tests
+assert.typeOf(Courses, 'function');
+assert.typeOf(Course, 'function');
 
 export default Courses;

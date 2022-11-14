@@ -5,6 +5,9 @@ import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
 import axios from 'axios'
+const chai = require('chai');
+const expect = chai.expect;
+const assert = chai.assert;
 
 
 const Course = () => {
@@ -34,6 +37,21 @@ const Course = () => {
     }
   }
 
+  // unit tests
+assert.typeOf(Course, 'function');
+assert.typeOf(Requirement, 'function');
+assert.typeOf(cart, 'array');
+assert.typeOf(cart.name, 'string');
+assert.typeOf(cart.isRequired, 'boolean');
+assert.typeOf(cart.sessions, 'array');
+assert.typeOf(cart.sessions.section, 'number');
+assert.typeOf(cart.sessions.prof, 'string');
+assert.typeOf(cart.sessions.day, 'object');
+assert.typeOf(cart.sessions.time, 'string');
+assert.typeOf(cart.sessions.time2, 'number');
+
+
+
 
   return (
     <>
@@ -55,13 +73,10 @@ const Course = () => {
           </Card>
           </>
         )
-        
-        
       })}
     </>
-    
-
   )
+
 
 
 }
