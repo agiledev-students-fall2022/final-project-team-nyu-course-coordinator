@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const chai = require('chai');
+const expect = chai.expect;
+
 
 const User = new mongoose.Schema({
     name: {type: String, required: true},
@@ -10,9 +13,9 @@ const User = new mongoose.Schema({
     }],
 });
 
-module.exports = mongoose.model('Users', User);
+module.exports = mongoose.model('User', User);
 
-
+// unit tests
 
 
 

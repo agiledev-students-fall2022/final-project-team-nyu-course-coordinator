@@ -5,6 +5,7 @@ import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
 
+
 const Course = () => {
   let [cart, setCart] = useState([])
   
@@ -49,13 +50,10 @@ const Course = () => {
           </Card>
           </>
         )
-        
-        
       })}
     </>
-    
-
   )
+
 
 
 }

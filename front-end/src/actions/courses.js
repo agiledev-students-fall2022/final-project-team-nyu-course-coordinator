@@ -69,7 +69,7 @@ export const getUsers = async () => {
   // .then(res => {
   //   console.log("hello")
   //   console.log("DATA",res.data)
-  console.log("getUsers", data)
+  console.log("getUsers", data[0].classes[0])
   return(data)
     // dispatch({ type: 'FETCH_ALL', payload: data })
   }

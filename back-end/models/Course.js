@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const chai = require('chai');
+const expect = chai.expect;
+const assert = chai.assert;
 
 
 const Course = new mongoose.Schema({
@@ -14,10 +17,17 @@ const Course = new mongoose.Schema({
       time: {type: String, required: true},
       time2: {type: Number, required: true},  
       loc: {type: String, required :true},
-      }]
+      }, {_id: true}]
 }, {
   _id: true
 });
+
+// unit tests
+// assert.typeOf(Course, 'object');
+
+
+
+
 
 module.exports = mongoose.model('Course', Course);
 
