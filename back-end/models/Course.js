@@ -23,7 +23,7 @@ const Course = new mongoose.Schema({
 });
 
 // unit tests
-assert.typeOf(Course, 'object');
+// assert.typeOf(Course, 'object');
 
 
 
