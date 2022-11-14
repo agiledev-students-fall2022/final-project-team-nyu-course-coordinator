@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux';
 const Course = (props) => {
   
   const schedule = props.schedule
-  console.log("schedule",schedule)
 
   return (
     <>
