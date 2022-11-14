@@ -108,13 +108,13 @@ const Schedule = () => {
               <h2>Monday</h2>
               <Course schedule={mon}/>
               <h2>Tuesday</h2>
-              {/* <Course schedule={tue}/> */}
+              <Course schedule={tue}/>
               <h2>Wednesday</h2>
-              {/* <Course schedule={wed}/> */}
+              <Course schedule={wed}/>
               <h2>Thursday</h2>
-              {/* <Course schedule={thu}/> */}
+              <Course schedule={thu}/>
               <h2>Friday</h2>
-              {/* <Course schedule={fri}/> */}
+              <Course schedule={fri}/>
             </Container>
             </div>
         </>
