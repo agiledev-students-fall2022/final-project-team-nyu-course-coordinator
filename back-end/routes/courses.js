@@ -104,8 +104,12 @@ router.delete('/:courseId', async (req, res) => {
         const users = await User.find({}).exec()
         const schedule = users[0].classes //the array of user.classes
         console.log(schedule)
-        schedule.pop(removingSection) // updated array of user.classes
-        console.log(schedule)
+        // traverse the array and find the index of the object to remove
+        for (let i=0; i<schedule.length; i++){
+            if (schedule[i].section_id===sectionId){
+                schedule.splice(i,1)
+            }
+        }
         const updatedSchedule= await User.updateOne({_id: users[0]._id},{$set:{"classes":schedule}})
         
         res.json(updatedSchedule);

@@ -76,6 +76,8 @@ const Schedule = () => {
   // mon = an array of sections happening on mondays
   const Split =() =>{
     Compare()
+  
+
     display.map(section => {
       if (section.day.includes("Mon") && !mon.includes(section)){
         mon.push(section)
@@ -100,6 +102,7 @@ const Schedule = () => {
   
 
   return (
+    
         <>
             <div className="container" >
             <Container className="container">
