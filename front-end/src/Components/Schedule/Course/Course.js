@@ -25,18 +25,18 @@ const Course = (props) => {
     {schedule.map(section => {
       return(
         <>
-          <Card className="card">
+        {visible &&   <Card className="card">
             <Card.Body>
               <Card.Title>{section.name}</Card.Title>
               <Card.Text>
-                <p>Section {section.section}</p>
-                <p>{section.prof}</p>
-                <p>{section.time}</p>
-                <p>{section.loc}</p>
+              {visible && <p>Section {section.section}</p>}
+              {visible && <p>{section.prof}</p> }
+              {visible &&  <p>{section.time}</p> }
+              {visible &&  <p>{section.loc}</p>}
               </Card.Text>
               {visible && <Button variant="primary" onClick= {() => handleRemove(section)}>Remove from Schedule</Button>}
             </Card.Body>
-          </Card>
+          </Card> }
         </>
       )
     })}
