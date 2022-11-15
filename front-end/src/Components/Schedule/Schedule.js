@@ -99,7 +99,6 @@ const Schedule = () => {
   Split()
   
 
-  // if any of the <Course> is not commented, getUsers() and getCourses() won't await
   return (
         <>
             <div className="container" >
