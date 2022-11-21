@@ -10,15 +10,13 @@ import RemoveClassPopup from '../../RemoveClassPopup'
 const Course = (props) => {
   const schedule = props.schedule
   const [visible, setVisible] = useState(true)
-  const handleRemove = (section) =>{
-    // const userid ="636ed77cfe63d7bf6b544a93"
-    // console.log(section.id)
-    removeFromSchedule(section.id)
-    setVisible((prev) => !prev)
-    RemoveClassPopup()
-  }
 
-
+  // const handleRemove = (section) =>{
+  //   // const userid ="636ed77cfe63d7bf6b544a93"
+  //   // console.log(section.id)
+  //   removeFromSchedule(section.id)
+  //   setVisible((prev) => !prev)
+  // }
 
   return (
     <>
@@ -34,9 +32,10 @@ const Course = (props) => {
               {visible &&  <p>{section.time}</p> }
               {visible &&  <p>{section.loc}</p>}
               </Card.Text>
-              {visible && <Button variant="primary" onClick= {() => handleRemove(section)}>Remove from Schedule</Button>}
+              {/* {visible && <Button variant="primary" onClick= {() => handleRemove(section)}>Remove from Schedule</Button>} */}
+              <RemoveClassPopup section = {section} setVisible = {setVisible}></RemoveClassPopup>
             </Card.Body>
-          </Card> }
+          </Card>}
         </>
       )
     })}
