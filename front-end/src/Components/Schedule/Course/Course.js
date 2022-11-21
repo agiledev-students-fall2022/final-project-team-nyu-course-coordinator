@@ -23,14 +23,13 @@ const Course = (props) => {
 
 
   const isConflicting = () => {
-    let prev = {}
     schedule.map(section => {
-      // section.conflicting = false
-      if (prev.time === section.time){
-        prev.conflicting = true
-        section.conflicting = true
-      }
-      prev=section
+      schedule.map(compare => {
+        if (section.time === compare.time && compare!==section){
+          compare.conflicting = true
+          section.conflicting = true
+        }
+      })
     })
   }
 
