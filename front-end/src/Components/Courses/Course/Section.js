@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { addToSchedule } from '../../../api';
-import { getUsers } from '../../../actions/courses'; 
+// import { addToSchedule } from '../../../api';
+import  { getUsers }  from '../../../actions/courses.js'; 
 import AddClassPopup from '../../AddClassPopup'
 
 const Section = (session) => { 
   const [users, setUsers] = useState([])
-  const [visible, setVisible] = useState(true)
-  const schedule =[]
+
+  // const [visible, setVisible] = useState(true)
+  // const schedule =[]
   const section = session.info
   const num = session.info.section
   const prof= session.info.prof
@@ -50,17 +51,8 @@ const Section = (session) => {
   // }
 
 
-  const handleAdd= (section) =>{
-    // const userid ="636ed77cfe63d7bf6b544a93"
-    console.log(section.id)
-    addToSchedule(section.id)
-    setVisible((prev) => !prev)
-    AddClassPopup()
-  }
-
 
   return (
-    
     <>
     {/* {initializeAdd()} */}
     <Card>
@@ -73,7 +65,8 @@ const Section = (session) => {
           <p>Location: {loc}</p>
           
         </Card.Text>
-        {visible && (<Button variant="primary" onClick= {() => handleAdd(section)}>Add to Schedule</Button>)}
+        {/* {visible && (<Button variant="primary" onClick= {() => handleAdd(section)}>Add to Schedule</Button>)} */}
+        {AddClassPopup(section)}
       </Card.Body>
     </Card>
     </>
