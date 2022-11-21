@@ -5,3 +5,10 @@
 .title {
   margin-top: 50px;
 }
+
+/* setting padding will allow the color to show up for all sections */
+#warning{
+  border-radius: 15px;
+  background-color: #c20a0a;
+  color: white;
+}
