@@ -42,6 +42,7 @@ const Schedule = () => {
   const Schedule = () => {
     return(
     users.map(user => { 
+      console.log(users)
       user.classes.map(section => {
         schedule.push(section.section_id)
       })
@@ -59,6 +60,7 @@ const Schedule = () => {
     })
   }
 
+
   // display= array of sections that shoudld be displayed
   const Compare = () => {
     Schedule()
@@ -74,7 +76,7 @@ const Schedule = () => {
 
   // split display by days in the week
   // mon = an array of sections happening on mondays
-  const Split =() =>{
+  const Split = () =>{
     Compare()
   
 
