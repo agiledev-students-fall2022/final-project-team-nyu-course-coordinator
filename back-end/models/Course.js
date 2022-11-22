@@ -7,6 +7,7 @@ const assert = chai.assert;
 const Course = new mongoose.Schema({
   name: {type: String, required: true},
   isRequired: {type: Boolean, required: true},
+  prereqs: {type: String, required: true},
   sessions: [{
       section: {type: Number, required: true},
       prof: {type: String, required: true},

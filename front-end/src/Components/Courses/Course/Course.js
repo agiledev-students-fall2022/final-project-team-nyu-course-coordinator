@@ -40,6 +40,7 @@ const Course = () => {
               <Card.Title>{course.name}</Card.Title>
               <Card.Text className="sectionInfo">
               <p> <Requirement isRequired={course.isRequired}/></p>
+              <p> {course.prereqs} </p>
               </Card.Text>
               {course.sessions.map((session, i)=>{
                 return(
