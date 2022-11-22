@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     try {
         const courses = await Course.find({}).exec()
         const data = courses.map(c => {
-            return {id: c._id, name: c.name, isRequired: c.isRequired, sessions: c.sessions.map(s => {
+            return {id: c._id, name: c.name, isRequired: c.isRequired, prereqs: c.prereqs, sessions: c.sessions.map(s => {
                 return{id: s._id, section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
             })}
         })
@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
     const course = new Course({
         name: req.body.name,
         isRequired: req.body.isRequired,
-        isPrerqSat: req.body.isPrerqSat,
+        prereqs: req.body.prereqs,
         sessions: req.body.sessions
     });
     course.save()
