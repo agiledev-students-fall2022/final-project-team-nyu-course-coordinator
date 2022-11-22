@@ -78,3 +78,10 @@ export const getUsers = async () => {
     console.log("This is an error")
   }
 }
+
+// export default getUsers;
+
+// module.exports = {
+//   getUsers,
+//   getCourses,
+// }

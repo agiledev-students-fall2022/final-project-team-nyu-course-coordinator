@@ -13,15 +13,6 @@ const Course = (props) => {
   const [visible, setVisible] = useState(true)
 
 
-  const handleRemove = (section) =>{
-    // const userid ="636ed77cfe63d7bf6b544a93"
-    // console.log(section.id)
-    removeFromSchedule(section.id)
-    setVisible((prev) => !prev)
-    RemoveClassPopup()
-  }
-
-
   const isConflicting = () => {
     schedule.map(section => {
       schedule.map(compare => {
@@ -43,6 +34,13 @@ const Course = (props) => {
 
   isConflicting()
 
+  // const handleRemove = (section) =>{
+  //   // const userid ="636ed77cfe63d7bf6b544a93"
+  //   // console.log(section.id)
+  //   removeFromSchedule(section.id)
+  //   setVisible((prev) => !prev)
+  // }
+
   return (
     <>
     {schedule.map(section => {
@@ -58,9 +56,10 @@ const Course = (props) => {
               {visible &&  <p>{section.loc}</p>}
               {visible &&  <p id="warning"> <AlertConflict conflicting={section.conflicting}/> </p>}
               </Card.Text>
-              {visible && <Button variant="primary" onClick= {() => handleRemove(section)}>Remove from Schedule</Button>}
+              {/* {visible && <Button variant="primary" onClick= {() => handleRemove(section)}>Remove from Schedule</Button>} */}
+              <RemoveClassPopup section = {section} setVisible = {setVisible}></RemoveClassPopup>
             </Card.Body>
-          </Card> }
+          </Card>}
         </>
       )
     })}
