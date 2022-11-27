@@ -83,6 +83,13 @@ router.patch('/:userId', async (req, res) => {
     }
 });
 
+const signin = require('../controllers/user.js');
+const signup = require('../controllers/user.js');
+
+router.post('/signin', 
+    signin.signin);
+router.post('/signup', 
+    signup.signup);
 
 
 module.exports = router;

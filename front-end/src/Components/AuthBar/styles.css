@@ -1,0 +1,7 @@
+.nav-link {
+  font-size:1em;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
