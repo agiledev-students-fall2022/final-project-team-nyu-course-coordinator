@@ -1,6 +1,6 @@
 import * as api from '../api/index.js';
-import axios from "axios"
-import {useDispatch} from 'react-redux'
+// import axios from "axios"
+// import {useDispatch} from 'react-redux'
 
 // action creators
 export const getCourses = async () => {
