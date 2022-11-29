@@ -1,11 +1,11 @@
-import Course from '../models/course';
-import express from 'express';
-import mongoose from 'mongoose';
+const Course = require('../models/Course');
+const express = require('express');
+const mongoose = require('mongoose');
 
 const router = express.Router();
 
 // shows all major courses
-export const getCourses = async (req, res) => {
+const getCourses = async (req, res) => {
   try {
     const courses = await Course.find();
     res.status(200).json(courses);
@@ -15,7 +15,7 @@ export const getCourses = async (req, res) => {
 }
 
 // shows specific major course
-export const getCourse = async (req, res) => {
+const getCourse = async (req, res) => {
   const { id } = req.params;
   try {
     const course = await Course.findById(id);
@@ -46,7 +46,7 @@ export const getCourse = async (req, res) => {
 // }
 
 // changes the section of a course
-export const changeSection = async (req, res) => {
+const changeSection = async (req, res) => {
   const { id } = req.params;
   const { section } = req.body;
   if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No course with id: ${id}`);
@@ -54,3 +54,8 @@ export const changeSection = async (req, res) => {
   res.json(updatedCourse);
 }
 
+module.exports = {
+  getCourses,
+  getCourse,
+  changeSection 
+}

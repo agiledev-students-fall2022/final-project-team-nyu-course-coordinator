@@ -1,9 +1,10 @@
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 
-import User from '../models/user.js';
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
-export const signin = async (req, res) => {
+const User = require('../models/User.js');
+
+const signin = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -22,17 +23,14 @@ export const signin = async (req, res) => {
   }
 }
 
-export const signup = async (req, res) => {
-  const { email, password, confirmPassword, firstName, lastName } = req.body;
+const signup = async (req, res) => {
+  const { email, password, firstName, lastName } = req.body;
 
   try {
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
       return res.status(400).json({ message: "User already exists." });
-    }
-    if (password !== confirmPassword) {
-      return res.status(400).json({ message: "Passwords don't match." });
     }
     const hashedPassword = await bcrypt.hash(password, 12);
     const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}` });
@@ -43,4 +41,9 @@ export const signup = async (req, res) => {
 
     console.log(error);
   }
+}
+
+module.exports = {
+  signin,
+  signup
 }

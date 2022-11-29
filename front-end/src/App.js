@@ -6,13 +6,17 @@ import Courses from "./Components/Courses/Courses";
 import Menu from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import Schedule from "./Components/Schedule/Schedule";
+import AuthBar from "./Components/AuthBar/AuthBar";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { expect } from 'chai';
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
   return (
+    <GoogleOAuthProvider clientId="261702453032-hhor34vsg5ufh7bnn99upoi5ph6e980v.apps.googleusercontent.com">
       <BrowserRouter>
       <Menu />
+      <AuthBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile/>} />
@@ -21,6 +25,7 @@ const App = () => {
           <Route path="/schedule" element={<Schedule />} />
         </Routes>
       </BrowserRouter> 
+    </GoogleOAuthProvider>
   );
 }
 
