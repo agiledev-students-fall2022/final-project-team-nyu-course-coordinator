@@ -7,6 +7,7 @@ app.use(cors())
 
 const chai = require('chai');
 const expect = chai.expect;
+const {body, validationResult} = require('express-validator')
 
 const User = require('../models/User');
 
@@ -31,22 +32,33 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', (req, res) => {
-    console.log('post user');
-    const user = new User({
-        name: req.body.name,
-        email: req.body.email,
-        major: req.body.major,
-        year: req.body.year,
-        classes: req.body.classes
-    });
-    user.save()
-    .then(data => {
-        res.json(data);
-    })
-    .catch(err => {
-        res.json({message: err});
-    });
+router.post('/', 
+    body('name').notEmpty().isString(),
+    body('email').isEmail(),
+    body('major').notEmpty(),
+    body('year').notEmpty(),
+    body('classes').notEmpty(),
+    (req, res) => {
+        const errors = validationResult(req)
+        if (!errors.isEmpty()){
+            return res.status(400).json({errors: errors.array()})
+        }
+
+        console.log('sign up user')
+        const user = new User({
+            name: req.body.name,
+            email: req.body.email,
+            major: req.body.major,
+            year: req.body.year,
+            classes: req.body.classes
+        })
+        user.save()
+        .then(data => {
+            res.json(data);
+        })
+        .catch(err => {
+            res.json({message: err});
+        });
 });
 
 // Specific Post
