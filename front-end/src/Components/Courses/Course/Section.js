@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import Card from 'react-bootstrap/Card';
 // import { addToSchedule } from '../../../api';
 import  { getUsers }  from '../../../actions/courses.js'; 
-import AddClassPopup from '../../AddClassPopup'
+import AddClassPopup from './AddClassPopup'
 
 const Section = (session) => { 
   const [users, setUsers] = useState([])
