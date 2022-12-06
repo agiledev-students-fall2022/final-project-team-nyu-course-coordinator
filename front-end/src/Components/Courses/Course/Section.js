@@ -1,15 +1,11 @@
-import React, {useState, useEffect} from 'react';
-// import Button from 'react-bootstrap/Button';
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
-// import { addToSchedule } from '../../../api';
 import  { getUsers }  from '../../../actions/courses.js'; 
 import AddClassPopup from './AddClassPopup'
 
 const Section = (session) => { 
-  const [users, setUsers] = useState([])
+  const [setUsers] = useState([])
 
-  // const [visible, setVisible] = useState(true)
-  // const schedule =[]
   const section = session.info
   const num = session.info.section
   const prof= session.info.prof
@@ -24,37 +20,10 @@ const Section = (session) => {
       setUsers(result)
     }
     fetchUsers()
-  }, [])
-
-
-  // const Schedule = () => {
-  //   return(
-  //   users.map(user => { 
-  //     user.classes.map(section => {
-  //       schedule.push(section.section_id)
-  //     })
-  //   })
-  //   )
-  // }
-
-  // const initializeAdd = () => {
-  //   Schedule()
-  //   // console.log("sche", schedule)
-  //   schedule.map(s => {
-  //     if (s===section.id){
-  //       console.log("Comparing with: ",section.id)
-  //       setVisible(false)
-  //     } else {
-  //       setVisible(true)
-  //     }
-  //   })
-  // }
-
-
+  }, [setUsers])
 
   return (
     <>
-    {/* {initializeAdd()} */}
     <Card>
       <Card.Body>
         <Card.Title>Section {num}</Card.Title>

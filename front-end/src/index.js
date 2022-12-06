@@ -19,4 +19,4 @@ root.render(
       <App />
     </Provider>
   </StrictMode>,
-);
+)
