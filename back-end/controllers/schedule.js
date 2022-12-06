@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 
+// add course to schedule
 const addToSchedule = async (req, res) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No course with id: ${id}`);
@@ -9,6 +10,7 @@ const addToSchedule = async (req, res) => {
   res.json(updatedCourse);
 }
 
+// remove course from schedule
 const removeFromSchedule = async (req, res) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No course with id: ${id}`);

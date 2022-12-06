@@ -1,9 +1,9 @@
-
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/User.js');
 
+// validate existing user
 const signin = async (req, res) => {
   const { email, password } = req.body;
 
@@ -23,6 +23,7 @@ const signin = async (req, res) => {
   }
 }
 
+// add new user
 const signup = async (req, res) => {
   const { email, password, firstName, lastName } = req.body;
 

@@ -11,7 +11,7 @@ app.use(cors())
 const chai = require('chai');
 const expect = chai.expect;
 
-
+// get all courses
 router.get('/', async (req, res) => {
     console.log("server reached")
     try {
@@ -29,6 +29,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// add a new course
 router.post('/', (req, res) => {
     const course = new Course({
         name: req.body.name,
@@ -45,7 +46,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// Specific Post
+// get a specific course based on id
 router.get('/:courseId', async (req, res) => {
     try {
         const course = await Course.findById(req.params.courseId);
@@ -55,18 +56,7 @@ router.get('/:courseId', async (req, res) => {
     }   
 });
 
-// // Delete Post
-// router.delete('/:courseId', async (req, res) => {
-//     try {
-//         const removedCourse = await Course.remove({_id: req.params.courseId});
-//         res.json(removedCourse);    
-//     } catch(err) {
-//         res.json({message: err});
-//     }
-// });
-
-
-// Update Post
+// update an existing course
 router.patch('/:courseId', async (req, res) => {
     console.log("Trying to add...")
     // const user= req.params.userID
@@ -90,7 +80,7 @@ router.patch('/:courseId', async (req, res) => {
 });
 
 
-// Update Post
+// delete a course from a user's schedule
 router.delete('/:courseId', async (req, res) => {
     console.log("Trying to delete...")
     // const user= req.params.userID
@@ -117,11 +107,5 @@ router.delete('/:courseId', async (req, res) => {
         res.json({message: err});
     }
 });
-
-
-
-
-
-
 
 module.exports = router;
