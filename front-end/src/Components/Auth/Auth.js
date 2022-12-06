@@ -6,6 +6,7 @@ import Input from './Input';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { GoogleLogin } from '@react-oauth/google';
+import Form from 'react-bootstrap/Form';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '' };
 
@@ -59,6 +60,27 @@ const Auth = () => {
                 <>
                   <Input name="firstName" label="First Name" handleChange={handleChange} half/>
                   <Input name="lastName" label="Last Name" handleChange={handleChange} half/>
+                  {['checkbox'].map((type) => (
+                    <div key={`default-${type}`} className="mb-3">
+                      <Form.Check
+                        label={`default ${type}`}
+                        name="group1"
+                        id={`default-${type}`}
+                        type={type}
+                      />
+                      <Form.Check
+                        label={`default ${type}`}
+                        name="group1"
+                        type={type}
+                        id={`default-${type}`}
+                      />
+                      <Form.Check
+                        label={`default ${type}`}
+                        type={type}
+                        id={`default-${type}`}
+                      />
+                    </div>
+                  ))}
                 </>
             )}
             <Input name="email" label="Email Address" handleChange={handleChange} type="email" />

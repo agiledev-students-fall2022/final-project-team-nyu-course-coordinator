@@ -21,3 +21,9 @@
   align-items: center;
   flex-direction: column;
 }
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
