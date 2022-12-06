@@ -110,7 +110,7 @@ const Schedule = () => {
     
         <>
             <div className="container" >
-            <Container className="container">
+            <Container className="container container-schedule">
               <h1 className="title">Schedule</h1>
               <h2>Monday</h2>
               <Course schedule={monWed}/>

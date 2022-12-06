@@ -4,7 +4,7 @@ import  { getUsers }  from '../../../actions/courses.js';
 import AddClassPopup from './AddClassPopup'
 
 const Section = (session) => { 
-  const [setUsers] = useState([])
+  const [users, setUsers] = useState([])
 
   const section = session.info
   const num = session.info.section
@@ -20,7 +20,7 @@ const Section = (session) => {
       setUsers(result)
     }
     fetchUsers()
-  }, [setUsers])
+  }, [])
 
   return (
     <>
