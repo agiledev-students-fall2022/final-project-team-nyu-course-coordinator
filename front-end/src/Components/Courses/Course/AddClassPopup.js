@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { addToSchedule } from '../api';
+import { addToSchedule } from '../../../api';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function AddClassPopup(section) {
