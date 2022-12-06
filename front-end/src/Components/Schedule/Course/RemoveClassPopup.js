@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { removeFromSchedule } from '../api';
+import { removeFromSchedule } from '../../../api';
 
 function RemoveClassPopup(props) {
   const [show, setShow] = useState(false);
@@ -11,7 +11,9 @@ function RemoveClassPopup(props) {
   const handleRemove = (section, setVisible) =>{
     removeFromSchedule(section.id)
     setVisible((prev) => !prev)
+    window.location.reload(false);
   }
+
 
   return (
     <>
@@ -24,7 +26,7 @@ function RemoveClassPopup(props) {
           <Modal.Title>Class Removed from Schedule</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-          <Button variant="secondary" onClick = {() => [handleRemove(props.section, props.setVisible), props.handleClose()]}>
+          <Button variant="secondary" onClick = {() => [handleRemove(props.section, props.setVisible), handleClose()]}>
             Close
           </Button>
         </Modal.Footer>

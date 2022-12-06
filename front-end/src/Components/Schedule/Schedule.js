@@ -15,10 +15,12 @@ const Schedule = () => {
   let schedule =[]
   let catalog = []
   let display = []
-  let mon = []
-  let tue = []
-  let wed = []
-  let thu = []
+  let monWed = []
+  let tueThu = []
+  // let mon = []
+  // let tue = []
+  // let wed = []
+  // let thu = []
   let fri = []
 // getUsers()
 
@@ -61,7 +63,7 @@ const Schedule = () => {
   }
 
 
-  // display= array of sections that shoudld be displayed
+  // display = array of sections that shoudld be displayed
   const Compare = () => {
     Schedule()
     Catalog()
@@ -78,26 +80,27 @@ const Schedule = () => {
   // mon = an array of sections happening on mondays
   const Split = () =>{
     Compare()
-  
-
     display.map(section => {
-      if (section.day.includes("Mon") && !mon.includes(section)){
-        mon.push(section)
+      // if (section.day.includes("Mon") && !mon.includes(section)){
+      //   mon.push(section)
+      // }
+      if (section.day.includes("Mon") && section.day.includes("Wed") && !monWed.includes(section)){
+        monWed.push(section)
       }
-      if (section.day.includes("Tue") && !tue.includes(section)){
-        tue.push(section)
+      if (section.day.includes("Tue") && section.day.includes("Thu") && !tueThu.includes(section)){
+        tueThu.push(section)
       }
-      if (section.day.includes("Wed") && !wed.includes(section)){
-        wed.push(section)
-      }
-      if (section.day.includes("Thu") && !thu.includes(section)){
-        thu.push(section)
-      }
+      // if (section.day.includes("Wed") && !wed.includes(section)){
+      //   wed.push(section)
+      // }
+      // if (section.day.includes("Thu") && !thu.includes(section)){
+      //   thu.push(section)
+      // }
       if (section.day.includes("Fri") && !fri.includes(section)){
         fri.push(section)
       }
     })
-    console.log(mon)
+    // console.log(mon)
   }
 
   Split()
@@ -110,13 +113,13 @@ const Schedule = () => {
             <Container className="container">
               <h1 className="title">Schedule</h1>
               <h2>Monday</h2>
-              <Course schedule={mon}/>
+              <Course schedule={monWed}/>
               <h2>Tuesday</h2>
-              <Course schedule={tue}/>
+              <Course schedule={tueThu}/>
               <h2>Wednesday</h2>
-              <Course schedule={wed}/>
+              <Course schedule={monWed}/>
               <h2>Thursday</h2>
-              <Course schedule={thu}/>
+              <Course schedule={tueThu}/>
               <h2>Friday</h2>
               <Course schedule={fri}/>
             </Container>

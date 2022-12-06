@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const router = express.Router();
 
-// shows all major courses
+// get all courses
 const getCourses = async (req, res) => {
   try {
     const courses = await Course.find();
@@ -14,7 +14,7 @@ const getCourses = async (req, res) => {
   }
 }
 
-// shows specific major course
+// get a specific course
 const getCourse = async (req, res) => {
   const { id } = req.params;
   try {
@@ -24,26 +24,6 @@ const getCourse = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 }
-
-// // // creates a new course?? from non major couses to major courses (doesn't make any sense)
-// // export const createCourse = async (req, res) => {
-// //   const course = req.body;
-// //   const newCourse = new Course(course);
-// //   try {
-// //     await newCourse.save();
-// //     res.status(201).json(newCourse);
-// //   } catch (error) {
-// //     res.status(409).json({ message: error.message });
-// //   }
-// // }
-
-// // delete non major course  
-// export const deleteCourse = async (req, res) => {
-//   const { id } = req.params;
-//   if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No course with id: ${id}`);
-//   await Course.findByIdAndRemove(id);
-//   res.json({ message: "Course deleted successfully." });
-// }
 
 // changes the section of a course
 const changeSection = async (req, res) => {

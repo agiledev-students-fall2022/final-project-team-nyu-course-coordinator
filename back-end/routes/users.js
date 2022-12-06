@@ -11,6 +11,7 @@ const {body, validationResult} = require('express-validator')
 
 const User = require('../models/User');
 
+// get all the users
 router.get('/', async (req, res) => {
     console.log('getting users...');
     try {
@@ -21,9 +22,6 @@ router.get('/', async (req, res) => {
                     return{section_id: c.section_id}
                 })}
             })
-
-
-            // console.log(data[0].classes[0].class_id)
             res.json(data);
         
     }
@@ -32,6 +30,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// create new user
 router.post('/', 
     body('name').notEmpty().isString(),
     body('email').isEmail(),
@@ -61,7 +60,7 @@ router.post('/',
         });
 });
 
-// Specific Post
+// get a specific user
 router.get('/:userId', async (req, res) => {
     console.log(req.params.userId);
     try {
@@ -72,7 +71,7 @@ router.get('/:userId', async (req, res) => {
     }  
 });
 
-// Delete Post
+// delete a specific user
 router.delete('/:userId', async (req, res) => {
     try {
         const removedUser = await User.remove({_id: req.params.userId});
@@ -82,7 +81,7 @@ router.delete('/:userId', async (req, res) => {
     };
 });
 
-// Update Post
+// update an existing user
 router.patch('/:userId', async (req, res) => {
     try {
         const updatedUser = await User.updateOne(
