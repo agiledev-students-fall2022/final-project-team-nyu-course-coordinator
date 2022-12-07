@@ -4,18 +4,14 @@ import Modal from 'react-bootstrap/Modal';
 import { addToSchedule } from '../../../api';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
-function AddClassPopup(section) {
-  const [show, setShow] = useState(false);
-  const [checked, setChecked] = useState(true);
+function AddClassPopup(section, userId) {
+  const [show, setShow] = useState(false)
+  const [checked, setChecked] = useState(true)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const handleAdd= (section) =>{
-    // const userid ="636ed77cfe63d7bf6b544a93"
-    console.log(section.id)
-    addToSchedule(section.id)
-
+  const handleAdd= (section, userId) =>{
+    addToSchedule(section.id, userId)
     // setVisible((prev) => !prev)
   }
 
@@ -32,7 +28,7 @@ function AddClassPopup(section) {
           variant="outline-primary"
           checked={checked}
           value="1"
-          onClick = {(e) => [setChecked(e.currentTarget.checked), handleAdd(section), handleShow()]}>
+          onClick = {(e) => [setChecked(e.currentTarget.checked), handleAdd(section, userId), handleShow()]}>
           Add to Schedule
       </ToggleButton>
 

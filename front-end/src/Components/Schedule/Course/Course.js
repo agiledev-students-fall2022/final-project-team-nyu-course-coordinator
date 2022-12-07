@@ -6,8 +6,15 @@ import RemoveClassPopup from './RemoveClassPopup'
 
 const Course = (props) => {
   let schedule = props.schedule
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile')))
+  const [userId, setUserId] = useState([])
   const [visible, setVisible] = useState(true)
 
+
+  useEffect(() => {
+    setUsers(JSON.parse(localStorage.getItem('profile')))
+    setUserId(users.result._id)
+  }, [])
 
   const isConflicting = () => {
     schedule.map(section => {
@@ -51,9 +58,9 @@ const Course = (props) => {
               {visible &&  <p>{section.time}</p> }
               {visible &&  <p>{section.loc}</p>}
               {visible &&  <p id="warning"> <AlertConflict conflicting={section.conflicting}/> </p>}
-              </Card.Text>
+              </Card.Text> 
               {/* {visible && <Button variant="primary" onClick= {() => handleRemove(section)}>Remove from Schedule</Button>} */}
-              <RemoveClassPopup section = {section} setVisible = {setVisible}></RemoveClassPopup>
+              <RemoveClassPopup section = {section} userId = {userId} setVisible = {setVisible}></RemoveClassPopup>
             </Card.Body>
           </Card>}
         </>

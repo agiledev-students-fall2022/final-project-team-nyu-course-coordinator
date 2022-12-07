@@ -10,8 +10,9 @@ import { getUsers } from '../../actions/courses';
 import { getCourses } from '../../actions/courses';
 
 const Schedule = () => {
-  let [users, setUsers] = useState([])
+  let [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile')));
   let [courses, setCourses] = useState([])
+  let [registered, setRegistered] = useState([])
   let schedule =[]
   let catalog = []
   let display = []
@@ -24,13 +25,15 @@ const Schedule = () => {
   let fri = []
 // getUsers()
 
-  useEffect(() => {
-    const fetchUsers = async() => {
-      const result = await getUsers();
-      console.log(result)
-      setUsers(result)
-    }
 
+  useEffect(() => {
+    setUsers(JSON.parse(localStorage.getItem('profile')))
+    const fetchUsers = async() => {
+      const result = await getUsers(users.result._id)
+      const x = result[0].classes
+      setRegistered(x)
+    }
+    
     const fetchCourses = async() => {
       const result = await getCourses();
       setCourses(result)
@@ -40,14 +43,12 @@ const Schedule = () => {
     fetchCourses()
   }, [])
 
+  
   // array of only section_ids in the schedule
   const Schedule = () => {
     return(
-    users.map(user => { 
-      console.log(users)
-      user.classes.map(section => {
-        schedule.push(section.section_id)
-      })
+    registered.map(course => { 
+      schedule.push(course.section_id)
     })
     )
   }
@@ -110,7 +111,7 @@ const Schedule = () => {
     
         <>
             <div className="container" >
-            <Container className="container container-schedule">
+            <Container className="schedule">
               <h1 className="title">Schedule</h1>
               <h2>Monday</h2>
               <Course schedule={monWed}/>

@@ -4,7 +4,11 @@ import  { getUsers }  from '../../../actions/courses.js';
 import AddClassPopup from './AddClassPopup'
 
 const Section = (session) => { 
-  const [users, setUsers] = useState([])
+
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile')))
+  const [userId, setUserId] = useState([])
+  // const [visible, setVisible] = useState(true)
+  // const schedule =[]
 
   const section = session.info
   const num = session.info.section
@@ -15,11 +19,8 @@ const Section = (session) => {
 
 
   useEffect(() => {
-    const fetchUsers = async() => {
-      const result = await getUsers();
-      setUsers(result)
-    }
-    fetchUsers()
+      setUsers(JSON.parse(localStorage.getItem('profile')))
+      setUserId(users.result._id)
   }, [])
 
   return (
@@ -32,10 +33,10 @@ const Section = (session) => {
           <p>Day: {day}</p>
           <p>Time: {time}</p>
           <p>Location: {loc}</p>
-          
+           
         </Card.Text>
         {/* {visible && (<Button variant="primary" onClick= {() => handleAdd(section)}>Add to Schedule</Button>)} */}
-        {AddClassPopup(section)}
+        {AddClassPopup(section, userId)}
       </Card.Body>
     </Card>
     </>
