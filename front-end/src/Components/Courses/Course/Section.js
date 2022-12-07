@@ -1,16 +1,16 @@
-import React, {useState, useEffect} from 'react';
-// import Button from 'react-bootstrap/Button';
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
-// import { addToSchedule } from '../../../api';
-import  { getUsers }  from '../../../actions/courses.js'; 
+// import  { getUsers }  from '../../../actions/courses.js'; 
 import AddClassPopup from './AddClassPopup'
 
 const Section = (session) => { 
+
   const [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile')))
   const [userId, setUserId] = useState([])
   const [registered, setRegistered] = useState([])
   const [visible, setVisible] = useState(true)
   // const schedule =[]
+
   const section = session.info
   const id = section.id
   const num = session.info.section
@@ -35,7 +35,6 @@ const Section = (session) => {
           console.log("REGISTER",registered)
       }
       
-
       
   }, [])
  
