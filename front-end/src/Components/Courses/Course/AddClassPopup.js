@@ -4,15 +4,15 @@ import Modal from 'react-bootstrap/Modal';
 import { addToSchedule } from '../../../api';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
-function AddClassPopup(section, userId) {
+function AddClassPopup(props) {
   const [show, setShow] = useState(false)
   const [checked, setChecked] = useState(true)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
-  const handleAdd= (section, userId) =>{
+  const handleAdd= (section, userId, setVisible) =>{
     addToSchedule(section.id, userId)
-    // setVisible((prev) => !prev)
+    setVisible((prev) => !prev)
   }
 
   return (
@@ -28,7 +28,7 @@ function AddClassPopup(section, userId) {
           variant="outline-primary"
           checked={checked}
           value="1"
-          onClick = {(e) => [setChecked(e.currentTarget.checked), handleAdd(section, userId), handleShow()]}>
+          onClick = {(e) => [setChecked(e.currentTarget.checked), handleAdd(props.userId, props.section, props.setVisible), handleShow()]}>
           Add to Schedule
       </ToggleButton>
 

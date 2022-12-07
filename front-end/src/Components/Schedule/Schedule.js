@@ -28,21 +28,30 @@ const Schedule = () => {
 
   useEffect(() => {
     setUsers(JSON.parse(localStorage.getItem('profile')))
-    const fetchUsers = async() => {
-      const result = await getUsers(users.result._id)
-      const x = result[0].classes
-      setRegistered(x)
+    if (users !== null){
+        const fetchUsers = async() => {
+        const result = await getUsers(users.result._id)
+        const x = result[0].classes
+        setRegistered(x)
+      }
+      fetchUsers()
+
     }
+    
     
     const fetchCourses = async() => {
       const result = await getCourses();
       setCourses(result)
     }
 
-    fetchUsers()
     fetchCourses()
   }, [])
 
+  const NotSignedIn = (props) => {
+    if (props.user === null){
+      return ("Sign in to build your schedule!")
+    }
+  }
   
   // array of only section_ids in the schedule
   const Schedule = () => {
@@ -105,14 +114,16 @@ const Schedule = () => {
   }
 
   Split()
-  
 
   return (
     
         <>
+        
+
             <div className="container" >
             <Container className="schedule">
               <h1 className="title">Schedule</h1>
+              <p id="warning"><NotSignedIn user={users}/></p>
               <h2>Monday</h2>
               <Course schedule={monWed}/>
               <h2>Tuesday</h2>

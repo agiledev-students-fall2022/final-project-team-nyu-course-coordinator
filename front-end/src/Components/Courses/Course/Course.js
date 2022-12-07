@@ -16,7 +16,6 @@ const Course = () => {
     fetchData()
   },[])
 
-  console.log(cart)
   
   const Requirement=(props) => {
     const isRequired= props.isRequired
