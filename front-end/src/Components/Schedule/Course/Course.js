@@ -17,7 +17,9 @@ const Course = (props) => {
 
   useEffect(() => {
     setUsers(JSON.parse(localStorage.getItem('profile')))
-    setUserId(users.result._id)
+    if (users !== null){
+      setUserId(users.result._id)
+    }
   }, [])
 
   const isConflicting = () => {

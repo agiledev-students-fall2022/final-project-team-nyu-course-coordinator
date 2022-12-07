@@ -17,7 +17,6 @@ const Course = () => {
     fetchData()
   },[])
 
-  console.log(cart)
   
   // const { cart } = useSelector((state) => state.course);
   const Requirement=(props) => {

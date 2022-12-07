@@ -8,9 +8,11 @@ import AddClassPopup from './AddClassPopup'
 const Section = (session) => { 
   const [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile')))
   const [userId, setUserId] = useState([])
-  // const [visible, setVisible] = useState(true)
+  const [registered, setRegistered] = useState([])
+  const [visible, setVisible] = useState(true)
   // const schedule =[]
   const section = session.info
+  const id = section.id
   const num = session.info.section
   const prof= session.info.prof
   const day = session.info.day
@@ -20,9 +22,23 @@ const Section = (session) => {
 
   useEffect(() => {
       setUsers(JSON.parse(localStorage.getItem('profile')))
-      setUserId(users.result._id)
-  }, [])
+      if (users !== null){
+          setUserId(users.result._id)
 
+          const fetchUsers = async() => {
+              const result = await getUsers(users.result._id)
+              const x = result[0].classes
+              setRegistered(x)
+          }
+    
+          fetchUsers()
+          console.log("REGISTER",registered)
+      }
+      
+
+      
+  }, [])
+ 
 
   // const Schedule = () => {
   //   return(
@@ -34,38 +50,39 @@ const Section = (session) => {
   //   )
   // }
 
-  // const initializeAdd = () => {
-  //   Schedule()
-  //   // console.log("sche", schedule)
-  //   schedule.map(s => {
-  //     if (s===section.id){
-  //       console.log("Comparing with: ",section.id)
-  //       setVisible(false)
-  //     } else {
-  //       setVisible(true)
-  //     }
-  //   })
-  // }
+  const initializeAdd = () => {
+    
+    registered.map(s => {
+      if (s.section_id === id){
+        console.log("here it is")
+        console.log("Comparing with: ",section.id)
+        // setVisible(false)
+      } else {
+        // setVisible(true)
+      }
+    })
+  }
 
+  // initializeAdd()
 
 
   return (
     <>
     {/* {initializeAdd()} */}
-    <Card>
+    {visible &&  <Card>
       <Card.Body>
         <Card.Title>Section {num}</Card.Title>
         <Card.Text className="sectionInfo">
-          <p>Professor: {prof}</p>
-          <p>Day: {day}</p>
-          <p>Time: {time}</p>
-          <p>Location: {loc}</p>
+          {visible &&  <p>Professor: {prof}</p>}
+          {visible &&  <p>Day: {day}</p>}
+          {visible &&  <p>Time: {time}</p>}
+          {visible &&  <p>Location: {loc}</p>}
            
         </Card.Text>
         {/* {visible && (<Button variant="primary" onClick= {() => handleAdd(section)}>Add to Schedule</Button>)} */}
-        {AddClassPopup(section, userId)}
+        <AddClassPopup section = {section} userId = {userId} setVisible = {setVisible}></AddClassPopup>
       </Card.Body>
-    </Card>
+    </Card>}
     </>
   )
 }

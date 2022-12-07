@@ -13,7 +13,6 @@ const User = require('../models/User');
 
 // get all the users --> get specified user by id
 router.get('/:userId', async (req, res) => {
-    console.log('getting the user...')
     const userId= req.params.userId
     
     try {
