@@ -11,7 +11,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { expect } from 'chai';
 
 const App = () => {
-  const user = JSON.parse(localStorage.getItem('profile'));
+  // const user = JSON.parse(localStorage.getItem('profile'));
   return (
     <GoogleOAuthProvider clientId="261702453032-hhor34vsg5ufh7bnn99upoi5ph6e980v.apps.googleusercontent.com">
       <BrowserRouter>

@@ -7,9 +7,10 @@ function RemoveClassPopup(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true)
-
-  const handleRemove = (section, setVisible) =>{
-    removeFromSchedule(section.id)
+ 
+  const handleRemove = (userId, section, setVisible) =>{
+    
+    removeFromSchedule(section.id, userId)
     setVisible((prev) => !prev)
     window.location.reload(false);
   }
@@ -26,7 +27,7 @@ function RemoveClassPopup(props) {
           <Modal.Title>Class Removed from Schedule</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-          <Button variant="secondary" onClick = {() => [handleRemove(props.section, props.setVisible), handleClose()]}>
+          <Button variant="secondary" onClick = {() => [handleRemove(props.userId, props.section, props.setVisible), handleClose()]}>
             Close
           </Button>
         </Modal.Footer>

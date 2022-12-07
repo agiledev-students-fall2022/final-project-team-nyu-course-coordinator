@@ -6,11 +6,12 @@ import * as api from '../api/index.js';
 export const getCourses = async () => {
   try {
         const { data } = await api.fetchCourses();
-        console.log("getCourses",data)
+        
         return (data)
         // dispatch({ type: 'FETCH_ALL', payload: data });
+
       } catch (error) {
-        console.log("GCM",error.message);
+        console.log(error.message);
       }
 }
     
@@ -62,15 +63,10 @@ export const changeSection = (id) => async (dispatch) => {
   }
 }
 
-export const getUsers = async () => {
+export const getUsers = async (id) => {
   try {
-    const { data } = await api.fetchUsers()
-  // axios.get ("http://localhost:3001/users")
-  // .then(res => {
-  //   console.log("hello")
-  //   console.log("DATA",res.data)
-  console.log("getUsers", data[0].classes[0])
-  return(data)
+    const { data } = await api.fetchUsers(id)
+    return(data)
     // dispatch({ type: 'FETCH_ALL', payload: data })
   }
   catch (error) {
@@ -79,9 +75,3 @@ export const getUsers = async () => {
   }
 }
 
-// export default getUsers;
-
-// module.exports = {
-//   getUsers,
-//   getCourses,
-// }

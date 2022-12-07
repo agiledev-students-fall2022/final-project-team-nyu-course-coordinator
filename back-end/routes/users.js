@@ -11,18 +11,24 @@ const {body, validationResult} = require('express-validator')
 
 const User = require('../models/User');
 
-// get all the users
-router.get('/', async (req, res) => {
-    console.log('getting users...');
+// get all the users --> get specified user by id
+router.get('/:userId', async (req, res) => {
+    console.log('getting the user...')
+    const userId= req.params.userId
+    
     try {
-        const users = await User.find({}).exec()
-        const data = users.map(u => {
-            return {id: u._id, name: u.name, email:u.email, major: u.major, year: u.year, 
+        
+        const user = await User.find({_id: userId}).exec()
+        // console.log("USER!",user)
+        
+        const data = user.map(u => {
+            return {id: u._id, name: u.name, email:u.email, 
                 classes: u.classes.map (c => {
                     return{section_id: c.section_id}
-                })}
-            })
-            res.json(data);
+            })}
+        })
+        // console.log("DATA",data)
+        res.json(data);
         
     }
     catch (err) {
