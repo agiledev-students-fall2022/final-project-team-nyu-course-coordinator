@@ -6,6 +6,10 @@
   margin-top: 50px;
 }
 
+.schedule {
+  padding-bottom: 30%;
+}
+
 /* setting padding will allow the color to show up for all sections */
 #warning{
   border-radius: 15px;

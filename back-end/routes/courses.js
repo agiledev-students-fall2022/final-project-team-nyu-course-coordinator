@@ -21,7 +21,6 @@ router.get('/', async (req, res) => {
                 return{id: s._id, section: s.section, prof: s.prof, day:s.day, time: s.time, time2:s.time2, loc:s.loc }
             })}
         })
-        console.log(data)
         res.json(data)
     }
     catch (err) {
@@ -56,51 +55,50 @@ router.get('/:courseId', async (req, res) => {
     }   
 });
 
-// update an existing course
-router.patch('/:courseId', async (req, res) => {
-    console.log("Trying to add...")
-    // const user= req.params.userID
+// update the user's schedule
+router.patch('/:courseId/:userId', async (req, res) => {
+    console.log("Adding the selecting course to the user's schedule...")
+    const userId= req.params.userId
     const sectionId= req.params.courseId
-    
+
     try {
-        
         const addingSection= {section_id: sectionId} // an object to add to the array of user.classes
        
-        // later with userID, find one user with that ID instead of retrieving all users
-        const users = await User.find({}).exec()
-        const schedule = users[0].classes //the array of user.classes
+        const user = await User.findOne({_id: userId}).exec()
+        const schedule = user.classes //the array of user.classes
+
         schedule.push(addingSection) // updated array of user.classes
-        
-        const updatedSchedule= await User.updateOne({_id: users[0]._id},{$set:{"classes":schedule}})
-        
-        res.json(updatedSchedule);
+
+        const updatedSchedule= await User.updateOne({_id: userId},{$set:{"classes":schedule}})
+        res.json(updatedSchedule)
+
     } catch(err) {
-        res.json({message: err});
+        res.json({message: err})
     }
 });
 
 
 // delete a course from a user's schedule
-router.delete('/:courseId', async (req, res) => {
-    console.log("Trying to delete...")
-    // const user= req.params.userID
+router.delete('/:courseId/:userId', async (req, res) => {
+    console.log("Deleting the session from the schedule...")
+    const userId= req.params.userId
     const sectionId= req.params.courseId
+
     
     try {
-        
-        const removingSection= {section_id: sectionId} // an object to add to the array of user.classes
-       
-        // later with userID, find one user with that ID instead of retrieving all users
-        const users = await User.find({}).exec()
-        const schedule = users[0].classes //the array of user.classes
-        console.log(schedule)
+        const user = await User.findOne({_id: userId}).exec()
+        const schedule = user.classes  
+        console.log(schedule)      
+        console.log(sectionId)
+
         // traverse the array and find the index of the object to remove
         for (let i=0; i<schedule.length; i++){
             if (schedule[i].section_id===sectionId){
                 schedule.splice(i,1)
             }
         }
-        const updatedSchedule= await User.updateOne({_id: users[0]._id},{$set:{"classes":schedule}})
+
+        const updatedSchedule= await User.updateOne({_id: userId},{$set:{"classes":schedule}})
         
         res.json(updatedSchedule);
     } catch(err) {
