@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
-import { useSelector } from 'react-redux';
 import { getCourses } from '../../../actions/courses';
 import Section from './Section';
 import './styles.css';
@@ -19,7 +18,6 @@ const Course = () => {
 
   console.log(cart)
   
-  // const { cart } = useSelector((state) => state.course);
   const Requirement=(props) => {
     const isRequired= props.isRequired
     if (isRequired){

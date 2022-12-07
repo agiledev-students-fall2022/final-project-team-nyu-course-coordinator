@@ -1,10 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Schedule from '../Schedule';
-import { removeFromSchedule } from '../../../api';
 import RemoveClassPopup from './RemoveClassPopup'
-import { changeSection } from '../../../actions/courses';
 
 
 
