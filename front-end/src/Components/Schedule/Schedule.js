@@ -68,7 +68,9 @@ const Schedule = () => {
       course.sessions.map(session => {
         session.name= course.name
         catalog.push(session)
+        return catalog
       })
+    return catalog
     })
   }
 
@@ -84,6 +86,7 @@ const Schedule = () => {
         }
         return display
       })
+      return display
     })
   }
 
