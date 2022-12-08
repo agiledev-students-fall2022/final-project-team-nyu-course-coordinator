@@ -1,4 +1,4 @@
-export default (state = { courses: [] }, action) => {
+const fetch = (state = { courses: [] }, action) => {
   
   switch (action.type) {
     case "FETCH_ALL":
@@ -17,3 +17,5 @@ export default (state = { courses: [] }, action) => {
       return state;
   }
 }
+
+export default fetch
