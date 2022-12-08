@@ -25,7 +25,9 @@ const Course = (props) => {
           compare.conflicting = true
           section.conflicting = true
         }
+        return (compare)
       })
+      return (section)
     })
   }
 
