@@ -82,6 +82,7 @@ const Schedule = () => {
         if(sectionId === section.id){
           display.push(section)
         }
+        return display
       })
     })
   }
@@ -109,6 +110,7 @@ const Schedule = () => {
       if (section.day.includes("Fri") && !fri.includes(section)){
         fri.push(section)
       }
+      return section
     })
     // console.log(mon)
   }
