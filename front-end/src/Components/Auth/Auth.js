@@ -70,7 +70,7 @@ const Auth = () => {
             <Button className="btn btn-light" onClick={switchMode}>
               { isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up" }
             </Button>
-            <GoogleLogin 
+            {/* <GoogleLogin 
                 clientId="261702453032-hhor34vsg5ufh7bnn99upoi5ph6e980v.apps.googleusercontent.com"
                 render={(renderProps) => (
                   <Button 
@@ -81,7 +81,7 @@ const Auth = () => {
                 )}
                 onSuccess={googleSuccess}
                 onFailure={googleFailure}
-              />
+              /> */}
           </div>
         </form>
     </Container>
