@@ -49,7 +49,7 @@ const Schedule = () => {
     // }, 5000);
 
     fetchCourses()
-  }, [users])
+  }, [])
 
   const NotSignedIn = (props) => {
     if (props.user === null){
@@ -62,7 +62,7 @@ const Schedule = () => {
     return(
     registered.map(course => { 
       schedule.push(course.section_id)
-      return schedule
+      // return schedule
     })
     )
   }
@@ -73,9 +73,9 @@ const Schedule = () => {
       course.sessions.map(session => {
         session.name= course.name
         catalog.push(session)
-        return catalog
+        // return catalog
       })
-    return catalog
+    // return catalog
     })
   }
 
