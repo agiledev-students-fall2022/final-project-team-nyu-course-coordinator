@@ -49,18 +49,17 @@ const Section = (session) => {
   //   )
   // }
 
-  const initializeAdd = () => {
-    
-    registered.map(s => {
-      if (s.section_id === id){
-        console.log("here it is")
-        console.log("Comparing with: ",section.id)
-        // setVisible(false)
-      } else {
-        // setVisible(true)
-      }
-    })
-  }
+  // const initializeAdd = () => {
+  //   registered.map(s => {
+  //     if (s.section_id === id){
+  //       console.log("here it is")
+  //       console.log("Comparing with: ",section.id)
+  //       // setVisible(false)
+  //     } else {
+  //       // setVisible(true)
+  //     }
+  //   })
+  // }
 
   // initializeAdd()
 
