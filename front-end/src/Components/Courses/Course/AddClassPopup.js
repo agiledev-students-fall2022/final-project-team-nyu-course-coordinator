@@ -9,9 +9,8 @@ function AddClassPopup(props) {
   const [checked, setChecked] = useState(true)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-
   const handleAdd= (section, userId, setVisible) =>{
-    addToSchedule(section.id, userId)
+    addToSchedule(section, userId)
     setVisible((prev) => !prev)
   }
 
@@ -28,7 +27,7 @@ function AddClassPopup(props) {
           variant="outline-primary"
           checked={checked}
           value="1"
-          onClick = {(e) => [setChecked(e.currentTarget.checked), handleAdd(props.userId, props.section, props.setVisible), handleShow()]}>
+          onClick = {(e) => [setChecked(e.currentTarget.checked), handleShow()]}>
           Add to Schedule
       </ToggleButton>
 
@@ -37,7 +36,7 @@ function AddClassPopup(props) {
           <Modal.Title>Class Added Successfully</Modal.Title>
         </Modal.Header>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="secondary" onClick = {() => [handleAdd(props.userId, props.section, props.setVisible), handleClose()]}>
               Close
             </Button>
           </Modal.Footer>

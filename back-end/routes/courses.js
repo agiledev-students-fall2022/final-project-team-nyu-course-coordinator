@@ -58,15 +58,13 @@ router.get('/:courseId', async (req, res) => {
 // update the user's schedule
 router.patch('/:courseId/:userId', async (req, res) => {
     console.log("Adding the selecting course to the user's schedule...")
-    const userId= req.params.userId
-    const sectionId= req.params.courseId
-
+    const sectionId= req.params.userId
+    const userId= req.params.courseId
     try {
         const addingSection= {section_id: sectionId} // an object to add to the array of user.classes
        
         const user = await User.findOne({_id: userId}).exec()
         const schedule = user.classes //the array of user.classes
-
         schedule.push(addingSection) // updated array of user.classes
 
         const updatedSchedule= await User.updateOne({_id: userId},{$set:{"classes":schedule}})
