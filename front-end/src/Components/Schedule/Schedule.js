@@ -49,7 +49,7 @@ const Schedule = () => {
     // }, 5000);
 
     fetchCourses()
-  }, [users])
+  }, [])
 
   const NotSignedIn = (props) => {
     if (props.user === null){
