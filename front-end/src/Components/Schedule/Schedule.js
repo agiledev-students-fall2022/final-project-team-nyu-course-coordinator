@@ -34,10 +34,8 @@ const Schedule = () => {
         const result = await getUsers(users.result._id)
         const x = result[0].classes
         setRegistered(x)
-      }
-    
-      
-      fetchUsers()
+        }
+        fetchUsers()
     }
     
     
@@ -45,6 +43,10 @@ const Schedule = () => {
       const result = await getCourses();
       setCourses(result)
     }
+    // sleep for 5 secs
+    // setTimeout(() => {
+    //   console.log("sleeping")
+    // }, 5000);
 
     fetchCourses()
   }, [users])
