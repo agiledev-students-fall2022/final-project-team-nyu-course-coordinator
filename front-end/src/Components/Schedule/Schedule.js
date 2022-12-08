@@ -27,13 +27,15 @@ const Schedule = () => {
 
 
   useEffect(() => {
+    
     setUsers(JSON.parse(localStorage.getItem('profile')))
-    if (users !== null){
+    if (users !== null){ // this is supposed to check if the user is signed in
         const fetchUsers = async() => {
         const result = await getUsers(users.result._id)
         const x = result[0].classes
         setRegistered(x)
       }
+    
       
       fetchUsers()
     }
@@ -45,7 +47,7 @@ const Schedule = () => {
     }
 
     fetchCourses()
-  }, [])
+  }, [users])
 
   const NotSignedIn = (props) => {
     if (props.user === null){
@@ -58,6 +60,7 @@ const Schedule = () => {
     return(
     registered.map(course => { 
       schedule.push(course.section_id)
+      return schedule
     })
     )
   }
