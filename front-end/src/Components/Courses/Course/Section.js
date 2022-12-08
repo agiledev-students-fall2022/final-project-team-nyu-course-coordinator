@@ -39,7 +39,7 @@ const Section = (session) => {
       
   }, [])
  
-
+  
   // const Schedule = () => {
   //   return(
   //   users.map(user => { 
@@ -80,7 +80,7 @@ const Section = (session) => {
            
         </Card.Text>
         {/* {visible && (<Button variant="primary" onClick= {() => handleAdd(section)}>Add to Schedule</Button>)} */}
-        <AddClassPopup section = {section} userId = {userId} setVisible = {setVisible}></AddClassPopup>
+        <AddClassPopup section = {id} userId = {userId} setVisible = {setVisible}></AddClassPopup>
       </Card.Body>
     </Card>}
     </>
