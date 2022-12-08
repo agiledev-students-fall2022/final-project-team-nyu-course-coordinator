@@ -34,8 +34,8 @@ const Schedule = () => {
         const x = result[0].classes
         setRegistered(x)
       }
+      
       fetchUsers()
-
     }
     
     

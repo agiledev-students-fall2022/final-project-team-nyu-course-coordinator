@@ -9,9 +9,8 @@ function AddClassPopup(props) {
   const [checked, setChecked] = useState(true)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-
   const handleAdd= (section, userId, setVisible) =>{
-    addToSchedule(section.id, userId)
+    addToSchedule(section, userId)
     setVisible((prev) => !prev)
   }
 
