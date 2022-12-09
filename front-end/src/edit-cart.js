@@ -9,28 +9,37 @@ import axios from 'axios';
 function EditCart() {
 
   //prop.data
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]) 
+  //data is an array of objects
 
-  const initialData = async() => {
+  const initialData = async() => { 
+    //get data from db
     
-    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/load-courses`)
+    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/load-courses`) 
+    //get data from db
         .then(res => {
-            setData(res.data)
+            setData(res.data) 
+            //set data to the data from db
         })
         .catch(err => {
-          console.log(`ERROR: ${err}`)
+          console.log(`ERROR: ${err}`) 
+          //error handling
         })
     }
 
 
-  useEffect(() => {
-    initialData()
+  useEffect(() => { 
+    //useEffect is a hook that runs after every render
+    initialData() 
+    //get data from db
   }, [])
 
 
 
-  const SearchAddCourse= ()=>{
-    const [input, setInput] = useState("")
+  const SearchAddCourse= ()=>{  
+    //search and add course
+    const [input, setInput] = useState("") 
+    //input is the text in the search bar
     const [submittedInput, setSubmittedInput] = useState("")
 
     async function handleClick(e){
