@@ -87,13 +87,17 @@ function EditCart() {
 
   async function handleRemove(id, e){ //remove course from cart
     // setData(data.filter((course,index) => index !== id))
-    e.preventDefault() // prevent page from refreshing
-    const unwanted= data.filter((course,index) => index === id) //get the course that is to be removed
-    const ID = unwanted._id //get the id of the course that is to be removed
-    const url=`/Allclasses/remove/?id=${ID}` //url to remove course from db
+    e.preventDefault() 
+    // prevent page from refreshing
+    const unwanted= data.filter((course,index) => index === id) 
+    //get the course that is to be removed
+    const ID = unwanted._id 
+    //get the id of the course that is to be removed
+    const url=`/Allclasses/remove/?id=${ID}` 
+    //url to remove course from db
       
-    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`)
-      .then(res => {
+    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`) //remove course from db
+      .then(res => { //set data to the data from db
         const updatedData= [...data, ...res.data]
           setData(updatedData)
       })
@@ -103,14 +107,14 @@ function EditCart() {
   }
 
 
-  const RemoveBtn=(props) =>{
-    const id= props.id
-    const isRequired= props.isRequired
+  const RemoveBtn=(props) =>{ //remove button
+    const id= props.id //get the id of the course 
+    const isRequired= props.isRequired //get the requirement of the course
     
-    if (!isRequired){
+    if (!isRequired){ //if the course is not required
       
       //to do: save data to db
-      return (
+      return ( //return the remove button
         <button onClick={()=> handleRemove(id) }>
           Remove from Cart
         </button>
