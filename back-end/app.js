@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 corsOptions = {
   origin: ["http://165.22.184.0:4000/"]
 }
-express.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // Import Routes
 const courseRoute = require('./routes/courses');
