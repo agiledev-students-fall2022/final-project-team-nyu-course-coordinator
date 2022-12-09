@@ -45,7 +45,7 @@ const Course = (props) => {
     }
   }
 
-  isConflicting()
+  isConflicting() // call the function
 
   // const handleRemove = (section) =>{
   //   // const userid ="636ed77cfe63d7bf6b544a93"
@@ -54,9 +54,9 @@ const Course = (props) => {
   //   setVisible((prev) => !prev)
   // }
 
-  return (
+  return ( // return the card
     <>
-    {schedule.map(section => {
+    {schedule.map(section => { // map through the schedule array
       return(
         <>
         {visible &&   <Card className="card">
