@@ -10,9 +10,12 @@ import { getUsers } from '../../actions/courses';
 import { getCourses } from '../../actions/courses';
 
 const Schedule = () => {
-  let [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile')));
-  let [courses, setCourses] = useState([])
-  let [registered, setRegistered] = useState([])
+  let [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile'))); 
+  // get the user object
+  let [courses, setCourses] = useState([]) 
+  // get the courses
+  let [registered, setRegistered] = useState([]) 
+  // get the registered courses
   let schedule =[]
   let catalog = []
   let display = []
@@ -29,19 +32,28 @@ const Schedule = () => {
   useEffect(() => {
     
     setUsers(JSON.parse(localStorage.getItem('profile')))
-    if (users !== null){ // this is supposed to check if the user is signed in
-        const fetchUsers = async() => {
-        const result = await getUsers(users.result._id)
-        const x = result[0].classes
-        setRegistered(x)
+    if (users !== null){ 
+      // this is supposed to check if the user is signed in
+        const fetchUsers = async() => { 
+          // fetch the user
+        const result = await getUsers(users.result._id) 
+        // get the user
+        const x = result[0].classes 
+        // get the classes
+        setRegistered(x) 
+        // set the registered classes
         }
-        fetchUsers()
+        fetchUsers() 
+        // fetch the user
     }
     
     
-    const fetchCourses = async() => {
-      const result = await getCourses();
-      setCourses(result)
+    const fetchCourses = async() => {   
+      // fetch the courses
+      const result = await getCourses();  
+      // get the courses
+      setCourses(result) 
+      // set the courses
     }
     // sleep for 5 secs
     // setTimeout(() => {
