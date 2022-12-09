@@ -16,6 +16,12 @@ jobs:
     defaults: 
       run: 
         working-directory: "back-end"
+    env: 
+      DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
+      FRONT_END_URL: ${{ secrets.FRONT_END_URL }}
+      PORT: ${{ secrets.PORT }}
+      
+
 
     strategy:
       matrix:
