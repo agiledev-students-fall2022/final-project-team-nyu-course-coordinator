@@ -41,20 +41,24 @@ function EditCart() {
     const [input, setInput] = useState("") 
     //input is the text in the search bar
     const [submittedInput, setSubmittedInput] = useState("")
+    //submittedInput is the text that has been submitted
 
-    async function handleClick(e){
-      e.preventDefault()
+    async function handleClick(e){ 
+      //when the search button is clicked
+      e.preventDefault() //prevent page from refreshing
       setSubmittedInput(input)
+      //set submittedInput to the text in the search bar
       const url=`/Allclasses/add/?name=${submittedInput}`
+      //url is the url to get data from db
       
-      axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`)
+      axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`) //get data from db
         .then(res => {
           const updatedData= [...data, ...res.data]
             setData(updatedData)
-        })
+        }) // set data to the data from db
         .catch(err => {
           console.log(`ERROR: ${err}`)
-        })
+        }) // error handling
 
       
 
