@@ -1,11 +1,14 @@
 import React, {useMemo}  from 'react'
 import { useTable, useFilters } from 'react-table'
 
-function FilterCart(props){
+function FilterCart(props){ 
+  // filter cart component
 
-    const ColumnFilter= ({column})=>{
-        const {filterValue, setFilter} =column
-        return (
+    const ColumnFilter= ({column})=>{ 
+      // column filter component
+        const {filterValue, setFilter} = column 
+        // filterValue is the value of the filter, setFilter is the function to set the filter value
+        return ( // return the filter input
             <span>
                 Search:{' '}
                 <input
