@@ -3,10 +3,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors= require('cors')
 const app = express();
-app.use(cors())
+
 require('dotenv/config');
 app.use(bodyParser.json());
-const cors = require('cors');
 corsOptions = {
   origin: ["http://165.22.184.0:4000/"]
 }
