@@ -16,14 +16,15 @@ const Course = (props) => {
   // visible is the state of the card
 
 
-  useEffect(() => {
-    setUsers(JSON.parse(localStorage.getItem('profile')))
-    if (users !== null){
-      setUserId(users.result._id)
+  useEffect(() => { // get the user id
+    setUsers(JSON.parse(localStorage.getItem('profile'))) // get the user object
+    if (users !== null){ // if the user object is not null
+      setUserId(users.result._id) // set the user id
     }
   }, [])
 
-  const isConflicting = () => {
+  const isConflicting = () => { 
+    // function to check for time conflicts
     schedule.map(section => {
       schedule.map(compare => {
         if (section.time === compare.time && compare!==section){
