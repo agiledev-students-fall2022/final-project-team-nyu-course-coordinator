@@ -122,12 +122,14 @@ function EditCart() {
     }
   }
 
-  const Requirement=(props) => {
+  const Requirement=(props) => { //requirement
     const isRequired= props.isRequired
-    if (isRequired){
+    if (isRequired){ 
+      //if the course is required
       return ("Required for your major")
     }
-    else {
+    else { 
+      //if the course is not required
       return ("Not required for your major")
     }
   }
