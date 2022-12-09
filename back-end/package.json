@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon app.js",
     "test": "mocha test",
+    "build": "node app.js",
     "coverage": "nyc npm run test"
   },
   "author": "",
