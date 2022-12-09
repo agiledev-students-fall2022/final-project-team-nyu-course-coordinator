@@ -144,7 +144,8 @@ function EditCart() {
     }
   }
 
-  const Time=(props) => {
+  const Time=(props) => { 
+    // time, eg. 10:00~11:00
     let time= props.time.toString()
     const startH= time.substring(0,2)
     const startM= time.substring(2,4)
@@ -154,7 +155,8 @@ function EditCart() {
     return(time)
   }
 
-  const Conflicted=(props) => {
+  const Conflicted=(props) => { 
+    //conflicted check
     const isConflicted= props.isConflicted
     if (isConflicted){
       return ("You have conflicting classes")
