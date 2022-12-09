@@ -64,9 +64,9 @@ function EditCart() {
 
     }
 
-    return (
+    return ( //return the search bar
       <>
-        <div className="Search">
+        <div className="Search"> 
           <form className="Search Form">
             <input
               className="search-input"
@@ -85,12 +85,12 @@ function EditCart() {
     )
   }
 
-  async function handleRemove(id, e){
+  async function handleRemove(id, e){ //remove course from cart
     // setData(data.filter((course,index) => index !== id))
-    e.preventDefault()
-    const unwanted= data.filter((course,index) => index === id)
-    const ID = unwanted._id
-    const url=`/Allclasses/remove/?id=${ID}`
+    e.preventDefault() // prevent page from refreshing
+    const unwanted= data.filter((course,index) => index === id) //get the course that is to be removed
+    const ID = unwanted._id //get the id of the course that is to be removed
+    const url=`/Allclasses/remove/?id=${ID}` //url to remove course from db
       
     axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`)
       .then(res => {
