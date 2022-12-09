@@ -1,11 +1,24 @@
+const cors= require('cors')
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors= require('cors')
-app.use(cors())
+const app = express();
+
 require('dotenv/config');
 app.use(bodyParser.json());
+corsOptions = {
+  origin: "*"
+}
+app.use(cors(corsOptions));
+
+// Add Access Control Allow Origin headers
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 
 // Import Routes
 const courseRoute = require('./routes/courses');
@@ -26,4 +39,4 @@ mongoose.connect(
     () => console.log('connected to db')
 );
  
-app.listen(3001);
+app.listen(process.env.PORT);

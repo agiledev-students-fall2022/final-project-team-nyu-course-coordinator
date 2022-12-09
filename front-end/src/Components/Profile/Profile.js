@@ -7,12 +7,14 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 export default function Profile() {
 
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-  useEffect(() => {
-    
-    setUser(JSON.parse(localStorage.getItem('profile')));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile'))); 
+  // get the user object
+  useEffect(() => { 
+    // get the user object
+     
+    setUser(JSON.parse(localStorage.getItem('profile'))); // set the user object
   }, []);
-    return ( 
+    return (  // return the profile
     <Container className="profileContainer">
     <h1 className="title">Your Profile</h1>
     <ListGroup className="listGroup">

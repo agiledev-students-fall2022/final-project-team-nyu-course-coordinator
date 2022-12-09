@@ -1,7 +1,8 @@
 import axios from 'axios';
+// import env from "react-dotenv";
 
 const api = axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: process.env.REACT_APP_SERVER_HOSTNAME,
 });
 
 api.interceptors.request.use((req) => {

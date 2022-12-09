@@ -10,9 +10,12 @@ import { getUsers } from '../../actions/courses';
 import { getCourses } from '../../actions/courses';
 
 const Schedule = () => {
-  let [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile')));
-  let [courses, setCourses] = useState([])
-  let [registered, setRegistered] = useState([])
+  let [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile'))); 
+  // get the user object
+  let [courses, setCourses] = useState([]) 
+  // get the courses
+  let [registered, setRegistered] = useState([]) 
+  // get the registered courses
   let schedule =[]
   let catalog = []
   let display = []
@@ -27,28 +30,51 @@ const Schedule = () => {
 
 
   useEffect(() => {
+    
     setUsers(JSON.parse(localStorage.getItem('profile')))
-    const fetchUsers = async() => {
-      const result = await getUsers(users.result._id)
-      const x = result[0].classes
-      setRegistered(x)
+    if (users !== null){ 
+      // this is supposed to check if the user is signed in
+        const fetchUsers = async() => { 
+          // fetch the user
+        const result = await getUsers(users.result._id) 
+        // get the user
+        const x = result[0].classes 
+        // get the classes
+        setRegistered(x) 
+        // set the registered classes
+        }
+        fetchUsers() 
+        // fetch the user
     }
     
-    const fetchCourses = async() => {
-      const result = await getCourses();
-      setCourses(result)
+    
+    const fetchCourses = async() => {   
+      // fetch the courses
+      const result = await getCourses();  
+      // get the courses
+      setCourses(result) 
+      // set the courses
     }
+    // sleep for 5 secs
+    // setTimeout(() => {
+    //   console.log("sleeping")
+    // }, 5000);
 
-    fetchUsers()
     fetchCourses()
   }, [])
 
+  const NotSignedIn = (props) => {
+    if (props.user === null){
+      return ("Sign in to build your schedule!")
+    }
+  }
   
   // array of only section_ids in the schedule
   const Schedule = () => {
     return(
     registered.map(course => { 
       schedule.push(course.section_id)
+      // return schedule
     })
     )
   }
@@ -59,7 +85,9 @@ const Schedule = () => {
       course.sessions.map(session => {
         session.name= course.name
         catalog.push(session)
+        // return catalog
       })
+    // return catalog
     })
   }
 
@@ -73,7 +101,9 @@ const Schedule = () => {
         if(sectionId === section.id){
           display.push(section)
         }
+        return display
       })
+      return display
     })
   }
 
@@ -100,19 +130,22 @@ const Schedule = () => {
       if (section.day.includes("Fri") && !fri.includes(section)){
         fri.push(section)
       }
+      return section
     })
     // console.log(mon)
   }
 
   Split()
-  
 
   return (
     
         <>
+        
+
             <div className="container" >
             <Container className="schedule">
               <h1 className="title">Schedule</h1>
+              <p id="warning"><NotSignedIn user={users}/></p>
               <h2>Monday</h2>
               <Course schedule={monWed}/>
               <h2>Tuesday</h2>

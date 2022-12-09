@@ -9,7 +9,6 @@ function RemoveClassPopup(props) {
   const handleShow = () => setShow(true)
  
   const handleRemove = (userId, section, setVisible) =>{
-    
     removeFromSchedule(section.id, userId)
     setVisible((prev) => !prev)
     window.location.reload(false);

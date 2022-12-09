@@ -9,51 +9,64 @@ import axios from 'axios';
 function EditCart() {
 
   //prop.data
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]) 
+  //data is an array of objects
 
-  const initialData = async() => {
+  const initialData = async() => { 
+    //get data from db
     
-    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/load-courses`)
+    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/load-courses`) 
+    //get data from db
         .then(res => {
-            setData(res.data)
+            setData(res.data) 
+            //set data to the data from db
         })
         .catch(err => {
-          console.log(`ERROR: ${err}`)
+          console.log(`ERROR: ${err}`) 
+          //error handling
         })
     }
 
 
-  useEffect(() => {
-    initialData()
+  useEffect(() => { 
+    //useEffect is a hook that runs after every render
+    initialData() 
+    //get data from db
   }, [])
 
 
 
-  const SearchAddCourse= ()=>{
-    const [input, setInput] = useState("")
+  const SearchAddCourse= ()=>{  
+    //search and add course
+    const [input, setInput] = useState("") 
+    //input is the text in the search bar
     const [submittedInput, setSubmittedInput] = useState("")
+    //submittedInput is the text that has been submitted
 
-    async function handleClick(e){
-      e.preventDefault()
+    async function handleClick(e){ 
+      //when the search button is clicked
+      e.preventDefault() //prevent page from refreshing
       setSubmittedInput(input)
+      //set submittedInput to the text in the search bar
       const url=`/Allclasses/add/?name=${submittedInput}`
+      //url is the url to get data from db
       
-      axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`)
+      axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`) //get data from db
         .then(res => {
           const updatedData= [...data, ...res.data]
             setData(updatedData)
-        })
+        }) // set data to the data from db
         .catch(err => {
           console.log(`ERROR: ${err}`)
-        })
+        }) // error handling
 
       
 
     }
 
-    return (
+    return ( //return the search bar
       <>
-        <div className="Search">
+        <div className="Search"> 
           <form className="Search Form">
             <input
               className="search-input"
@@ -72,15 +85,19 @@ function EditCart() {
     )
   }
 
-  async function handleRemove(id, e){
+  async function handleRemove(id, e){ //remove course from cart
     // setData(data.filter((course,index) => index !== id))
-    e.preventDefault()
-    const unwanted= data.filter((course,index) => index === id)
-    const ID = unwanted._id
-    const url=`/Allclasses/remove/?id=${ID}`
+    e.preventDefault() 
+    // prevent page from refreshing
+    const unwanted= data.filter((course,index) => index === id) 
+    //get the course that is to be removed
+    const ID = unwanted._id 
+    //get the id of the course that is to be removed
+    const url=`/Allclasses/remove/?id=${ID}` 
+    //url to remove course from db
       
-    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`)
-      .then(res => {
+    axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/${url}`) //remove course from db
+      .then(res => { //set data to the data from db
         const updatedData= [...data, ...res.data]
           setData(updatedData)
       })
@@ -90,14 +107,14 @@ function EditCart() {
   }
 
 
-  const RemoveBtn=(props) =>{
-    const id= props.id
-    const isRequired= props.isRequired
+  const RemoveBtn=(props) =>{ //remove button
+    const id= props.id //get the id of the course 
+    const isRequired= props.isRequired //get the requirement of the course
     
-    if (!isRequired){
+    if (!isRequired){ //if the course is not required
       
       //to do: save data to db
-      return (
+      return ( //return the remove button
         <button onClick={()=> handleRemove(id) }>
           Remove from Cart
         </button>
@@ -105,12 +122,14 @@ function EditCart() {
     }
   }
 
-  const Requirement=(props) => {
+  const Requirement=(props) => { //requirement
     const isRequired= props.isRequired
-    if (isRequired){
+    if (isRequired){ 
+      //if the course is required
       return ("Required for your major")
     }
-    else {
+    else { 
+      //if the course is not required
       return ("Not required for your major")
     }
   }
@@ -125,7 +144,8 @@ function EditCart() {
     }
   }
 
-  const Time=(props) => {
+  const Time=(props) => { 
+    // time, eg. 10:00~11:00
     let time= props.time.toString()
     const startH= time.substring(0,2)
     const startM= time.substring(2,4)
@@ -135,7 +155,8 @@ function EditCart() {
     return(time)
   }
 
-  const Conflicted=(props) => {
+  const Conflicted=(props) => { 
+    //conflicted check
     const isConflicted= props.isConflicted
     if (isConflicted){
       return ("You have conflicting classes")
