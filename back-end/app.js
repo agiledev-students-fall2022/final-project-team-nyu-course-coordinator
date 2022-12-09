@@ -6,7 +6,11 @@ const app = express();
 app.use(cors())
 require('dotenv/config');
 app.use(bodyParser.json());
-app.use(cors({ origin: process.env.FRONT_END_URL, credentials: true }));
+const cors = require('cors');
+corsOptions = {
+  origin: ["http://165.22.184.0:4000/"]
+}
+express.use(cors(corsOptions));
 
 // Import Routes
 const courseRoute = require('./routes/courses');
