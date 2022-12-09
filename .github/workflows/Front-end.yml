@@ -18,7 +18,6 @@ jobs:
         working-directory: 'front-end'
     env:
       REACT_APP_SERVER_HOSTNAME: ${{secrets.REACT_APP_BACKEND_API_URL}}
-      PORT: ${{secrets.REACT_APP_SERVER_HOSTNAME}}
 
     strategy:
       matrix:
