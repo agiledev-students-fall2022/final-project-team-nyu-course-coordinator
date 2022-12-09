@@ -1,20 +1,29 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8742888&assignment_repo_type=AssignmentRepo)
-# Project Repository
+# Welcome to NYU Course Coordinator!
+## About the Project
+For NYU students, class registration can be a daunting task. From choosing classes, picking timeslots, and organizing a functioning schedule, there is a lot than can go wrong. And through NYU's built-in system, [NYU Albert](http://albert.nyu.edu/albert_index.html), the registration process can be confusing, inefficient, and nonsensical. 
 
-This repository will be used for team projects.
+This project aims to alleviate this burden by making the class registration process simple and easy. Students will be able to choose classes and fit them directly into a weekly calendar that is displayed showing time slots and course titles. Students can also input classes that they have already taken for their major which will be filtered out during course selection. As a result, students can focus on simply adding and deleting courses.
 
-Several sets of instructions are included in this repository. They should each be treated as separate assignments with their own due dates and sets of requirements.
+The program will offer:
+ - a simplified user interface
+ - a weekly calendar
+ - Classes (course title, timings, and course description)
 
-1. See the [App Map & Wireframes](instructions-0a-app-map-wireframes.md) and [Prototyping](./instructions-0b-prototyping.md) instructions for the requirements of the initial user experience design of the app.
+Click [here](http://165.22.184.0:8080/) to view our website!
 
-1. Delete the contents of this file and replace with the contents of a proper README.md, as described in the [project setup instructions](./instructions-0c-project-setup.md)
+## Meet the Team
+- Rizwan Amir, [github](https://github.com/raa573)
+- Yuri Hwang, [github](https://github.com/yurihwang)
+- Noah Kim, [github](https://github.com/nonoahkim1)
+- Laura Lourenco, [github](https://github.com/qlaueen)
+- Phil Wee, [github](https://github.com/philwee)
 
-1. See the [Sprint Planning instructions](instructions-0d-sprint-planning.md) for the requirements of Sprint Planning for each Sprint.
+## Project History
+This project was founded by Yuri Hwang, who sought to coordinate classes for NYU students in a simpler fashion under the title, "NYU Course Coordinator." Much of her initial vision is intact albeit added functionalities. 
 
-1. See the [Front-End Development instructions](./instructions-1-front-end.md) for the requirements of the initial Front-End Development.
+Please contribute [here](https://github.com/agiledev-students-fall2022/final-project-team-nyu-course-coordinator/blob/master/CONTRIBUTING.md).
 
-1. See the [Back-End Development instructions](./instructions-2-back-end.md) for the requirements of the initial Back-End Development.
+## Additional Information/Links
+[Yuri Hwang's Project Proposal](https://github.com/agiledev-students-fall2022/project-proposal-team)
 
-1. See the [Database Integration instructions](./instructions-3-database.md) for the requirements of integrating a database into the back-end.
-
-1. See the [Deployment instructions](./instructions-4-deployment.md) for the requirements of deploying an app.
+[NYU Albert](http://albert.nyu.edu/albert_index.html)
