@@ -9,6 +9,8 @@ The program will offer:
  - a weekly calendar
  - Classes (course title, timings, and course description)
 
+Click [here](http://165.22.184.0:8080/) to view our website!
+
 ## Meet the Team
 - Rizwan Amir, [github](https://github.com/raa573)
 - Yuri Hwang, [github](https://github.com/yurihwang)
