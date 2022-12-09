@@ -4,11 +4,16 @@ import RemoveClassPopup from './RemoveClassPopup'
 
 
 
-const Course = (props) => {
-  let schedule = props.schedule
-  const [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile')))
-  const [userId, setUserId] = useState([])
-  const [visible, setVisible] = useState(true)
+const Course = (props) => { 
+  // props is the schedule array
+  let schedule = props.schedule 
+  // schedule is the array of sections
+  const [users, setUsers] = useState(JSON.parse(localStorage.getItem('profile'))) 
+  // users is the user object
+  const [userId, setUserId] = useState([]) 
+  // userId is the user id
+  const [visible, setVisible] = useState(true) 
+  // visible is the state of the card
 
 
   useEffect(() => {
@@ -33,6 +38,7 @@ const Course = (props) => {
 
 
   const AlertConflict = (props) => {
+    // this checks if there is a time conflict
     const conflicting= props.conflicting
     if (conflicting){
       return ("WARNING: time conflict with other classes")
